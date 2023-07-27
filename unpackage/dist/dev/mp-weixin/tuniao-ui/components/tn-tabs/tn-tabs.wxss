@@ -4,6 +4,24 @@
  * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
  * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
  */
+.tap_first.data-v-77999140 {
+  width: 72rpx;
+  height: 34rpx;
+  margin-top: 4rpx;
+}
+.tn-tab-bg.data-v-77999140 {
+  background-color: #ECDEFC;
+  border-radius: 8rpx;
+  margin-left: 20rpx;
+  height: 40rpx;
+  width: 62rpx;
+  opacity: 0.5;
+  font-size: 20rpx;
+  font-family: PingFang SC-Bold, PingFang SC;
+  font-weight: bold;
+  color: #202542;
+  line-height: 29rpx;
+}
 .data-v-77999140::-webkit-scrollbar {
   display: none;
   width: 0 !important;

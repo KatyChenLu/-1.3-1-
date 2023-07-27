@@ -14,17 +14,63 @@
 	
 		<!-- 推荐 -->
 				<mescroll-body ref="mescrollRef" @down="downCallback" @up="upCallback" >
-		<view class="" v-if="current==1" :style="{paddingTop: vuex_custom_bar_height + 'px'}">
+		<view  v-if="current==1" class="indexbg" :style="{paddingTop: vuex_custom_bar_height + 'px'}">
 		
 		<!-- #ifdef MP -->
 		<add-tip  />
 		<!-- #endif -->
 
-				<view class="" style="padding: 10px 15px;" v-if="swiperList.length>0">
+				<!-- <view class="" style="padding: 10px 15px;" v-if="swiperList.length>0">
 					<tn-swiper :list="swiperList" imageMode="aspectFill" @click="hpicto" :height="200"></tn-swiper>
+				</view> -->
+				
+				<view class="index-top">
+					<view class="index-top-left flex-base">
+							<view :class="{'top-tab-view-select':topTabSelect==0,'top-tab-view-normal':topTabSelect!=0}" >交友</view>
+							<view :class="{'top-tab-view-select':topTabSelect==1,'top-tab-view-normal':topTabSelect!=1}" >电竞</view>
+							<view :class="{'top-tab-view-select':topTabSelect==2,'top-tab-view-normal':topTabSelect!=2}" >搭子</view>
+					</view>
+					<view class="index-top-right flex-base">
+						<view class="search-box">
+							
+							<image src="../static/newUI/search_box.png" mode="" class="search-bg"></image>
+							<image src="../static/newUI/search_icon.png" mode="" class="search-icon"></image>
+							<view class="search-tip">
+								搜一搜
+							</view>
+						</view>
+						<view class="gift-box">
+							<image src="../static/newUI/gift.png" mode="" class="gift" ></image>
+						</view>
+					</view>
+				</view>
+				<view class="bulletin_box">
+					<image src="../static/newUI/bulletin_bg.png" mode="" class="bulletin-bg"></image>
+					<view class="bulletin-tip">
+						公告 : <text class="bulletin-tip-text">测试内容.测试内容.测试内容.测试内容.测试内容.测试内容</text>
+					</view>
 				</view>
 				
-				<view class="nav-list  tea-user__wrap">
+					<view class="nav-list  tea-user__wrap">
+						 <view
+						       class="nav-list-item tn-shadow-blur tn-cool-bg-image image-bg"		       
+						     style="height: 100rpx;" @click="navigateToFn({ url: '/pages/diaoyou', checkLogin: false })">
+						       <view class="nav-link" style="margin-top:-30rpx;margin-left:-20rpx;">
+						         <view class='title'>线下钓友</view>					     
+						       </view>					      
+						     </view>
+						 
+						 <view
+						   class="nav-list-item tn-shadow-blur tn-cool-bg-image tn-main-gradient-indigo--single"		       
+						 style="height: 100rpx;" @click="navigateToFn({ url: '/pages/liaotian', checkLogin: false })">
+						   <view class="nav-link" style="margin-top:-30rpx;margin-left:-20rpx;">
+						     <view class='title'>同城交友</view>					 
+						   </view>
+						  
+						 </view>	
+					</view>
+				
+			<!-- 	<view class="nav-list  tea-user__wrap">
 					 <view
 					       class="nav-list-item tn-shadow-blur tn-cool-bg-image tn-main-gradient-purplered--single"		       
 					     style="height: 100rpx;" @click="navigateToFn({ url: '/pages/diaoyou', checkLogin: false })">
@@ -41,7 +87,7 @@
 					   </view>
 					  
 					 </view>	
-				</view>
+				</view> -->
 				
 				
 					<block v-if="configInfo.xcx_sh==1">
@@ -56,7 +102,7 @@
 											        <image class="" :src='item.image' mode='aspectFit' style="height:90rpx;width: 90rpx;"></image>
 											      </view>
 											      <view class=" tn-text-center tn-margin-top-sm">
-											        <text class="tn-text-ellipsis">{{item.title}}</text>
+											        <text class="tn-text-ellipsis tn-text-color">{{item.title}}</text>
 											      </view>
 											    </view>
 											  </view>
@@ -141,7 +187,7 @@
 				<view class="tn-flex tn-flex-direction-column tn-margin-bottom">
 				
 				<view class="" style="width: 100%;position: relative;">
-					<tn-tabs :list="list" activeColor="#5500ff" inactiveColor="#000000" :isScroll="true" :current="currenttiezi" name="tab-name"
+					<tn-tabs :list="list" activeColor="#5500ff" inactiveColor="#000000" :isScroll="true" :current="currenttiezi" name="tab-name" 
 						@change="tabsChange"></tn-tabs>	
 				</view>		
 					<quan-news :list="content" :index="true"></quan-news>
@@ -185,6 +231,7 @@
 		},
 		data() {
 			return {
+				topTabSelect:1,
 				numindex:0,
 				shoplist: [],
 				vodurl: '',
@@ -835,6 +882,129 @@
 </script>
 
 <style lang="scss" scoped>
+	.indexbg{
+		background-image:linear-gradient(180deg, #982FD8 0%, #D52F9A 58%, #B263E2 73%, #FFFFFF 100%);
+	}
+	.top-tab-view-normal{
+		font-size: 32rpx;
+		font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #FFFFFF;
+		margin-right: 32rpx;
+		opacity: 0.7;
+	}
+	.top-tab-view-select{
+		font-size: 60rpx;
+		font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #FFFFFF;
+		margin-right: 32rpx;
+	}
+	.index-top{
+		display: flex;
+		background-color: transparent;
+		height: 100rpx;
+		align-items: flex-end;
+		margin-left: 22rpx;
+		justify-content: space-between;
+		margin-bottom: 20rpx;
+	}
+	.flex-base{
+		display: flex;
+	}
+	.search-box{
+		position: relative;
+		width: 176rpx;
+		height: 65rpx;
+	}
+	.search-bg{
+		position: absolute;
+		width: 174.21rpx;
+		height: 64.64rpx;
+		opacity:0.3
+	}
+	.search-icon{
+		position: absolute;
+		width: 25.6rpx;
+		height: 25.67rpx;
+		    top: 22rpx;
+		    left: 24rpx;
+	}
+	.search-tip{
+		position: absolute;
+		height: 32rpx;
+		font-size: 23rpx;
+		font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #FFFFFF;
+		line-height: 24rpx;
+		top: 22rpx;
+		    left: 70rpx;
+	}
+	.gift-box{
+		width: 53.92rpx;
+		height: 52.54rpx;
+		margin: 0 30rpx;
+	}
+	.gift{
+		width: 53.92rpx;
+		height: 52.54rpx;
+	}
+	.index-top-left{
+		align-items:flex-end;
+	}
+	.index-top-right{
+		align-items:center;
+		height: 66rpx;
+	}
+	.bulletin_box{
+		position: relative;
+		padding: 0 20rpx;
+		width: 710rpx;
+		height: 54rpx;
+		
+	}
+	.bulletin-bg{
+		position: absolute;
+		top: 0;
+		left: 20rpx;
+		width: 710rpx;
+		height: 52.67rpx;
+		opacity: 0.3;
+	}
+	.bulletin-tip{
+		position: absolute;
+		top: 8rpx;
+		left: 60rpx;
+		width: 770rpx;
+		height: 41rpx;
+		font-size: 29rpx;
+		font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #EEFF00;
+		line-height: 30rpx;
+	}
+	.bulletin-tip-text{
+		margin-left: 24rpx;
+		width: 541rpx;
+		height: 30rpx;
+		font-size: 21rpx;
+		font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #FFFFFF;
+		line-height: 22rpx;
+	}
+	.tn-text-color{
+		width: 68rpx;
+		height: 31rpx;
+		font-size: 22rpx;
+		font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #FFFFFF;
+		line-height: 41rpx;
+	}
+	
+	
 	.template-circle {
 		max-height: 100vh;
 	}
@@ -1522,7 +1692,9 @@
 	.nav-list {
 	  display: flex;
 	  justify-content: space-between;
-	  
+	  .image-bg{
+		  background-image: url('../static/newUI/nac_list_1.png');
+	  }
 	  /* 列表元素 start */
 	  .nav-list-item {
 	    padding: 35rpx 30rpx 5rpx 30rpx;
@@ -1683,4 +1855,6 @@
 	.sige{
 	width: 25%;	
 	}
+		
+	
 </style>

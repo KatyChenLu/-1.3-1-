@@ -195,6 +195,10 @@ var _components_color = _interopRequireDefault(__webpack_require__(/*! ../../lib
 //
 //
 //
+//
+//
+//
+//
 var _default2 = {
   mixins: [_components_color.default],
   name: 'tn-tabs',
@@ -268,7 +272,7 @@ var _default2 = {
     // 是否显示底部滑块
     showBar: {
       type: Boolean,
-      default: true
+      default: false
     },
     // 底部滑块的宽度
     barWidth: {
@@ -334,6 +338,9 @@ var _default2 = {
           flex: _this.isScroll ? 'auto' : '1',
           transitionDuration: "".concat(_this.duration, "s")
         };
+        if (index === 0) {
+          // style.backgroundColor= transparent;
+        }
         if (index === _this.currentIndex) {
           if (_this.bold) {
             style.fontWeight = 'bold';

@@ -10,12 +10,16 @@
             v-for="(item, index) in list"
             :key="index"
             :id="'tn-tabs__scroll-view__item-' + index"
-            class="tn-tabs__scroll-view__item tn-text-ellipsis "
+            :class="['tn-tabs__scroll-view__item','tn-text-ellipsis',index!=0?'tn-tab-bg':'']"
             :style="[tabItemStyle(index)]"
             @tap="clickTab(index)"
           >
-            <tn-badge v-if="item[count] || item['count']" backgroundColor="tn-bg-red" fontColor="#FFFFFF" :absolute="true" :top="badgeOffset[0] || 0" :right="badgeOffset[1] || 0">{{ item[count] || item['count']}}</tn-badge>
-            {{ item[name] || item['name'] }}
+            <tn-badge v-if="(item[count] || item['count'])&&index!=0" backgroundColor="red" fontColor="#FFFFFF" :absolute="true" :top="badgeOffset[0] || 0" :right="badgeOffset[1] || 0">{{ item[count] || item['count']}}</tn-badge>
+           
+		   <view class="" v-if="index!=0">
+		   	{{ item[name] || item['name'] }}
+		   </view> 
+			<image src="../../../static/newUI/tap_first.png" mode="" v-if="index==0" class="tap_first"></image>
           </view>
           
           <!-- 底部滑块 -->
@@ -101,7 +105,7 @@
       // 是否显示底部滑块
       showBar: {
         type: Boolean,
-        default: true
+        default: false
       },
       // 底部滑块的宽度
       barWidth: {
@@ -166,6 +170,9 @@
             flex: this.isScroll ? 'auto' : '1',
             transitionDuration: `${this.duration}s`
           }
+		  if(index ===0){
+			  // style.backgroundColor= transparent;
+		  }
           if (index === this.currentIndex) {
             if (this.bold) {			
               style.fontWeight = 'bold'
@@ -284,6 +291,25 @@
 </script>
 
 <style lang="scss" scoped>
+	.tap_first{
+		width: 72rpx;
+		height: 34rpx;
+		margin-top: 4rpx;
+	}
+	.tn-tab-bg{
+		background-color: #ECDEFC;
+		border-radius:8rpx;
+		margin-left: 20rpx;
+		height: 40rpx;
+		width: 62rpx;
+		opacity: 0.5;
+		
+		font-size: 20rpx;
+		font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #202542;
+		line-height: 29rpx;
+	}
   
   /* #ifndef APP-NVUE */
   ::-webkit-scrollbar {

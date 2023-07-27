@@ -5,7 +5,6 @@
   "usingComponents": {
     "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
     "add-tip": "/components/add-tip/add-tip",
-    "tn-swiper": "/tuniao-ui/components/tn-swiper/tn-swiper",
     "tn-avatar-group": "/tuniao-ui/components/tn-avatar-group/tn-avatar-group",
     "tn-tabs": "/tuniao-ui/components/tn-tabs/tn-tabs",
     "quan-news": "/components/quan-news/quan-news",

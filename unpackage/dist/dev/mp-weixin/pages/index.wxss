@@ -161,6 +161,126 @@ page {
  * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
  * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
  */
+.indexbg.data-v-2a183b29 {
+  background-image: linear-gradient(180deg, #982FD8 0%, #D52F9A 58%, #B263E2 73%, #FFFFFF 100%);
+}
+.top-tab-view-normal.data-v-2a183b29 {
+  font-size: 32rpx;
+  font-family: PingFang SC-Bold, PingFang SC;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-right: 32rpx;
+  opacity: 0.7;
+}
+.top-tab-view-select.data-v-2a183b29 {
+  font-size: 60rpx;
+  font-family: PingFang SC-Bold, PingFang SC;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-right: 32rpx;
+}
+.index-top.data-v-2a183b29 {
+  display: flex;
+  background-color: transparent;
+  height: 100rpx;
+  align-items: flex-end;
+  margin-left: 22rpx;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.flex-base.data-v-2a183b29 {
+  display: flex;
+}
+.search-box.data-v-2a183b29 {
+  position: relative;
+  width: 176rpx;
+  height: 65rpx;
+}
+.search-bg.data-v-2a183b29 {
+  position: absolute;
+  width: 174.21rpx;
+  height: 64.64rpx;
+  opacity: 0.3;
+}
+.search-icon.data-v-2a183b29 {
+  position: absolute;
+  width: 25.6rpx;
+  height: 25.67rpx;
+  top: 22rpx;
+  left: 24rpx;
+}
+.search-tip.data-v-2a183b29 {
+  position: absolute;
+  height: 32rpx;
+  font-size: 23rpx;
+  font-family: PingFang SC-Bold, PingFang SC;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 24rpx;
+  top: 22rpx;
+  left: 70rpx;
+}
+.gift-box.data-v-2a183b29 {
+  width: 53.92rpx;
+  height: 52.54rpx;
+  margin: 0 30rpx;
+}
+.gift.data-v-2a183b29 {
+  width: 53.92rpx;
+  height: 52.54rpx;
+}
+.index-top-left.data-v-2a183b29 {
+  align-items: flex-end;
+}
+.index-top-right.data-v-2a183b29 {
+  align-items: center;
+  height: 66rpx;
+}
+.bulletin_box.data-v-2a183b29 {
+  position: relative;
+  padding: 0 20rpx;
+  width: 710rpx;
+  height: 54rpx;
+}
+.bulletin-bg.data-v-2a183b29 {
+  position: absolute;
+  top: 0;
+  left: 20rpx;
+  width: 710rpx;
+  height: 52.67rpx;
+  opacity: 0.3;
+}
+.bulletin-tip.data-v-2a183b29 {
+  position: absolute;
+  top: 8rpx;
+  left: 60rpx;
+  width: 770rpx;
+  height: 41rpx;
+  font-size: 29rpx;
+  font-family: PingFang SC-Bold, PingFang SC;
+  font-weight: bold;
+  color: #EEFF00;
+  line-height: 30rpx;
+}
+.bulletin-tip-text.data-v-2a183b29 {
+  margin-left: 24rpx;
+  width: 541rpx;
+  height: 30rpx;
+  font-size: 21rpx;
+  font-family: PingFang SC-Bold, PingFang SC;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 22rpx;
+}
+.tn-text-color.data-v-2a183b29 {
+  width: 68rpx;
+  height: 31rpx;
+  font-size: 22rpx;
+  font-family: PingFang SC-Bold, PingFang SC;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 41rpx;
+}
 .template-circle.data-v-2a183b29 {
   max-height: 100vh;
 }
@@ -780,6 +900,9 @@ to {
   justify-content: space-between;
   /* 列表元素 start */
   /* 列表元素 end */
+}
+.nav-list .image-bg.data-v-2a183b29 {
+  background-image: url(/static/newUI/nac_list_1.png);
 }
 .nav-list .nav-list-item.data-v-2a183b29 {
   padding: 35rpx 30rpx 5rpx 30rpx;

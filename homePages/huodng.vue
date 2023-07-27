@@ -17,6 +17,9 @@
 	      <view class="swiper-item image-banner tn-shadow-blur" :style="'background-image:url('+ item.image + ');background-size: cover;border-radius: 15rpx;'">
 	      </view>
 
+
+
+
 	    </swiper-item>
 	  </swiper>
 	  <view class="indication">

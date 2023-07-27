@@ -3,5 +3,18 @@
     "projectname": "%E5%A4%9A%E5%AE%A2%E9%99%AA%E7%8E%A9%E7%B3%BB%E7%BB%9F",
     "setting": {
         "compileHotReLoad": true
+    },
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "",
+                    "pathName": "pages/login/tags",
+                    "query": "op=xcx",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
     }
 }

@@ -106,9 +106,6 @@ try {
     addTip: function () {
       return __webpack_require__.e(/*! import() | components/add-tip/add-tip */ "components/add-tip/add-tip").then(__webpack_require__.bind(null, /*! @/components/add-tip/add-tip.vue */ 778))
     },
-    tnSwiper: function () {
-      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-swiper/tn-swiper */ "tuniao-ui/components/tn-swiper/tn-swiper").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-swiper/tn-swiper.vue */ 785))
-    },
     tnAvatarGroup: function () {
       return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-avatar-group/tn-avatar-group */ "tuniao-ui/components/tn-avatar-group/tn-avatar-group").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-avatar-group/tn-avatar-group.vue */ 792))
     },
@@ -143,8 +140,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var g0 = _vm.current == 1 ? _vm.swiperList.length : null
-  var g1 =
+  var g0 =
     _vm.current == 1
       ? _vm.configInfo.yuyin_open == 1 &&
         _vm.configInfo.xcx_sh == 1 &&
@@ -155,7 +151,6 @@ var render = function () {
     {
       $root: {
         g0: g0,
-        g1: g1,
       },
     }
   )
@@ -375,6 +370,52 @@ var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/component
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //引入静默更新
 var MescrollBody = function MescrollBody() {
   __webpack_require__.e(/*! require.ensure | components/mescroll-uni/mescroll-body */ "components/mescroll-uni/mescroll-body").then((function () {
@@ -389,6 +430,7 @@ var _default = {
   },
   data: function data() {
     return {
+      topTabSelect: 1,
       numindex: 0,
       shoplist: [],
       vodurl: '',
