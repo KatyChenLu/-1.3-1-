@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "礼物列表",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body",
+    "nav-index-button": "/libs/components/nav-index-button"
+  }
+}

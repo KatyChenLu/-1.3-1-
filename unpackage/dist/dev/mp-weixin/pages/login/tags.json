@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "兴趣标签",
+  "disableScroll": true,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "ksp-cropper": "/uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "get-tel": "/components/loginFn/get-tel"
+  }
+}

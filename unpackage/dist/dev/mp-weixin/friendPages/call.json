@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "聊天",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "trtc-local-view": "/friendPages/view/TrtcLocalView",
+    "trtc-remote-view": "/friendPages/view/TrtcRemoteView"
+  }
+}

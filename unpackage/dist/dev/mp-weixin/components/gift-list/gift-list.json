@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tn-tabs": "/tuniao-ui/components/tn-tabs/tn-tabs",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal"
+  }
+}

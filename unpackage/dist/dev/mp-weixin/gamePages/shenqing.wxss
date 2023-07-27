@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.template-wave.data-v-eda059cc {
+  background-color: #f5f5f5;
+  width: 100vw;
+  height: 100vh;
+}
+/* 图标容器7 start */
+.icon7__item.data-v-eda059cc {
+  width: 30%;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  margin: 20rpx 10rpx;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.icon7__item--icon.data-v-eda059cc {
+  width: 120rpx;
+  height: 120rpx;
+  font-size: 50rpx;
+  border-radius: 0;
+  margin-bottom: -10rpx;
+  position: relative;
+  z-index: 1;
+}
+.reg-block.data-v-eda059cc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+.reg-block .description-text.data-v-eda059cc {
+  font-size: 26rpx;
+  color: #686a68;
+}
+.reg-block .description-text .text.data-v-eda059cc {
+  display: inline-block;
+  text-decoration: underline;
+}
+

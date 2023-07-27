@@ -1,0 +1,1 @@
+<canvas class="fire-canvas" style="{{'width:'+(width+'px')+';'+('height:'+(height+'px')+';')+('z-index:'+(zIndex)+';')}}" canvas-id="{{canvasId}}" data-event-opts="{{[['error',[['canvasIdErrorCallback',['$event']]]]]}}" binderror="__e"></canvas>

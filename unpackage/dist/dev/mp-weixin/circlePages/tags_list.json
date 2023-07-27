@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "话题列表",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "quan-list": "/components/quan-list/quan-list",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body"
+  }
+}

@@ -1,0 +1,320 @@
+page {
+	height: 100%;
+	box-sizing: border-box; /* 避免设置padding出现双滚动条的问题 */
+}
+.mescroll-uni-warp{
+	height: 100%;
+}
+.mescroll-uni {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-height: 200rpx;
+	overflow-y: auto;
+	box-sizing: border-box; /* 避免设置padding出现双滚动条的问题 */
+}
+
+/* 定位的方式固定高度 */
+.mescroll-uni-fixed{
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: auto; /* 使right生效 */
+	height: auto; /* 使bottom生效 */
+}
+
+/* 下拉刷新区域 */
+.mescroll-downwarp {
+	position: absolute;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+/* 下拉刷新--内容区,定位于区域底部 */
+.mescroll-downwarp .downwarp-content {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	min-height: 60rpx;
+	padding: 20rpx 0;
+	text-align: center;
+}
+
+/* 下拉刷新--提示文本 */
+.mescroll-downwarp .downwarp-tip {
+	display: inline-block;
+	font-size: 28rpx;
+	vertical-align: middle;
+	margin-left: 16rpx;
+	/* color: gray; 已在style设置color,此处删去*/
+}
+
+/* 下拉刷新--旋转进度条 */
+.mescroll-downwarp .downwarp-progress {
+	display: inline-block;
+	width: 32rpx;
+	height: 32rpx;
+	border-radius: 50%;
+	border: 2rpx solid gray;
+	border-bottom-color: transparent !important; /*已在style设置border-color,此处需加 !important*/
+	vertical-align: middle;
+}
+
+/* 旋转动画 */
+.mescroll-downwarp .mescroll-rotate {
+	-webkit-animation: mescrollDownRotate 0.6s linear infinite;
+	        animation: mescrollDownRotate 0.6s linear infinite;
+}
+@-webkit-keyframes mescrollDownRotate {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+@keyframes mescrollDownRotate {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+
+/* 上拉加载区域 */
+.mescroll-upwarp {
+	min-height: 60rpx;
+	padding: 30rpx 0;
+	text-align: center;
+	clear: both;
+}
+
+/*提示文本 */
+.mescroll-upwarp .upwarp-tip{
+	display: inline-block;
+	font-size: 28rpx;
+	vertical-align: middle;
+	/* color: gray; 已在style设置color,此处删去*/
+}
+.mescroll-upwarp .upwarp-nodata {
+	display: inline-block;
+	font-size: 28rpx;
+	vertical-align: middle;
+	/* color: gray; 已在style设置color,此处删去*/
+}
+.mescroll-upwarp .upwarp-tip {
+	margin-left: 16rpx;
+}
+
+/*旋转进度条 */
+.mescroll-upwarp .upwarp-progress {
+	display: inline-block;
+	width: 32rpx;
+	height: 32rpx;
+	border-radius: 50%;
+	border: 2rpx solid gray;
+	border-bottom-color: transparent !important; /*已在style设置border-color,此处需加 !important*/
+	vertical-align: middle;
+}
+
+/* 旋转动画 */
+.mescroll-upwarp .mescroll-rotate {
+	-webkit-animation: mescrollUpRotate 0.6s linear infinite;
+	        animation: mescrollUpRotate 0.6s linear infinite;
+}
+@-webkit-keyframes mescrollUpRotate {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+@keyframes mescrollUpRotate {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+/* 胶囊*/
+.tn-custom-nav-bar__back.data-v-1c11709a {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 1000rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.5);
+  color: #FFFFFF;
+  font-size: 18px;
+}
+.tn-custom-nav-bar__back .icon.data-v-1c11709a {
+  display: block;
+  flex: 1;
+  margin: auto;
+  text-align: center;
+}
+.tn-custom-nav-bar__back.data-v-1c11709a:before {
+  content: " ";
+  width: 1rpx;
+  height: 110%;
+  position: absolute;
+  top: 22.5%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  opacity: 0.7;
+  background-color: #FFFFFF;
+}
+/* 图标容器12 start */
+.tn-three.data-v-1c11709a {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  bottom: 50%;
+  left: 50%;
+  -webkit-transform: translate(-38rpx, -20rpx) rotateX(20deg) rotateY(10deg) rotateZ(-20deg);
+          transform: translate(-38rpx, -20rpx) rotateX(20deg) rotateY(10deg) rotateZ(-20deg);
+  text-shadow: -1rpx 2rpx 0 #f0f0f0, -2rpx 4rpx 0 #f0f0f0, -10rpx 20rpx 30rpx rgba(0, 0, 0, 0.2);
+}
+.icon13__item.data-v-1c11709a {
+  width: 30%;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  margin: 20rpx 10rpx;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.icon13__item--icon.data-v-1c11709a {
+  width: 120rpx;
+  height: 120rpx;
+  font-size: 60rpx;
+  border-radius: 50%;
+  margin-bottom: 18rpx;
+  position: relative;
+  z-index: 1;
+}
+.icon13__item--icon.data-v-1c11709a::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  border-radius: inherit;
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  background-size: 100% 100%;
+}
+.icon12__item.data-v-1c11709a {
+  width: 30%;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  margin: 20rpx 10rpx;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.icon12__item--icon.data-v-1c11709a {
+  width: 80rpx;
+  height: 80rpx;
+  font-size: 60rpx;
+  border-radius: 50%;
+  margin-bottom: 18rpx;
+  position: relative;
+  z-index: 1;
+}
+.icon12__item--icon.data-v-1c11709a::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  border-radius: inherit;
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  background-size: 100% 100%;
+}
+.message.data-v-1c11709a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.message__left.data-v-1c11709a {
+  width: 10%;
+}
+.message__middle.data-v-1c11709a {
+  width: 70%;
+  padding-left: 20rpx;
+  padding-right: 40rpx;
+}
+.message__right.data-v-1c11709a {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.message__name.data-v-1c11709a {
+  font-size: 32rpx;
+  margin-bottom: 8rpx;
+}
+.message__content.data-v-1c11709a {
+  font-size: 26rpx;
+  color: #838383;
+}
+.message__tips__icon.data-v-1c11709a {
+  font-size: 36rpx;
+  color: #AAAAAA;
+}
+

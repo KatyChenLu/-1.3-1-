@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.tn-radio.data-v-6107447c {
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  -webkit-user-select: none;
+          user-select: none;
+  line-height: 1.8;
+}
+.tn-radio__icon-wrap.data-v-6107447c {
+  color: #000000;
+  display: flex;
+  flex-direction: row;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 42rpx;
+  height: 42rpx;
+  color: transparent;
+  text-align: center;
+  transition-property: color, border-color, background-color;
+  font-size: 20rpx;
+  border: 1rpx solid #AAAAAA;
+  transition-duration: 0.2s;
+}
+.tn-radio__icon-wrap--circle.data-v-6107447c {
+  border-radius: 100%;
+}
+.tn-radio__icon-wrap--square.data-v-6107447c {
+  border-radius: 6rpx;
+}
+.tn-radio__icon-wrap--checked.data-v-6107447c {
+  color: #FFFFFF;
+  background-color: #01BEFF;
+  border-color: #01BEFF;
+}
+.tn-radio__icon-wrap--disabled.data-v-6107447c {
+  background-color: #E6E6E6;
+  border-color: #AAAAAA;
+}
+.tn-radio__icon-wrap--disabled--checked.data-v-6107447c {
+  color: #AAAAAA !important;
+}
+.tn-radio__label.data-v-6107447c {
+  word-wrap: break-word;
+  margin-left: 10rpx;
+  margin-right: 24rpx;
+  color: #000000;
+  font-size: 30rpx;
+}
+.tn-radio__label--disabled.data-v-6107447c {
+  color: #AAAAAA;
+}
+

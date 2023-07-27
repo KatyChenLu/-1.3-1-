@@ -1,0 +1,128 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.container.data-v-37294502 {
+  background-color: #000000;
+}
+.button.data-v-37294502 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: visible;
+  color: #FFFFFF;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+  border: none;
+}
+.button.data-v-37294502::after {
+  border: none;
+}
+.item.data-v-37294502 {
+  /* width : 750rpx; */
+  background-color: #000000;
+  position: relative;
+}
+.videoHover.data-v-37294502 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+  /* border-style: dashed;
+	border-color: #DD524D;
+	border-width: 1px; */
+}
+.playState.data-v-37294502 {
+  margin-top: 100%;
+  margin-left: 40%;
+  width: 160rpx;
+  height: 160rpx;
+  opacity: 0.2;
+}
+.playStatedd.data-v-37294502 {
+  margin-top: 100%;
+  margin-left: 40%;
+  width: 160rpx;
+  height: 160rpx;
+}
+.userInfo.data-v-37294502 {
+  position: absolute;
+  bottom: 140px;
+  right: 10px;
+  flex-direction: column;
+}
+.userAvatar.data-v-37294502 {
+  border-radius: 500%;
+  margin-bottom: 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ffffff;
+}
+.userAvatar.data-v-37294502 {
+  width: 100rpx;
+  height: 100rpx;
+}
+.likeIco.data-v-37294502, .shareIco.data-v-37294502, .commentIco.data-v-37294502 {
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 15px;
+}
+.likeNum.data-v-37294502, .commentNum.data-v-37294502, .shareTex.data-v-37294502 {
+  color: #ffffff;
+  font-size: 30rpx;
+  text-align: center;
+  margin: 5px;
+}
+.likeNumActive.data-v-37294502 {
+  color: red;
+}
+.content.data-v-37294502 {
+  width: 620rpx;
+  z-index: 99;
+  position: absolute;
+  bottom: 30px;
+  /* justify-content: center; */
+  padding: 15rpx;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #ffffff;
+}
+.userName.data-v-37294502 {
+  font-size: 30rpx;
+  color: #ffffff;
+  margin-top: 80rpx;
+}
+.words.data-v-37294502 {
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  color: #ffffff;
+}
+.root.data-v-37294502 {
+  background-color: #000000;
+}
+.data-v-37294502 .input-placeholder {
+  font-size: 30rpx;
+  color: #C6D1D8;
+}
+.input-box.data-v-37294502 {
+  position: fixed;
+  width: 100%;
+  transition: all 0.25s ease-out;
+  min-height: 100rpx;
+  padding: 10px;
+  background-color: #ffffff;
+  display: flex;
+  position: fixed;
+  z-index: 120;
+  bottom: -2rpx;
+}
+

@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal",
+    "dk-tanchuang": "/components/dk-tanchuang/dk-tanchuang",
+    "tn-popup": "/tuniao-ui/components/tn-popup/tn-popup",
+    "tn-list-cell": "/tuniao-ui/components/tn-list-cell/tn-list-cell",
+    "tn-avatar": "/tuniao-ui/components/tn-avatar/tn-avatar"
+  }
+}

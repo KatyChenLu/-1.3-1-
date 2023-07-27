@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.tn-input.data-v-628dad5c {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  flex: 1;
+}
+.tn-input__input.data-v-628dad5c {
+  font-size: 28rpx;
+  color: #000000;
+  flex: 1;
+}
+.tn-input__textarea.data-v-628dad5c {
+  width: auto;
+  font-size: 28rpx;
+  color: #000000;
+  padding: 10rpx 0;
+  line-height: normal;
+  flex: 1;
+}
+.tn-input--border.data-v-628dad5c {
+  border-radius: 6rpx;
+  border: 2rpx solid rgba(0, 0, 0, 0.1);
+}
+.tn-input--error.data-v-628dad5c {
+  border-color: #E83A30 !important;
+}
+.tn-input__right-icon.data-v-628dad5c {
+  line-height: 1;
+}
+.tn-input__right-icon .icon.data-v-628dad5c {
+  color: #AAAAAA;
+}
+.tn-input__right-icon__item.data-v-628dad5c {
+  margin-left: 10rpx;
+}
+.tn-input__right-icon__clear .icon.data-v-628dad5c {
+  font-size: 32rpx;
+}
+.tn-input__right-icon__select.data-v-628dad5c {
+  transition: -webkit-transform .4s;
+  transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
+}
+.tn-input__right-icon__select .icon.data-v-628dad5c {
+  font-size: 26rpx;
+}
+.tn-input__right-icon__select--reverse.data-v-628dad5c {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+

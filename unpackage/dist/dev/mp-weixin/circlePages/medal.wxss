@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.template-suspended.data-v-6210085e {
+  background-image: linear-gradient(to top, #4C3FAE 20%, #6E26BA 80%);
+  width: 100vw;
+}
+/* 悬浮 */
+.tnxuanfu.data-v-6210085e {
+  -webkit-animation: suspension-data-v-6210085e 3s ease-in-out infinite;
+          animation: suspension-data-v-6210085e 3s ease-in-out infinite;
+}
+@-webkit-keyframes suspension-data-v-6210085e {
+0%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+50% {
+    -webkit-transform: translateY(-0.8rem);
+            transform: translateY(-0.8rem);
+}
+}
+@keyframes suspension-data-v-6210085e {
+0%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+50% {
+    -webkit-transform: translateY(-0.8rem);
+            transform: translateY(-0.8rem);
+}
+}
+/* 悬浮按钮 */
+.button-shop.data-v-6210085e {
+  width: 90rpx;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  /* bottom:200rpx;
+    right: 20rpx; */
+  left: 5rpx;
+  top: 5rpx;
+  z-index: 1001;
+  border-radius: 100px;
+  opacity: 0.9;
+}
+/* 按钮 */
+.wechat.data-v-6210085e {
+  bottom: 300rpx;
+  right: 75rpx;
+  position: fixed;
+  z-index: 9999;
+}
+/* 用户头像 start */
+.logo-image.data-v-6210085e {
+  width: 110rpx;
+  height: 110rpx;
+  position: relative;
+}
+.logo-pic.data-v-6210085e {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  border: 8rpx solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0rpx 0rpx 80rpx 0rpx rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  overflow: hidden;
+}
+/* 页面 start*/
+.about-shadow.data-v-6210085e {
+  border-radius: 15rpx;
+  box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.07);
+}
+

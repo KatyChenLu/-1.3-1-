@@ -1,0 +1,1867 @@
+<template>
+	<view class="container">
+		<!-- #ifdef APP -->
+	
+		<view @click="autoPlay" style="position: fixed; margin-top:10rpx; left: 40upx;">
+			<text style="padding: 10upx; padding-left: 40upx; padding-right: 40upx; border-radius: 20upx; background-color: #F8F8F8; color: #007AFF; font-weight: bold; font-size: 14px;margin-top: 60rpx;">返回</text>
+		</view>
+		
+	
+		<view :style="'width: '+ windowWidth +'px; height: '+ boxStyle.height +'px;'" v-if="isShow1">
+			
+			<list @loadmore="getData" @scroll="scrolls" :loadmoreoffset="wHeight*1" :show-scrollbar="false" ref="listBox" :pagingEnabled="true" :scrollable="true">
+				<!-- 刷新模块 -->
+				<refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
+					<loading style="background-color: #FFFFFF;">
+						<image src="@/static/play.png" :style="'width: 80upx; height: 40upx; margin-top: 80upx; margin-bottom: 30upx; margin-left: '+ (windowWidth - 200) +'px;'"></image>
+					</loading>
+				</refresh>
+				
+				<!-- 循环数据 -->
+				<cell v-for="(item,i) in dataList" :key="i">
+					<!-- 用div把视频模组套起来 -->
+					<div :style="'width: '+ windowWidth +'px; height: '+ boxStyle.height +'px;'" @disappear="stop()">
+						<view v-if="Math.abs(k-i)<=1">
+							<view class="root">
+								
+								<video
+									:ref="'item'+i"
+									:id="item.gid"
+									:loop="true"
+									:src="item.src"
+									:muted="item.isplay"
+									@play="playIngs(i)"	
+									:enable-progress-gesture="false"
+									:page-gesture="false"
+									:controls="false"
+									:http-cache="true"
+									:show-loading="false"
+									:show-fullscreen-btn="false"
+									:show-center-play-btn="false"
+									:style="boxStyle"
+									:object-fit="object_fit"
+									@timeupdate="timeupdate($event,i)"
+								></video>
+								<!-- 这里是封面 -->
+							
+							</view>
+						
+							<!-- 这个是暂停时出现的图标 -->
+							<view class="videoHover" @click="tapVideoHover(item.state,$event)" @touchstart="touchstartHover" :style="boxStyle">
+								<image v-if="item.state=='pause'" class="playState" src="@/static/img/index/play.png"></image>
+							</view>
+						
+							<view  class="videoHover" :style="boxStyle" v-if="item.price>0&&item.is_buy==0" 
+							>
+								<view style="font-size: 24rpx;color: #ffff00; "> 付费视频,花费{{item.price}}{{item.moneyname}}</view>
+								<view style="font-size: 24rpx;color: #000000;background-color: #ffff00; padding: 10px 20px;" @click="goumai(item._id)">购买</view>
+								
+							</view>
+							
+							
+							<view class="userInfo">
+								<!-- 1.头像 -->
+								<image  @click="tozuozhe" class="userAvatar" :src="item.href" mode="aspectFill"></image>
+								<!-- 2.点赞 -->
+								<view  @click="cLike(item.like);" style="opacity: 0.9; margin-top: 17px;">
+									<image v-if="item.like" src="@/static/img/index/xin.png" style="width: 40px; height: 40px; position: absolute;left:32rpx "></image>
+									<image v-if="!item.like" src="@/static/img/index/xin-2.png" style="width: 40px; height: 40px; position: absolute;left:32rpx  "></image>
+									<text style="color: #FFFFFF; margin-top: 5px;font-size: 14px; text-align: center; margin-top: 40px; font-weight: bold;" :class="{'likeNumActive':item.like}">{{item.like_n}}</text>
+								</view>
+								<!-- 3.评论 -->
+								<view  class="comment" @click="toComment(i)" style="opacity: 0.9; margin-top: 17px;">
+									<image src="@/static/img/index/liaotian-2.png" style="width: 35px; height: 35px; position: absolute; left: 32rpx;"></image>
+									<text style="color: #FFFFFF; margin-top: 5px; font-size: 14px; font-weight: bold; text-align: center; margin-top: 40px;">{{item.sms_n}}</text>
+								</view>
+								<!-- 4.分享 -->
+								<view @click="share" style="opacity: 0.9; margin-top: 17px;">
+									<image src="@/static/img/index/share-fill.png" style="width: 40px; height: 40px; position: absolute; left:32rpx"></image>
+									<text style="color: #FFFFFF; margin-top: 5px; font-size: 14px; text-align: center; font-weight: bold; margin-top: 40px;">分享</text>
+								</view>
+							
+							</view>
+							<!-- 最底下的文字部分 -->
+							<view class="content" v-if="dataList.length !== 0 ">
+								<text class="userName" :style="'width: '+ (windowWidth - 90) +'px;'">@{{item.username}}</text>
+								<text class="userName" style="font-size: 24rpx;color: #ffffff; margin-top: 20upx;" :style="'width: '+ (windowWidth - 90) +'px;'">
+									{{item.msgdd}}									
+								</text>
+							</view>
+						
+							<image
+							v-if="item.isShowimage == true"
+								:src="item.src+'?x-oss-process=video/snapshot,t_'+ currenttimes +'000,f_jpg'" 
+								mode="aspectFill"
+								:style="'width: 120upx; height: 160upx; border-radius: 10upx; position: absolute; bottom: '+ (ProgressBarBottom + 160) +'upx; left: '+ (currentPositions - 15) +'px;'"
+							></image>
+						</view>
+					</div>
+				</cell>
+			</list>
+			<!-- 1.注意：进度条这类拖拽的东西不能放进block\cell这些循环体中的，要不然touchmove方法会捕捉有误 -->
+			<view v-if="dataList.length !== 0 && dataList[k].isShowProgressBarTime == true" :style="'position: absolute; bottom: '+ (ProgressBarBottom + this.windowWidth*0.2)/2 +'px; left: '+ (windowWidth*2 - this.windowWidth*1.35)/2 +'px;'">
+				<text style="font-size: 22px; font-weight: bold; color: #F1F1F1;">{{changeTime}} / {{videoTimes}}</text>
+			</view>
+			<!-- 这里就是进度条了：纯手工进度条，调整位置的话就把他们的 bottom 改成一下就行了 -->
+			<view v-if="isDragging == false" @touchmove="touchmove" @touchend="touchend" @touchstart="touchstart" style="position: absolute; bottom: 0; left: 0;">
+				<!-- 1.这一步必须加，为了适配低端机型 -->
+				<text :style="'width: '+ windowWidth +'px; opacity: 0;'">.</text>
+				<!-- 2.这是未加载的时的右边的灰色部分 -->
+				<view :style="'width: '+ windowWidth +'px; height: 4upx; background-color: #C8C7CC; position: absolute; bottom: '+ ProgressBarBottom +'upx; opacity: '+ ProgressBarOpacity +';'"></view>
+				<!-- 3.这里我采用的分离式办法：就是让滑动样式和不滑动的样式分开，这样相互不干扰，可以避免进度条闪动的问题 -->
+				<!-- 4.注意：isShowProgressBarTime 加入了返回数据中 -->
+				<view v-if="dataList.length !== 0 && dataList[k].isShowProgressBarTime == false" :style="'width: '+ (currentPosition) +'px; height: 4upx; background-color: #FFFFFF; position: absolute; bottom: '+ ProgressBarBottom +'upx; left: 0; opacity: '+ (ProgressBarOpacity - 0.1) +';'"></view>
+				<view v-if="dataList.length !== 0 && dataList[k].isShowProgressBarTime == true" :style="'width: '+ (currentPositions) +'px; height: 8upx; background-color: #FFFFFF; position: absolute; bottom: '+ ProgressBarBottom +'upx; left: 0; opacity: '+ (ProgressBarOpacity + 0.05) +';'"></view>
+				<view v-if="dataList.length !== 0 && dataList[k].isShowProgressBarTime == false" :style="'width: 4px; height: 4px; background-color: #FFFFFF; border-radius: 10px; position: absolute; bottom: '+ (ProgressBarBottom - 2) +'upx; left: '+ (currentPosition) +'px; opacity: '+ ProgressBarOpacity +';'"></view>
+				<view v-if="dataList.length !== 0 && dataList[k].isShowProgressBarTime == true" :style="'width: '+ dotWidth +'px; height: '+ dotWidth +'px; background-color: #FFFFFF; border-radius: 10px; position: absolute; bottom: '+ (ProgressBarBottom - 5) +'upx; left: '+ (currentPositions - 5) +'px; opacity: '+ ProgressBarOpacity +';'"></view>
+			</view>
+		</view>
+
+		 
+		 
+		 
+		 			</div>
+		 		</cell>
+		 	</list>
+		 </view>
+		 
+		 
+		<uni-popup type="bottom" ref="pinglun"  @touchmove.stop.prevent="moveHandle" v-if="isShow2">
+			<view :style="'width: '+ windowWidth +'px; height: '+ (boxStyle.height/heightNum) +'px;  border-top-left-radius: 10px; border-top-right-radius: 10px;'">
+		
+		
+		
+		<view :style="'width: '+ windowWidth +'px; height: '+ (boxStyle.height/heightNum) +'px; margin-top: 20upx; background-color: #242424; display: flex; flex-direction: column;'">
+			<text v-if="content.length == 0" :style="'font-size: 14px; font-weight: bold; color: #a3a1a4; margin-top: 50upx; margin-left: '+ (windowWidth/2.9) +'px; position: absolute;'">～ 快来评论吧 ～</text>
+			<list :show-scrollbar="false" :scrollable="true" >
+				<cell v-for="(list,index) in content" :key="index">
+					<view :style="'width: '+ windowWidth +'px; display: flex; flex-direction: row;'" style="background-color: #424242;border-radius: 10upx;margin-bottom: 10upx;padding-bottom: 10upx;">
+						<!-- 1.用户的头像 -->
+						<image :src="list.avatar" mode="aspectFill" style="width: 75upx; height: 75upx; border-radius: 50upx; margin-top: 40upx; margin-left: 30upx;"></image>
+						<!-- 2.一级评论 -->
+						<view :style="'width: '+ (windowWidth*0.8) +'px; display: flex;  flex-direction: column; margin-top: 40upx; margin-left: 20upx;'">
+							<!-- 3.用户名称，并自动判断是否为视频作者 -->
+							<view style="display: flex; flex-direction: row;">
+								<text style="font-size: 12px; font-weight: bold; color: #a3a1a4;">{{list.nickname}}</text>
+								<!-- 4.如果是视频作者就显示 作者 -->
+								<view v-if="list.user_id == list.fa_user_id" style="background-color: #E43D33; border-radius: 5upx; margin-left: 15upx;">
+									<text style="font-size: 8px; font-weight: bold; padding: 5upx; padding-left: 8upx; padding-right: 8upx; font-weight: bold; color: #FFFFFF;">作者</text>
+								</view>
+							</view>
+							
+							<view  :style="'width: '+ (windowWidth*0.78) +'px; display: flex; flex-direction: row; flex-wrap: wrap; margin-top: 14upx;'">
+							<text :style="'font-size: 14px; font-weight: bold; color: #FFFFFF;'">{{list.content}}</text>
+							</view>
+							<!-- 6.如果用户输入了 GIF 表情，就会在这里显示 -->
+							
+							<!-- 7.这里就是 时间、回复、点赞、点赞量显示的地方 -->
+							<view :style="'width: '+ (windowWidth*0.8) +'px; height: 30upx; display: flex; flex-direction: row; margin-top: 10upx; margin-bottom: 10upx;'">
+								<text style="font-size: 12px; color: #a3a1a4;">{{list.create_time}}</text>
+								<text @click="hiufu(list.nickname,list.id,index)" style="font-size: 12px; font-weight: bold; color: #a3a1a4; margin-left: 20upx;">回复</text>
+								<text v-if="list.user_id==list.ziji_id||list.fa_user_id==list.ziji_id" @click="delcomment(list.id,'del',0,0,index,0)" style="font-size: 12px; font-weight: bold; color: #a3a1a4; margin-left: 20upx;">删除</text>
+								
+								
+								<text @click="top(list.id,'top',1,0,index,0)"
+									style="font-size: 12px; font-weight: bold; color: #a3a1a4; margin-left: 20upx;"
+									v-if="list.is_ding==0&&list.fa_user_id==list.ziji_id">
+									置顶
+								</text>
+								<text @click="top(list.id,'top',0,0,index,0)"
+									style="font-size: 12px; font-weight: bold; color: #a3a1a4; margin-left: 20upx;"
+									v-if="list.is_ding==1&&list.fa_user_id==list.ziji_id">
+									取消置顶
+								</text>
+								
+								
+								<image v-if="!list.is_like" @click="likeComment(list.id,index,0,0)" src="@/static/img/index/xin-2.png" style="width: 20upx; height:20upx; position: absolute; right: 35upx; margin-left: 5upx; margin-top: 0upx;"></image>
+								<image v-if="list.is_like" @click="likeComment(list.id,index,0,0)" src="@/static/img/index/xin.png" style="width:20upx; height: 20upx; position: absolute; right: 35upx; margin-left: 5upx;"></image>
+								<text  style="font-size: 12px; color: #a3a1a4; position: absolute; right:15upx; margin-top:2upx;">{{list.like_num}}</text>
+							</view>
+							
+							<block v-for="(li,inde) in list.child" v-if="update" :key="inde">
+								<view :style="'width: '+ (windowWidth*0.8) +'px; display: flex; flex-direction: row;'" style="background-color: #585858;border-radius: 10upx;margin-bottom: 10upx;padding-bottom: 10upx;">
+									<!-- 9.子评论 用户头像 -->
+									<image :src="li.avatar" mode="aspectFill" style="width: 45upx; height: 45upx; border-radius: 50upx; margin-top: 10upx;margin-left: 10upx;"></image>
+									<!-- 10.动态计算宽度 子评论列表 -->
+									<view :style="'width: '+ (windowWidth*0.8*0.85) +'px; display: flex;  flex-direction: column; margin-top: 10upx; margin-left: 20upx;'">
+										<view style="display: flex; flex-direction: row;">
+											<view style="display: flex; flex-direction: row;">
+												<!-- 11.回复评论的人显示在这里 -->
+												<text style="font-size: 12px; font-weight: bold; color: #a3a1a4;">{{li.nickname}}</text>
+												<!-- 12.同时要判断评论人是不是作者，如果是作者就在这里显示 -->
+												<view v-if="li.fa_user_id == li.user_id" style="background-color: #E43D33; border-radius: 5upx; margin-left: 15upx;">
+													<text style="font-size: 8px; font-weight: bold; padding: 5upx; padding-left: 8upx; padding-right: 8upx; font-weight: bold; color: #FFFFFF;">作者</text>
+												</view>
+											</view>
+											<!-- 13.图片是一个向右的小图标 -->
+										
+											<!-- 14.被回复用户的名称 会显示在这里 -->
+											<view style="display: flex; flex-direction: row; margin-left: 10upx;">
+												<text style="font-size: 12px; font-weight: bold; color: #ffffff;margin-right: 10upx;" v-if="li.to_name">回复</text>
+												<text style="font-size: 12px; font-weight: bold; color: #a3a1a4;" v-if="li.to_name"> {{li.to_name}}</text>
+												<!-- 15.同时要判断评论人是不是作者，如果是作者就在这里显示 -->
+												<view v-if="li.fa_user_id == li.user_id" style="background-color: #E43D33; border-radius: 5upx; margin-left: 15upx;">
+													<text style="font-size: 8px; font-weight: bold; padding: 5upx; padding-left: 8upx; padding-right: 8upx; font-weight: bold; color: #FFFFFF;">作者</text>
+												</view>
+											</view>
+										</view>
+									
+										<view   :style="'width: '+ (windowWidth*0.8*0.85) +'px; display: flex; flex-direction: row; flex-wrap: wrap; margin-top: 5upx;'">
+										<text :style="'font-size: 15px; font-weight: bold; color: #FFFFFF; '">{{li.content}}</text>										
+										</view>
+										<!-- 18.这里就是 时间、回复、点赞、点赞量显示的地方 -->
+										<view :style="'width: '+ (windowWidth*0.8*0.85) +'px; height: 20upx; display: flex; flex-direction: row; margin-top: 2upx; margin-bottom:5upx;'">
+											<text style="font-size: 12px; color: #a3a1a4;">{{li.create_time}}</text>
+											<text @click="hiufu(li.nickname,list.id,index)" style="font-size: 12px; font-weight: bold; color: #a3a1a4; margin-left: 20upx;">回复</text>
+											<text @click="delcomment(li.id,'del',0,inde,index,1)" v-if="li.user_id==li.ziji_id||list.fa_user_id==li.ziji_id" style="font-size: 12px; font-weight: bold; color: #a3a1a4; margin-left: 20upx;">删除</text>
+											<image v-if="!li.is_like" @click="likeComment(li.id,index,inde,1)" src="@/static/img/index/xin-2.png" style="width: 20upx; height:20upx; position: absolute; right: 20upx; margin-left: 5upx;"></image>
+											<image v-if="li.is_like" @click="likeComment(li.id,index,inde,1)" src="@/static/img/index/xin.png" style="width: 20upx; height:20upx; position: absolute; right: 20upx; margin-left: 5upx;"></image>
+											<text  style="font-size: 12px; color: #a3a1a4; position: absolute; right:2upx; ">{{li.like_num}}</text>
+										</view>
+									</view>
+								</view>
+							</block>
+							
+						</view>
+					</view>
+					<!-- 20.留一定的高度以免视图被遮挡 -->
+					<view v-if="index == (content.length-1)" :style="'width: '+ windowWidth +'px; height: 80px;'"></view>
+				</cell>
+				
+			</list>
+			
+			
+		
+			<view  :style="'width: '+ windowWidth +'px; height: 80px; background-color: #b5b5b5;'">
+				<view :style="'width: '+ (windowWidth-120) +'px; height: 42px; margin-left: 15px; margin-right: 15px;  margin-top: 10upx; background-color: #c3c3c3; border-radius: 100upx;display: flex; flex-direction: row;'">
+					<textarea 
+					@blur="blur" 
+					@click="clickTextarea" 
+					:auto-focus="autoFocus" 
+					maxlength="150"  					
+					:focus="is_focus"
+					@confirm="fasong" 
+					:placeholder="huifubody" 
+					confirm-type="send" 
+					type="text" 
+					v-model="sendmsgBoy"  
+					:style="'width: '+ (windowWidth-120) +'px;height: 40px; margin-bottom: 20upx; font-size: 16px; color: #000000; margin-top: 10upx; margin-left: 30upx;'" /></textarea>
+				
+				</view>
+				 <text style="font-size: 16px; color: #000000; position: absolute;  height: 40px;margin-top: 20upx;right:15upx;width: 100px; margin-left: 25px;" @click="sendmsg">
+				 发送
+				 </text>
+			</view>
+			
+
+		
+		
+		</view>		
+	<!-- 	<view  @touchstart="openPinglun" :style="'width: '+ windowWidth +'px; height: '+ plHeight +'px; background-color: #ffffff;'">
+			<view :style="'width: '+ (windowWidth-30) +'px; height: 42px; margin-left: 15px; margin-top: 20upx; background-color: #00ff7f; border-radius: 100upx; display: flex; flex-direction: row;'">
+				<text style="font-size: 14px; color: #a3a1a4; margin-top: 20upx; margin-left: 30upx;">有爱评论，说点好听的～</text>
+			
+			</view>
+		</view> -->
+
+			</view>
+		</uni-popup>
+		
+		
+		
+		
+		
+		
+		<!-- #endif -->
+
+	</view>
+</template>
+<script>
+	import {
+		host
+	} from '@/siteinfo.js'
+
+import { render } from "vue";	
+	export default {
+        data() {
+			return {
+			// ----- start ----- 评论输入框部分
+			num: 1.15,//用来处理评论的高度
+			plHeight:80,//评论高度
+			value: "",//用户在输入框输入信息的数据
+			autoHeight: false,//这个默认即可（用于评论框自动适应高度）
+			borderRadius: 100,//评论框圆角大小
+			lineheight: 0,//默认即可（用于处理评论框高度）
+			percent: 1,//默认（用于处理发送按钮已经评论框宽度）
+			show: true,//默认（是否显示评论框）
+			emojiHeight: 0,//表情区域的高度
+			emojiheight: 0,//用于处理表情区域的高度
+			cursorSpacing: 20,//键盘距离输入框的距离
+			autoFocus: false,//是否自动聚焦（默认聚焦）
+			isopen: false,//(默认不展开)
+			isToShow: false,//默认
+			adjustPosition: false,//默认
+			placeholder: "有爱评论，说点好听的～",
+			
+			// 
+			current: 1,//当前切换的位置
+			emojilist: [],//表情数组
+			nowTimeEmojiList: [],//最近输入的表情
+			sinaEmojilist: [],//新浪微博表情
+			currentNum: 4.4,//默认
+			likeImage: [],//默认
+			nowImage: [],//默认
+			
+			gifAndpngList: [],//默认
+			gifAndpnglist: [],//默认
+			
+			searchGIFValue: "",//默认
+			isSearcopen: false,//默认
+			GifList: [],//默认
+			isShowImage: false,//默认
+			imageURL: "",//默认
+			
+			platform: "",//默认
+			systemVerson: "",//系统版本
+			ischangepinlun: true,//默认显示全面屏手机评论样式
+			
+			// ----- end ----- 评论输入框部分
+				
+			
+				jubao_body:'',
+				jubaoshow:false,
+				sharedata: [],
+				goodsgid:0,
+				pid:0,
+				huifubody: '有爱评论，说点好听的～',
+				is_focus: false,
+				sendmsgBoy: '',
+				sendmsgBoy_huifuname: '',
+				pingpage:1,
+				id:0,
+				page:2,
+				content:[],
+				showpinglun:false,
+				loginBoxFlag:false,
+				//下面打🌟号的是必须要的基础字段
+				//下面打💗号的是拥有滑动条的必须字段
+				dataList:[],//用于数据循环的列表🌟💗
+				wHeight:0,//获取的屏幕高度🌟💗
+				boxStyle:{//视频，图片封面样式🌟💗
+					'height': 0,
+					'width': 0,
+				},
+				k:0,//默认为0🌟💗
+				playIngIds:[],//正在播放的视频id列队，列队用于处理滑动过快导致的跳频问题🌟💗
+				ready:false,//可忽略
+				isDragging: false,//false代表停止滑动🌟💗
+				refreshing: true,//用于下拉刷新🌟💗
+				windowWidth: 0,//获取屏幕宽度🌟💗
+				windowHeight: 0,
+				dex: [0,0],//用于判断是上滑还是下滑，第一个存旧值，第二个存新值【目前在1.0.7已经废弃】
+				currents: 0,//用于左右滑动，0代表视频界面，1代表右滑界面🌟💗
+				platform: '',//用于获取操作系统：ios、android🌟💗
+				playIng: false,//用于视频初始化时是否播放，默认不播放🌟💗
+				videoTime: '',//视频总时长，这个主要用来截取时间数值💗
+				videoTimes: '',//视频时长，用这个来获取时间值，例如：00:30这个时间值💗
+				changeTime: '',//显示滑动进度条时变化的时间💗
+				isShowimage: false,//是否显示封面【1.0.4已废弃，但是意思需要记住】
+				currenttimes: 0,//当前时间💗
+				isShowProgressBarTime: false,//是否拖动进度条，如果拖动（true）则显示进度条时间，否则不显示（false）【1.0.4已废弃，但是意思需要记住】
+				ProgressBarOpacity: 0.7,//进度条不拖动时的默认值，就是透明的💗
+				dotWidth: 0,//播放的小圆点，默认没有💗
+				deleteHeight: 0,//测试高度🌟💗
+				percent: 0,//百分小数💗
+				currentPosition: 0,//滑块当前位置💗//2.0已弃用，现已用于后端参数
+				currentPositions: 0,//滑块当前位置的副本💗//2.0已弃用，现已用于后端参数
+				newTime: 0,//跟手滑动后的最新时间💗
+				timeNumber: 0,//🌟💗
+				ProgressBarBottom: 20,//进度条离底部的距离💗
+				object_fit: 'contain',//视频样式默认包含🌟💗
+				mode: 'aspectFit',//图片封面样式🌟💗
+				timeout: "",//🌟用来阻止 setTimeout()方法
+				voice: "",//🌟用来阻止 setTimeout()方法
+				oldVideo: "",
+				
+				isAutoplay: false,//是否开启自动播放(默认不开启)
+				autoplayText: "开启自动播放",
+				timers: "",
+				
+				// 引入评论 - 参数
+				heightNum: 1.18,
+				
+				// 双击点赞参数
+				touchNum: 0,
+				aixinLeft: 0,
+				aixinTop: 0,
+				isShowAixin: false,
+				Rotate: 0,
+				
+				isShow1: false,//控制渲染变量1
+				isShow2: false,//控制渲染变量2 ： 专门控制 uni-popup
+				
+				showPlay: false,//转轮显示控制
+				rotates: 0,//转轮旋转角度
+				rotateTime: "",//转轮递归事件控制
+				xrotats: "",
+				update: true,//用于刷新视图
+				isLogin:'',
+				globalToken:''
+			}
+        },
+		
+		watch:{
+			
+			// 监听 输入框 高度变化
+			lineheight(newVal,oldVal){
+				if(Math.abs(newVal) < 30){
+					this.borderRadius = 100
+				} else {
+					this.borderRadius = 30
+				}
+			},
+			async k(k,old_k){//监听 k 值的变化，可以控制视频的播放与暂停
+			
+			
+			
+				// 清理定时器
+				this.clearToTime();					
+				this.dataList[old_k].state = 'stop'//如果是被滑走的视频，就停止播放
+				this.dataList[old_k].playIng = false//如果视频暂停，就加载封面
+				this.dataList[old_k].isplay = true
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				uni.createVideoContext(this.dataList[old_k].gid,this).play()
+				clearTimeout(this.oldVideo)
+				this.oldVideo = await setTimeout(()=>{
+					uni.createVideoContext(this.dataList[old_k].gid,this).seek(0)
+					uni.createVideoContext(this.dataList[old_k].gid,this).pause()
+					console.log('预留第' + (old_k + 1) + '个视频：' + this.dataList[old_k].gid)
+				},500)
+				// 2.0版本已经去掉了下面这一句，视频不用暂停，只需要把声音禁止就行
+				// uni.createVideoContext(this.dataList[old_k].gid + '' + old_k,this).stop()//如果视频暂停，那么旧视频停止，这里的this.dataList[old_k].gid + '' + old_k，后面加 old_k 是为了每一个视频的 id 值不同，这样就可以大程度的避免串音问题
+				this.dataList[k].state = 'play'
+				uni.createVideoContext(this.dataList[k].gid,this).play();
+				console.log('已经暂停 --> 第' + (old_k + 1) + '个视频～')//提示
+				this.xrotats = setTimeout(()=>{
+					this.showPlay = true;
+					this.rotateX();
+				},200)
+				clearTimeout(this.voice)
+				this.voice = await setTimeout(()=>{
+					this.dataList[k].isplay = false
+				},300)
+				await setTimeout(()=>{
+					this.dataList[k].playIng = true
+				},850)
+				//【2.0版本更新内容】- start
+				var p = k;
+				++p;
+				this.dataList[p].isplay = true
+				await setTimeout( async ()=>{
+					uni.createVideoContext(this.dataList[p].gid,this).play()
+					clearTimeout(this.timeout)
+					this.timeout = await setTimeout(()=>{
+						uni.createVideoContext(this.dataList[p].gid,this).seek(0)
+						uni.createVideoContext(this.dataList[p].gid,this).pause()
+						console.log('预加载第' + (p + 1) + '个视频：' + this.dataList[p].gid)
+					},1500)
+				},20)
+				//【2.0版本更新内容】- end
+				//【此处处理进度条卡住的问题】
+				if(uni.getSystemInfoSync().platform !== 'ios'){
+					await setTimeout(()=>{
+						uni.createVideoContext(this.dataList[k].gid,this).pause()
+						uni.createVideoContext(this.dataList[k].gid,this).play()
+					},100)
+				}
+				//付费
+				if (this.dataList[k].price>0&&this.dataList[k].is_buy==0){					
+					await setTimeout(()=>{
+						uni.createVideoContext(this.dataList[k].gid,this).pause()					
+					},200)
+					
+				}
+	
+			
+				
+			}
+		},
+		onShow(){
+			console.log('回到前台');
+			
+			
+			
+			
+			
+			
+			if(this.dataList.length !== 0){
+				this.dataList[this.k].state = 'play';
+				uni.createVideoContext(this.dataList[this.k].gid,this).play()
+				if (this.dataList[this.k].price>0&&this.dataList[this.k].is_buy==0){
+					 setTimeout(()=>{
+						uni.createVideoContext(this.dataList[this.k].gid,this).pause()					
+					},0)				
+				}	
+			}
+			//付费
+		
+		},
+		onHide(){
+			this.dataList[this.k].state = 'pause';//界面隐藏也要停止播放视频
+			uni.createVideoContext(this.dataList[this.k].gid,this).pause();//暂停以后继续播放
+			console.log('到后台');
+		},
+		onUnload() {
+			this.dataList[this.k].state = 'pause';//界面隐藏也要停止播放视频
+			uni.createVideoContext(this.dataList[this.k].gid,this).pause();//暂停以后继续播放
+			console.log('到后台');
+		},
+		onLoad(option) {
+			if (option.id) {
+				this.id = Number(option.id)
+			}
+			
+		
+			
+			
+		// 1.isToShow 用于输入框显示（默认不改）
+		this.isToShow = false;
+		// 2.判断当前设备信息
+		var model = uni.getSystemInfoSync().model;
+		// 3.判断当前设备信息
+		this.platform = uni.getSystemInfoSync().platform;
+		// 3.1 获取系统版本
+		var systemVerson = uni.getSystemInfoSync().system
+		if(systemVerson.split(' ')[0] == "Android"){
+			if(systemVerson.split(' ')[1] < 9){
+				// 低端安卓机
+				this.ischangepinlun = false//小于安卓 8
+				this.windowHeight = uni.getSystemInfoSync().screenHeight;
+				this.emojiHeight = this.windowHeight/2.1 - this.deleteAndroidHeight;
+			} else {
+				// 全面屏安卓机
+				this.ischangepinlun = true//全面屏
+				this.windowHeight = uni.getSystemInfoSync().screenHeight;
+				this.emojiHeight = this.windowHeight/2.6 - this.deleteAndroidHeight;
+			}
+		} else {
+			if(uni.getSystemInfoSync().platform == 'ios' && (model !== 'iPhone6' || model !== 'iPhone6s' || model !== 'iPhone7' || model !== 'iPhone8')){
+				// 全面屏iPhone
+				this.ischangepinlun = true//全面屏
+				this.windowHeight = uni.getSystemInfoSync().screenHeight;
+				this.emojiHeight = this.windowHeight/2.2 - this.deleteIOSHeight;
+			} else {
+				// 非全面屏iPhone
+				this.ischangepinlun = false
+				this.windowHeight = uni.getSystemInfoSync().screenHeight;
+				this.emojiHeight = this.windowHeight/2.1 - this.deleteIOSHeight;
+			}
+		}
+			
+			if(uni.getSystemInfoSync().platform == 'ios' && (model !== 'iPhone6' || model !== 'iPhone6s' || model !== 'iPhone7' || model !== 'iPhone8')){
+				this.num = 1.25
+			} else {
+				this.num = 1.15
+			}
+			if(uni.getSystemInfoSync().platform=='ios'){
+				this.adjustPosition = true
+			} else {
+				this.adjustPosition = false
+			}
+			this.plHeight = this.Height-(this.Height/this.num);
+			console.log(this.plHeight);
+			// 8.聚焦输入
+			
+			
+			this.isLogin=uni.getStorageSync('token')
+			this.globalToken=uni.getStorageSync('token')			
+		
+			var model = uni.getSystemInfoSync().model
+			if(this.platform == 'ios' && (model !== 'iPhone6' || model !== 'iPhone6s' || model !== 'iPhone7' || model !== 'iPhone8')){
+				this.deleteHeight = 32//有 tabbar的 修改这里可以改变视频高度
+				
+				 /*
+				 引入评论参数
+				 */
+				
+				this.heightNum = 1.27
+			} else {
+				this.deleteHeight = 0
+				/*
+				引入评论参数
+				*/
+				this.heightNum = 1.18
+			}
+			// 控制渲染 -- start
+			this.isShow1 = true;
+			setTimeout(()=>{
+				this.isShow2 = true;
+			},400)
+			// 控制渲染 -- end
+			this.windowWidth = uni.getSystemInfoSync().screenWidth//获取屏幕宽度
+			this.boxStyle.width = this.windowWidth + 'px'//给宽度加px
+			this.wHeight = uni.getSystemInfoSync().screenHeight;//获取屏幕高度
+			this.boxStyle.height = this.wHeight - this.deleteHeight;//改变视频高度
+			this.get()//这一步，加载视频数据
+			this.rotateX();
+		},
+		onReady() {
+			
+		},
+        methods: {
+			msg(title){
+				uni.showToast({
+					title:title,
+					icon:'none'
+				})		
+			},
+			async goumai(id) {
+				let that = this;
+				if (!this.isLogin) {
+				 this.loginpass()
+					return false;
+				}
+				
+				uni.showLoading({
+					title:'读取中'
+				})
+				let headerObj = {};
+				if (uni.getStorageSync('token')) {
+					headerObj.token = this.globalToken				
+				}
+			
+				uni.request({
+					url: host+'/api/user/buy_goods',
+					method: 'POST',
+					data:{					
+					id: id
+					},
+					header: {
+						...headerObj,					
+					},
+					success: (result) => {	
+						uni.hideLoading()
+					if (result.data.code == 200) {
+						if (result.data.msg == '余额不足') {	
+						this.msg(result.data.msg)
+						return
+						}
+						this.msg(result.data.msg)
+						that.dataList[that.k].is_buy=1
+						uni.createVideoContext(that.dataList[that.k].gid,that).play()							
+						
+					}
+					
+					
+					}
+				})
+				
+				
+			},
+			
+			change(e){				
+				this.isToShow = false;
+				if(e.show == true){
+					this.show = false;
+				
+				} else {
+					uni.hideKeyboard();
+					this.show = true
+					this.autoFocus = true;
+					this.isopen = false;
+					this.current = 1;
+					this.currentNum = 4.4;
+					this.isShowImage = false;
+					this.cursorSpacing = 20;
+					this.placeholder = "有爱评论，说点好听的～";
+					this.istohuifu = false;
+				}
+			},
+			/*
+			
+			以下方法都是输入框 状态变化，以及逻辑切换等信息
+			
+			虽然不起眼但是很重要 【🌟🌟🌟🌟🌟】
+			
+			（如果是要复制的话都是要复制的）
+			
+			*/ 
+			// ------- start -------
+		
+			closeSheet(){
+				this.$emit('closeScrollview');
+			},
+			focus(){
+				if(uni.getSystemInfoSync().platform == 'ios'){
+					this.autoFocus = false;
+					this.is_focus=true
+				}
+				setTimeout(()=>{
+					this.is_focus=true
+					this.autoFocus = true;								
+				},20)
+			},
+			movehandle(){},
+			movesearch(){},
+			openPinglun(){
+				this.$refs.openPinglun.open('bottom')
+			},
+			linechange(event){
+				this.lineheight = event.detail.height
+			},
+			keyboardheightchange(){},
+			blur(){
+				this.is_focus=false
+				this.autoFocus = false;
+				uni.hideKeyboard();
+			},
+			
+			openPinglun(){
+				this.$refs.openPinglun.open('bottom')
+			},
+			toBilibili(){
+				// #ifdef H5
+				window.open('https://www.bilibili.com/video/BV1gi4y12745')
+				// #endif
+			},
+			selectVideo(){
+				uni.navigateTo({
+					url: '/pages/selectVideo/selectVideo'
+				})
+			},
+			dealVoice(){
+				uni.showToast({
+					title: '处理声音',
+					icon: 'none'
+				})
+			},
+			clearToTime(){
+				//清理定时器
+				for(let i=0;i<20;i++){
+					clearTimeout(this.rotateTime);
+					clearTimeout(this.xrotats);
+					this.showPlay = false;
+					this.rotates = 0;
+				}
+			},
+			clearTime(){
+				//清理定时器
+				for(let i=0;i<20;i++){
+					clearTimeout(this.rotateTime);
+					clearTimeout(this.xrotats);
+				}
+			},
+			rotateX(){
+				// clearTimeout(this.rotateTime);
+				this.rotateTime = setTimeout(()=>{
+					this.rotateX();
+					this.rotates += 1;
+				},30)
+			},
+			autoPlay(){ 
+				
+				uni.navigateBack()
+				return
+				this.isAutoplay = !this.isAutoplay;
+				if(!this.isAutoplay){
+					this.autoplayText = "开启自动播放"
+					uni.showToast({
+						title: "关闭自动播放",
+						icon: 'none',
+						duration: 3000
+					})
+				} else {
+					this.autoplayText = "关闭自动播放"
+					uni.showToast({
+						title: "开启自动播放",
+						icon: 'none',
+						duration: 3000
+					})
+				}
+			},
+			getData(){
+				
+				let headerObj = {};
+				if (uni.getStorageSync('token')) {
+					headerObj.token = this.globalToken				
+				}
+				uni.request({
+					url: host+'/api/four/vod',
+					method: 'POST',
+					data:{					
+						page: this.page++
+					},
+					header: {
+						...headerObj,					
+					},
+					success: (res) => {
+						var msg = res.data.data.data
+						// 2.这里把视频添加到视频列表
+						for (let i = 0; i < msg.length; i++) {
+							this.dataList.push(msg[i])
+						}
+					}
+				})
+				// 这里就是数据加载完以后再向后端发送数据的地方
+				
+			},
+			touchstart(event){
+				this.dataList[this.k].isShowimage = true //刚触摸的时候就要显示预览视频图片了
+				this.dataList[this.k].isShowProgressBarTime = true //显示时间线
+				this.ProgressBarOpacity = 1 //让滑块显示起来更明显一点
+				this.dotWidth = 10 //让点显示起来更明显一点
+			},
+			touchend(){//当手松开后，跳到最新时间
+				uni.createVideoContext(this.dataList[this.k].gid,this).seek(this.newTime)
+				if(this.dataList[this.k].state == 'pause'){
+					this.dataList[this.k].state = 'play'
+					uni.createVideoContext(this.dataList[this.k].gid,this).play()
+				}
+				this.dataList[this.k].isShowProgressBarTime = false //触摸结束后，隐藏时间线
+				this.dataList[this.k].isShowimage = false //触摸结束后，隐藏时间预览
+				this.ProgressBarOpacity = 0.5 //隐藏起来进度条，不那么明显了
+				this.dotWidth = 0 //隐藏起来进度条，不那么明显了
+			},
+			touchmove(event){//当手移动滑块时，计算位置、百分小数、新的时间
+				var msg = []
+				if(this.videoTime !== ''){
+					msg = this.videoTime.split(':')
+				}
+				var timeNumber = Number(msg[0])*60 + Number(msg[1])
+				this.currentPositions = event.changedTouches[0].screenX
+				this.percent = this.currentPositions / this.windowWidth
+				this.newTime = this.percent*timeNumber 
+				this.currenttimes = parseInt(this.newTime)
+				let theTime = this.newTime
+				let middle = 0;// 分
+				if(theTime > 60) {
+					middle = parseInt(theTime/60);
+					theTime = parseInt(theTime%60);	
+				}
+				this.changeTime = `${Math.round(middle)>9?Math.round(middle):'0'+Math.round(middle)}:${Math.round(theTime)>9?Math.round(theTime):'0'+Math.round(theTime)}`
+			},
+			timeupdate(event,index){//计算滑块当前位置，计算当前百分小数
+				// console.log(index)
+				if(index == this.k){
+					// console.log(event)
+					var currenttime = event.detail.currentTime
+					this.timeNumber = Math.round(event.detail.duration)
+					this.getTime()
+					this.percent = currenttime/this.timeNumber
+					this.currentPosition = this.windowWidth*this.percent
+					let theTime = currenttime
+					let middle = 0;// 分
+					if(theTime > 60) {
+						middle = parseInt(theTime/60);
+						theTime = parseInt(theTime%60);	
+					}
+					this.changeTime = `${Math.round(middle)>9?Math.round(middle):'0'+Math.round(middle)}:${Math.round(theTime)>9?Math.round(theTime):'0'+Math.round(theTime)}`
+					//自动切换视频
+					if(this.isAutoplay){//true,代表自动播放
+						if(Math.round(currenttime) == this.timeNumber - 1){
+							const dom = uni.requireNativePlugin('dom')
+							let doms = 'item'+(this.k+1)
+							setTimeout(()=>{
+								let el = this.$refs[doms][0]
+								dom.scrollToElement(el,{
+									offset: 0,
+									animated: true
+								})
+							},500)
+						}
+					}
+				}
+			},
+			getTime(){//得到时间函数
+				this.videoTime = this.formatSeconds(this.timeNumber);
+				// console.log(that.videoTime)
+				var msg = []
+				if(this.videoTime !== ''){
+					msg = this.videoTime.split(':')
+				}
+				this.videoTimes = `${msg[0]>9?msg[0]:'0'+msg[0]}:${msg[1]>9?msg[1]:'0'+msg[1]}`;
+			},
+			formatSeconds(value) {//获取时间函数
+				let theTime = parseInt(value);// 秒
+				let middle= 0;// 分
+				if(theTime > 60) {
+					middle= parseInt(theTime/60);
+					theTime = parseInt(theTime%60);	
+				}
+				return `${middle>9?middle:middle}:${theTime>9?theTime:theTime}`;
+			},
+			playIngs(index) {
+				//
+			},
+			moreVideo(index){
+				
+			},
+			toVideo(index){
+				
+			},
+			erweima(){
+				
+			},
+			tozuozhe(){
+				this.currents = 1//点击头像以后就会切换
+			},
+			stop(){
+				// console.log('stop')
+			},
+			scrolls (event) {
+				this.isDragging = event.isDragging
+				if (!event.isDragging) {//isDragging：判断用户是不是在滑动，滑动：true，停止滑动：false。我们要用户停止滑动时才给 k 赋值，这样就可以避免很多麻烦
+					var i = Math.round(Math.abs(event.contentOffset.y) / (this.wHeight - this.deleteHeight + 1))//先用绝对值取出滑动的距离，然后除以屏幕高度，取一个整，就知道你现在滑动到哪一个视频了
+					if(i !== this.k){//这里加判断是因为这个方法会执行很多次，会造成重复请求，所以这里写一个限制
+						if(uni.getSystemInfoSync().platform == 'ios'){
+							this.k = i//判断了用户没有滑动，确认了用户的确是在看这个视频，然后就赋值啦
+							this.dataList[this.k].state = 'play'
+							console.log('正在播放 --> 第' + (this.k + 1) + '个视频～')
+						} else {
+							clearTimeout(this.timers);
+							this.timers = setTimeout(()=>{
+								this.k = i//判断了用户没有滑动，确认了用户的确是在看这个视频，然后就赋值啦
+								this.dataList[this.k].state = 'play'
+								console.log('正在播放 --> 第' + (this.k + 1) + '个视频～')
+							},80)
+						}
+					}
+				}
+			},
+			get(){
+				// 这个方法主要就是用来第一次进入视频播放时用来处理的
+				// this.dataList = userList;//这个就是赋值加载视频啦
+				// var msg = userList
+				let headerObj = {};
+				if (uni.getStorageSync('token')) {
+					headerObj.token = this.globalToken				
+				}
+				uni.request({
+					url: host+'/api/four/vod',
+					method: 'POST',
+					data:{
+						id:this.id,
+						page: 1
+					},
+					header: {
+						...headerObj,					
+					},			
+					success: async (res) => {
+						var msg = res.data.data.data
+						// console.log(msg)
+						this.dataList = msg
+						this.dataList[0].state = "play";
+						
+						
+					
+						await setTimeout(()=>{
+							//这里的延迟是为了避免执行时间太快而直接跳过执行的 bug
+						uni.createVideoContext(this.dataList[0].gid,this).seek(0)
+						uni.createVideoContext(this.dataList[0].gid,this).play()
+						},200)
+						
+					//付费
+					if (this.dataList[0].price>0&&this.dataList[0].is_buy==0){						
+						await setTimeout(()=>{					
+						uni.createVideoContext(this.dataList[0].gid,this).pause()
+						},1000)
+					}
+					
+						
+						
+						this.dataList[0].isplay = false
+						await setTimeout(()=>{
+							this.dataList[0].playIng = true
+						},500)
+						var p = 0;
+						this.showPlay = true;
+						
+						
+						
+						await setTimeout( async ()=>{
+							++p;
+							this.dataList[p].isplay = true
+							uni.createVideoContext(this.dataList[p].gid,this).play()
+							await setTimeout(()=>{
+								uni.createVideoContext(this.dataList[p].gid,this).seek(0)
+								uni.createVideoContext(this.dataList[p].gid,this).pause()
+								console.log('预加载第' + (p + 1) + '个视频：' + this.dataList[p].gid)
+							},800)
+						},50)
+					}
+				})
+			},
+			onpullingdown(){
+				// console.log('正在下拉刷新，此时手还在触摸没有松开')
+				this.refreshing = true
+			},
+			onrefresh(){
+				// console.log('下拉刷新完毕，此时手松开了')
+				setTimeout(()=>{
+					this.refreshing = false
+				},1000)
+			},
+			// 双击点赞效果
+			touchstartHover(event){
+				return
+				if(this.touchNum >= 1){
+					// console.log('双击 -- X坐标：'+ event.touches[0].screenX);
+					// console.log('双击 -- Y坐标：'+ event.touches[0].screenY);
+					this.aixinLeft = event.touches[0].screenX - 50;
+					this.aixinTop =  event.touches[0].screenY - 50;
+					this.isShowAixin = true;
+					let max = 40; let min = -40;
+					this.Rotate = Math.floor(Math.random() * (max - min + 1)) + min;
+					setTimeout(()=>{
+						this.isShowAixin = false;
+					},700)
+					this.onTabItemTaps();
+				}
+			},
+			//点击播放&&暂停
+			tapVideoHover(state,event){
+			
+				this.dataList[this.k].isShowimage = false
+				this.dataList[this.k].isShowProgressBarTime = false
+				this.ProgressBarOpacity = 0.5
+				this.dotWidth = 0
+				console.log('state--',state);
+				// 1.启用双击点赞 --- start
+				
+				if (this.dataList[this.k].price>0&&this.dataList[this.k].is_buy==0){
+					return
+				}
+				
+				
+				
+				
+				this.touchNum++;
+				setTimeout(()=>{
+					if(this.touchNum == 1){
+						if(state=='play'||state=='continue'){
+							this.dataList[this.k].state = 'pause';
+						}else{
+							this.dataList[this.k].state = 'continue';
+						}
+						if(this.dataList[this.k].state == 'continue'){
+							uni.createVideoContext(this.dataList[this.k].gid,this).play();//暂停以后继续播放
+							this.clearTime();
+							setTimeout(()=>{
+								this.rotateX();
+							},50)
+						}
+						if(this.dataList[this.k].state == 'pause'){
+							uni.createVideoContext(this.dataList[this.k].gid,this).pause();//暂停以后继续播放
+							this.clearTime();
+						}
+					}
+					if(this.touchNum >= 2){
+						this.doubleLike();
+					}
+					this.touchNum = 0;
+				},200)
+				// --------------- ending
+				// 2. 不启用双击点赞 start
+				// if(state=='play'||state=='continue'){
+				// 	this.dataList[this.k].state = 'pause';
+				// }else{
+				// 	this.dataList[this.k].state = 'continue';
+				// }
+				// if(this.dataList[this.k].state == 'continue'){
+				// 	uni.createVideoContext(this.dataList[this.k].gid,this).play();//暂停以后继续播放
+				// }
+				// if(this.dataList[this.k].state == 'pause'){
+				// 	uni.createVideoContext(this.dataList[this.k].gid,this).pause();//暂停以后继续播放
+				// }
+				// --------------- ending
+			},
+			doubleLike(){
+				if(this.dataList[this.k].like == false){
+					this.dataList[this.k].like_n += 1;
+					this.dataList[this.k].like = true;
+				}
+				/*
+				点赞
+				*/
+			},
+			toComment(index){
+			
+			 this.blur()
+				uni.setStorageSync("videoID",this.dataList[index].gid);
+					this.$refs.pinglun.open('bottom')
+				this.getpinglun(this.dataList[index]._id);
+				//this.showpinglun=true
+			
+			},
+			share(){		
+				
+				
+			uni.shareWithSystem({
+			  summary: this.dataList[this.k].share_title,
+			  href: this.dataList[this.k].share_url,
+			  success(){
+			    // 分享完成，请注意此时不一定是成功分享
+			  },
+			  fail(){
+			    // 分享失败
+			  }
+			})
+			},
+			wxh5Video(){
+				uni.navigateTo({
+					url: '../wxh5previewVideo/wxh5previewVideo'
+				})
+			},
+			previewVideo(){
+				uni.navigateTo({
+					url: '../previewVideo/previewVideo'
+				})
+			},
+			toTwoVideo(){
+				uni.navigateTo({
+					url: '../new_index/new_index'
+				})
+			},
+			tolistVideo(){
+				uni.navigateTo({
+					url: '../nvueSwiper/nvueSwiper'
+				})
+			},
+			cLike(sss){
+				if (!this.isLogin) {
+				 this.loginpass()
+					return false;
+				}		
+				this.dataList[this.k].like = !this.dataList[this.k].like
+				const video = this.dataList[this.k];
+				sss?video.like_n -= 1:video.like_n += 1;
+				this.dianzantiezi(this.dataList[this.k]._id,this.dataList[this.k]);	
+			},
+			async dianzantiezi(id,like) {
+				
+				const shaya = {
+					id: id,	
+					is_like:like			
+				}
+			
+				uni.$emit('onlist_change', shaya)
+				
+			 this.flowgoods(id)
+			},
+			moveHandle(){},
+			closeScrollview(){
+				// 点击评论里面的叉叉，就会关闭评论
+				this.$refs.pinglun.close();
+			},
+			onTabItemTaps() {
+			    // #ifdef APP-PLUS
+			    if (uni.getSystemInfoSync().platform == "ios") {
+			        let UIImpactFeedbackGenerator = plus.ios.importClass('UIImpactFeedbackGenerator');
+			        let impact = new UIImpactFeedbackGenerator();
+			        impact.prepare();
+			        impact.init(1);
+			        impact.impactOccurred();
+			    }
+			    if (uni.getSystemInfoSync().platform == "android") {
+			        uni.vibrateShort({
+			            success: () => {
+			                console.log('点击震动');
+			            }
+			        });
+			    }
+			    // #endif
+			},
+			
+			loginpass() {
+				let that = this
+				uni.showModal({
+					title: '提示',
+					content: '你还没有登录?',
+					confirmText: '去登录',
+					success: function(res) {
+						if (res.confirm) {									
+							uni.navigateTo({
+								url: '/pages/login/login'
+							})
+						} else if (res.cancel) {
+							console.log('用户点击取消');
+						}
+					}
+				});
+			},
+			msg(msg){
+				uni.showToast({
+					title: msg,
+					icon: 'none',
+					duration: 2000,
+					mask: true
+				});
+			},
+				async likeComment(id, index, cindex, type) {
+					
+				
+					if (!this.isLogin) {
+					 this.loginpass()
+						return false;
+					}
+						console.log(id, index, cindex, type)
+				
+					
+					let headerObj = {};
+					if (uni.getStorageSync('token')) {
+						headerObj.token = this.globalToken				
+					}
+					uni.showLoading({
+						title:'读取中'
+					})
+					uni.request({
+					url: host+'/api/user/likeComment',
+						method: 'POST',
+						data:{
+							id:id							
+						},
+						header: {
+							...headerObj,					
+						},
+						success: (res) => {
+						let result=res.data
+						this.msg(result.msg)
+						if (type == 0) {
+							uni.hideLoading()
+							if (result.msg == '点赞成功') {
+								this.content[index].is_like = true
+								this.content[index].like_num += 1
+										
+							} else {
+								this.content[index].is_like = false
+								this.content[index].like_num -= 1
+							}
+						} else {
+							if (result.msg == '点赞成功') {
+								this.content[index].child[cindex].is_like = true
+								this.content[index].child[cindex].like_num += 1
+										
+							} else {
+								this.content[index].child[cindex].like_num -= 1
+								this.content[index].child[cindex].is_like = false
+							}
+										
+						}
+						}
+					})
+					
+			
+				
+				
+				
+				},
+				
+				
+			lostfocus() {
+				this.is_focus = false
+			},
+			
+			huifuzhuti() {
+				if (this.is_focus == false) {
+					this.callerhuifu()
+				}
+			},
+			
+			callerhuifu() {
+				this.huifubody = '说点啥吧'
+				this.sendmsgBoy_huifuname = ''
+				this.huifuindex = 0
+				this.sendmsgBoy = ''
+				this.pid = 0
+				this.is_focus = false
+			
+			
+			},
+			
+			hiufu(name, pid, index) {
+				this.huifubody = '回复：' + name
+				this.sendmsgBoy_huifuname = name
+				this.huifuindex = index
+				this.pid = pid
+				this.focus()
+				// this.is_focus = true
+				// this.autoFocus=true
+			},
+			getpinglun(id){
+				this.pingpage=1
+					let headerObj = {};
+					if (uni.getStorageSync('token')) {
+						headerObj.token = this.globalToken				
+					}
+					uni.request({
+					url: host+'/api/index/goodsCommentList',
+						method: 'POST',
+						data:{
+							id:id,
+							page:this.pingpage
+						},
+						header: {
+							...headerObj,					
+						},
+						success: (res) => {
+							var msg = res.data.data.data
+							this.content=msg
+						}
+					})
+				
+			},
+			async dianzantiezi(id,like) {
+				if (!this.isLogin) {
+					 this.loginpass()
+					return false;
+				}			
+				const shaya = {
+					id: id,	
+					is_like:like			
+				}
+			
+				uni.$emit('onlist_change', shaya)
+				
+			let result = await this.flowgoods(id)
+			},
+			async sendmsg() {			
+			
+				let that = this;
+				if (!this.isLogin) {
+					 this.loginpass()
+					return false;
+				}
+				if (that.sendmsgBoy == '') {
+				
+					that.msg('说点啥呗')
+					return
+				}
+				uni.showLoading({
+					title:'提交中'
+				})
+				uni.hideKeyboard();
+				this.lostfocus()
+				let result = await that.request({
+					loading: 1,
+					method: 'post',
+					url: '/api/user/addGoodsComment',
+					data: {
+						goods_id:this.dataList[this.k]._id,
+						content: that.sendmsgBoy,
+						pid: that.pid,
+						to_name: that.sendmsgBoy_huifuname
+					}
+				});
+				if (result.statusCode == 200) {
+					
+				
+					if (result.data.code == 200) {
+						if (that.content.length == 0) {
+							//that.mescroll.resetUpScroll();
+							//that.mescroll.removeEmpty()
+						}
+						if (that.pid == 0) {						
+							that.content = result.data.data.concat(that.content);
+						} else {
+							console.log(that.content[that.huifuindex])
+							if (that.content[that.huifuindex].child.length==0){
+								that.content[that.huifuindex].child=result.data.data
+							}else{							
+							that.content[that.huifuindex].child = result.data.data.concat(that.content[that.huifuindex].child);
+							}
+						}
+			
+				
+			
+						that.commentCount++
+						that.callerhuifu()
+						uni.showToast({
+							icon: 'none',
+							title: result.data.msg
+						});
+					} else {
+						uni.showToast({
+							icon: 'none',
+							title: result.data.msg
+						});
+					}
+				} else {
+					uni.showToast({
+						icon: 'none',
+						title: that.$errorMsg
+					});
+				}
+			
+			
+			},
+			appshare() {			
+				let sharedata = {
+					type: 1,
+					strShareUrl:this.dataList[this.k].share_url,
+					strShareTitle: this.dataList[this.k].share_title,
+					strShareSummary: this.dataList[this.k].share_sub,
+					strShareImageUrl:this.dataList[this.k].share_img,
+				}
+				this.sharedata = sharedata
+				this.$refs.sharepopup.open();			
+			},
+			jubaoshowchick() {			
+				this.jubaoshow = true
+				this.$refs.sharepopup.close();
+			},
+			share_qrcode() {			
+				this.sharelist()
+				this.show_poster=true
+				this.$refs.sharepopup.close();	
+					if (!this.path){	
+					setTimeout(() => {
+					this.toSave()
+					}, 500);
+					}
+				
+			},
+			sharelist(){
+				console.log(this.item)
+			
+				this.posterObj.views=[					
+						{
+						type: 'image',
+						src: this.item.userAvatar,
+						css: {
+							left: '32rpx',
+							top: '32rpx',
+							borderRadius: '50%',
+							width: '80rpx',
+							height: '80rpx'
+						}
+					},
+					{
+						type: 'text',
+						text: this.item.userName,
+						css: {
+							fontSize: '28rpx',
+							fontWeight: 'bold',
+							color: '#1A2033',
+							lineHeight: '28rpx',
+							left: '136rpx',
+							top: '39rpx'
+						}
+					},
+					{
+						type: 'text',
+						text: '发布了一条有趣的动态',
+						css: {
+							fontSize: '24rpx',
+							color: '#4070FF',
+							lineHeight: '24rpx',
+							left: '136rpx',
+							top: '80rpx'
+						}
+					},
+					
+					{
+						type: 'qrcode',
+						text: this.item.share_url,
+						css: {
+							left: '190rpx',
+							top: '120rpx',
+							width: '200rpx',
+							height: '200rpx',
+						}
+					},
+					{
+						type: 'text',
+						text: '————  长按二维码 快来看看吧  ————',
+						css: {
+							left: '0',
+							top: '340rpx',
+							width: '100%',
+							textAlign: 'center',
+							fontSize: '24rpx',
+							color: '#000000',
+							lineHeight: '33rpx'
+						}
+					},
+					{
+						type: 'image',
+						src: this.item.share_img,
+						css: {
+							left: '32rpx',
+							top: '384rpx',					
+							width: '90%',							
+							borderRadius: '16rpx'
+						}
+					},
+					]
+			},
+			
+			
+			
+			
+			previewImg(){
+				
+				uni.previewImage({
+					current:this.path,
+					urls: [this.path]
+				});
+			},
+			toSave() {			
+				uni.showLoading({
+					title:'海报生成中',
+				})
+				const painter = this.$refs.painter;
+				painter.canvasToTempFilePath().then(res => {
+					this.path = res.tempFilePath;	
+								setTimeout(() => {
+								uni.hideLoading()
+								}, 1000);
+				
+				});
+			},
+			
+			async jubaopass() {
+				let that = this;
+				if (!this.isLogin) {
+					 this.loginpass()
+					return false;
+				}
+				
+				if (that.jubao_body==''){
+					this.msg('请输入举报理由')
+					return
+				}	
+				
+				let result = await that.request({
+					loading: 0,
+					method: 'post',
+					url: '/api/user/addReport',
+					data: {
+						goods_id: that.goods_id,
+						type:0,
+						content:that.jubao_body
+					}
+				});
+			
+				if (result.statusCode == 200) {
+					if (result.data.code == 200) {
+						that.jubao_body=''
+						this.msg(result.data.msg)
+						this.jubaoshow=false
+					}
+				}
+			},
+			
+			
+			top(id, type, num, ziindex, index, is_zi) {
+			
+				let typename = ''
+				if (num == 0) {
+					typename = '取消'
+				}
+				let that = this
+				uni.showModal({
+					title: '提示',
+					content: '确定要' + typename + '置顶该条评论吗？',
+					success: function(res) {
+						if (res.confirm) {
+							that.editcommet(id, type, num, ziindex, index, is_zi)
+						} else if (res.cancel) {
+			
+						}
+					}
+				});
+			},
+			delcomment(id, type, num, ziindex, index, is_zi) {
+			
+			
+			
+				let that = this
+				uni.showModal({
+					title: '提示',
+					content: '确定要删除该条评论吗？',
+					success: function(res) {
+						if (res.confirm) {
+							that.editcommet(id, type, num, ziindex, index, is_zi)
+						} else if (res.cancel) {
+			
+						}
+					}
+				});
+			},
+			
+			async editcommet(id, type, num, ziindex, index, is_zi) {
+				let that = this;
+				let result = await that.request({
+					loading: 1,
+					method: 'post',
+					url: '/api/user/editcomment',
+					data: {
+						id: id,
+						type: type,
+						num: num,
+						goods_id: that.id
+					}
+				});
+			
+			
+				if (result.statusCode == 200) {
+				  if (result.data.code==0){
+					  
+					  uni.showToast({
+					  	icon: 'none',
+					  	title: result.data.msg
+					  });
+					  return
+				  }
+			
+					if (type == 'del' && is_zi == 0) {
+						that.content.splice(index, 1);
+						that.commentCount--
+						//删除主评论
+					}
+					if (type == 'del' && is_zi == 1) {
+						that.commentCount--
+						//删除回复
+						that.content[index].child.splice(ziindex, 1);
+					}
+					if (type == 'top') {
+						//操作置顶			
+						that.content[index].is_ding = num
+					}
+			
+					uni.showToast({
+						icon: 'none',
+						title: result.data.msg
+					});
+				} else {
+					uni.showToast({
+						icon: 'none',
+						title: that.$errorMsg
+					});
+				}
+			
+			
+			},
+			
+			
+			async flowgoods(id) {
+				let result = await this.request({
+					url: '/api/user/likeGoods',
+					data: {
+						id: id,
+					},
+				})	
+				console.log(result)
+			},
+		
+			async request(item) {
+				let headerObj = {};
+				if (uni.getStorageSync('token')) {
+					headerObj.token = this.globalToken				
+				}
+				return new Promise((resFn, rejFn) => {
+				uni.request({
+					url:host+''+item.url,
+					method: 'POST',
+					data:item.data,
+					header: {
+						...headerObj,					
+					},
+					success: (res) => {
+					resFn(res);				    	 
+					}
+				})		
+					}).catch((e)=>{});		
+			},
+			
+        }
+    }
+</script>
+<style>
+	.container {background-color: #000000;}
+    .item {
+		/* width : 750rpx; */
+		background-color: #000000;
+		position: relative;
+	}
+	.videoHover{
+		position: absolute;
+		top: 0;
+		left: 0;
+		flex: 1;
+		background-color: rgba(0,0,0,0.1);
+		justify-content: center;
+		align-items: center;
+		
+		/* border-style: dashed;
+		border-color: #DD524D;
+		border-width: 1px; */
+	}
+	.playState{
+		width:  160rpx;
+		height: 160rpx;
+		opacity: 0.6;
+	}
+	.userInfo{
+		position: absolute;
+		bottom: 80px;
+		right: 10px;
+		flex-direction: column;
+		
+	}
+	.userAvatar{
+		border-radius: 500%;
+		margin-bottom: 15px;
+		border-style: solid;
+		border-width: 2px;
+		border-color: #ffffff;
+	}
+	.userAvatar{
+		width : 100rpx;
+		height: 100rpx;
+	}
+	.likeIco,.shareIco,.commentIco{
+		width : 60rpx;
+		height: 60rpx;
+		margin-top: 15px;
+	}
+	.likeNum,.commentNum,.shareTex{
+		color: #ffffff;
+		font-size: 30rpx;
+		text-align: center;
+		margin: 5px;
+	}
+	.likeNumActive{
+		color: red;
+	}
+	.content{
+	  width: 610rpx;
+	  z-index: 99;
+	  position: absolute;
+	  bottom: 30px;
+	  /* background-color: #007AFF; */
+	  /* justify-content: center; */
+	  padding: 15rpx;
+	  flex-direction: column;
+	  justify-content: flex-start;
+	  color: #ffffff;
+	}
+	.userName {
+	  font-size: 30rpx;
+	  color: #ffffff;
+	  margin-top: 80upx;
+	}
+	.words {
+	  margin-top: 10rpx;
+	font-size: 30rpx;
+	color: #ffffff;
+	}
+	.root{
+		background-color: #000000;
+	}
+	
+	/////////APP的评论
+	.pinglunbox {
+		left: 0;
+		bottom: 0;		
+		background-color: #222;
+		border-top-left-radius: 20rpx;
+		border-top-right-radius: 20rpx;
+		position: absolute;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	/////////APP的评论
+	.pinglunboxapplingqu {
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 200px;
+		background-color: #ffffff;
+		border-top-left-radius: 20rpx;
+		border-top-right-radius: 20rpx;
+		position: absolute;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	
+	.commont-list {
+		flex: 1;
+		overflow: hidden;
+	}
+	
+	.comment-panel {
+		margin: 30rpx 40rpx;
+		display: flex;
+	}
+	
+	.first-user {
+		width: 50rpx;
+		height: 50rpx;
+		border-radius: 100%;
+	}
+	
+	.first-comment {
+		flex: 1;
+		margin: 0rpx 20rpx;
+	}
+	
+	.inline-block.comment-name {
+		font-size: 12px;
+		font-weight: bold;
+		color: #999;
+	}
+	
+	
+	.comment-content {
+	
+		font-size: 14px;
+		margin-top: 10rpx;
+	}
+	
+	.time-box {
+		margin-top: 10rpx;
+		font-size: 24rpx;
+		color: #999;
+	}
+	
+	.reply-btn {
+		margin-left: 20rpx;
+	}
+	
+	
+	.fabulous-box {
+		text-align: center;
+		color: #666;
+	}
+	
+	.fabulous-btn {
+		font-size: 36rpx;
+		transition: color .3s;
+	}
+	
+	.fabulous-text {
+		font-size: 24rpx;
+		color: #999;
+	}
+	
+	.guide-item {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: row;
+	
+	}
+	
+
+</style>

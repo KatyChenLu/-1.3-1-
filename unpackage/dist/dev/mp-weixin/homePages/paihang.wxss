@@ -1,0 +1,167 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.ranking_content.data-v-8dd290fc {
+  position: relative;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: auto;
+}
+.ranking_content .ranking_content_nav.data-v-8dd290fc {
+  position: relative;
+  padding-top: 220rpx;
+}
+.ranking_content .ranking_content_nav .ranking_content_nav_subsection.data-v-8dd290fc {
+  width: 100%;
+  margin: 0 auto;
+}
+.ranking_content .ranking_content_top.data-v-8dd290fc {
+  width: 60%;
+  height: 600rpx;
+  margin: 40rpx auto 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 120rpx;
+}
+.ranking_content .ranking_content_top .ranking_content_top_center.data-v-8dd290fc {
+  z-index: 3;
+}
+.ranking_content .ranking_content_top .ranking_content_top_left.data-v-8dd290fc {
+  position: relative;
+  left: 120rpx;
+  top: 140rpx;
+}
+.ranking_content .ranking_content_top .ranking_content_top_right.data-v-8dd290fc {
+  position: relative;
+  right: 140rpx;
+  top: 170rpx;
+}
+.ranking_content .ranking_content_list.data-v-8dd290fc {
+  background: rgba(255, 255, 255, 0.59);
+  border: 1px solid white;
+  -webkit-backdrop-filter: blur(32.61936px);
+          backdrop-filter: blur(32.61936px);
+  border-radius: 40rpx 40rpx 0px 0px;
+  opacity: 0.8;
+  position: relative;
+  bottom: 110rpx;
+  z-index: 99999999;
+  width: 90%;
+  margin: 0 auto;
+}
+.ranking_content .ranking_content_list .ranking_content_list_top.data-v-8dd290fc {
+  display: flex;
+  justify-content: space-between;
+  color: #333330;
+  padding: 40rpx 60rpx;
+  font-size: 30rpx;
+}
+.ranking_content .ranking_content_list .ranking_content_list_item.data-v-8dd290fc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 160rpx;
+  padding: 30rpx 60rpx 0 50rpx;
+  border-bottom: 1px solid rgba(214, 229, 228, 0.57);
+}
+.ranking_content .ranking_content_list .ranking_content_list_item .ranking_content_list_item_name.data-v-8dd290fc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 20rpx 0 20rpx;
+  width: 260rpx;
+}
+.data-v-8dd290fc .u-subsection--button {
+  background: rgba(255, 255, 255, 0.31) !important;
+  border: 1px solid white !important;
+  box-shadow: inset 5px 3px 7px rgba(255, 255, 255, 0.31) !important;
+  -webkit-backdrop-filter: blur(84.26668px) !important;
+          backdrop-filter: blur(84.26668px) !important;
+  border-radius: 35rpx !important;
+  height: 80rpx;
+  padding: 0;
+}
+.data-v-8dd290fc .u-subsection--button__bar {
+  background: linear-gradient(rgba(255, 255, 255, 0.419608) 0%, rgba(255, 255, 255, 0.419608) 100%);
+  border: 1px solid white;
+  box-shadow: inset 5px 3px 7px rgba(255, 255, 255, 0.31);
+  -webkit-backdrop-filter: blur(84.26668px);
+          backdrop-filter: blur(84.26668px);
+  border-radius: 40px 0px 0px 40px;
+  padding: 0 !important;
+}
+.u-subsection.data-v-8dd290fc {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+.u-subsection--button.data-v-8dd290fc {
+  height: 32px;
+  background-color: #eeeeef;
+  padding: 3px;
+  border-radius: 3px;
+  align-items: stretch;
+}
+.u-subsection--button__bar.data-v-8dd290fc {
+  background-color: #ffffff;
+  border-radius: 3px !important;
+}
+.u-subsection--subsection.data-v-8dd290fc {
+  height: 30px;
+}
+.u-subsection__bar.data-v-8dd290fc {
+  position: absolute;
+  transition-property: color, -webkit-transform;
+  transition-property: transform, color;
+  transition-property: transform, color, -webkit-transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.u-subsection__bar--first.data-v-8dd290fc {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.u-subsection__bar--center.data-v-8dd290fc {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.u-subsection__bar--last.data-v-8dd290fc {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.u-subsection__item.data-v-8dd290fc {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.u-subsection__item--no-border-right.data-v-8dd290fc {
+  border-right-width: 0 !important;
+}
+.u-subsection__item--first.data-v-8dd290fc {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.u-subsection__item--last.data-v-8dd290fc {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.u-subsection__item__text.data-v-8dd290fc {
+  font-size: 12px;
+  line-height: 12px;
+  align-items: center;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+

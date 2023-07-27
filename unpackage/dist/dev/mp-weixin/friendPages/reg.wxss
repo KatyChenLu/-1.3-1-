@@ -1,0 +1,255 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.tag-view.data-v-2912d7a6 {
+  border-radius: 2000px !important;
+  border: 1px solid #dfe2e5;
+}
+.about__wrap.data-v-2912d7a6 {
+  position: relative;
+  z-index: 1;
+  margin: 20rpx 30rpx;
+  margin-top: -230rpx;
+}
+/* 顶部背景图 start */
+.top-backgroup.data-v-2912d7a6 {
+  height: 350rpx;
+  z-index: -1;
+}
+.top-backgroup .backgroud-image.data-v-2912d7a6 {
+  width: 100%;
+  height: 250rpx;
+}
+/* 用户头像 start */
+.logo-image.data-v-2912d7a6 {
+  width: 210rpx;
+  height: 210rpx;
+  position: relative;
+}
+.logo-pic.data-v-2912d7a6 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  border: 8rpx solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0rpx 0rpx 80rpx 0rpx rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.bg-flex-shadow.data-v-2912d7a6 {
+  background-color: #00C3FF;
+  z-index: 9999;
+}
+/* 胶囊*/
+.tn-custom-nav-bar__back.data-v-2912d7a6 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 1000rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.5);
+  color: #FFFFFF;
+  font-size: 18px;
+}
+.tn-custom-nav-bar__back .icon.data-v-2912d7a6 {
+  display: block;
+  flex: 1;
+  margin: auto;
+  text-align: center;
+}
+.tn-custom-nav-bar__back.data-v-2912d7a6:before {
+  content: " ";
+  width: 1rpx;
+  height: 110%;
+  position: absolute;
+  top: 22.5%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  opacity: 0.7;
+  background-color: #FFFFFF;
+}
+/* 底部悬浮按钮 start*/
+/* 底部悬浮按钮 start*/
+.tn-tabbar-height.data-v-2912d7a6 {
+  min-height: 100rpx;
+  height: calc(120rpx + env(safe-area-inset-bottom) / 2);
+}
+.tn-footerfixed.data-v-2912d7a6 {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  bottom: calc(30rpx + env(safe-area-inset-bottom));
+  z-index: 1000;
+  box-shadow: 0 1rpx 6rpx rgba(0, 0, 0, 0);
+}
+/* 底部悬浮按钮 end*/
+/* 标签内容 start*/
+.tn-tag-content__item.data-v-2912d7a6 {
+  display: inline-block;
+  line-height: 45rpx;
+  padding: 10rpx 30rpx;
+  margin: 20rpx 20rpx 5rpx 0rpx;
+}
+.tn-tag-content__item--prefix.data-v-2912d7a6 {
+  padding-right: 10rpx;
+}
+.tn-shadow-blurddd.data-v-2912d7a6 {
+  border: 2px solid black;
+}
+.login.data-v-2912d7a6 {
+  /* 背景图片 start */
+  /* 背景图片 end */
+  /* 内容 start */
+  /* 切换 start */
+  /* 切换 end */
+  /* 登录注册信息 start */
+  /* 登录注册信息 end */
+  /* 内容 end */
+}
+.login__bg.data-v-2912d7a6 {
+  z-index: -1;
+  position: fixed;
+}
+.login__bg--top.data-v-2912d7a6 {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.login__bg--top .bg.data-v-2912d7a6 {
+  width: 050rpx;
+  will-change: transform;
+}
+.login__bg--bottom.data-v-2912d7a6 {
+  bottom: -10rpx;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.login__bg--bottom image.data-v-2912d7a6 {
+  width: 750rpx;
+  will-change: transform;
+}
+.login__mode.data-v-2912d7a6 {
+  position: relative;
+  margin: 0 auto;
+  width: 476rpx;
+  height: 77rpx;
+  margin-top: 100rpx;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0rpx 10rpx 50rpx 0rpx rgba(0, 3, 72, 0.1);
+  border-radius: 39rpx;
+}
+.login__mode__item.data-v-2912d7a6 {
+  height: 77rpx;
+  width: 100%;
+  line-height: 77rpx;
+  text-align: center;
+  font-size: 31rpx;
+  color: #78909C;
+  letter-spacing: 1em;
+  text-indent: 1em;
+  z-index: 2;
+  transition: all 0.4s;
+}
+.login__mode__item--active.data-v-2912d7a6 {
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.login__mode__slider.data-v-2912d7a6 {
+  position: absolute;
+  height: inherit;
+  width: calc(476rpx / 2);
+  border-radius: inherit;
+  box-shadow: 0rpx 18rpx 72rpx 18rpx rgba(0, 195, 255, 0.1);
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.login__info.data-v-2912d7a6 {
+  margin: 80rpx 30rpx 10rpx 30rpx;
+  padding-bottom: 0;
+  border-radius: 20rpx;
+}
+.login__info__item__input.data-v-2912d7a6 {
+  margin-top: 59rpx;
+  width: 100%;
+  height: 77rpx;
+  border: 1rpx solid #C6D1D8;
+  border-radius: 39rpx;
+}
+.login__info__item__input__left-icon.data-v-2912d7a6 {
+  width: 10%;
+  font-size: 44rpx;
+  margin-left: 20rpx;
+  color: #78909C;
+}
+.login__info__item__input__content.data-v-2912d7a6 {
+  width: 80%;
+  padding-left: 10rpx;
+}
+.login__info__item__input__content--verify-code.data-v-2912d7a6 {
+  width: 56%;
+}
+.login__info__item__input__content input.data-v-2912d7a6 {
+  font-size: 30rpx;
+  color: #78909C;
+}
+.login__info__item__input__right-icon.data-v-2912d7a6 {
+  width: 10%;
+  font-size: 44rpx;
+  margin-right: 20rpx;
+  color: #78909C;
+}
+.login__info__item__input__right-verify-code.data-v-2912d7a6 {
+  width: 34%;
+  margin-right: 20rpx;
+}
+.login__info__item__button.data-v-2912d7a6 {
+  margin-top: 75rpx;
+  margin-bottom: 39rpx;
+  width: 100%;
+  height: 77rpx;
+  text-align: center;
+  font-size: 31rpx;
+  font-weight: bold;
+  line-height: 77rpx;
+  letter-spacing: 1em;
+  text-indent: 1em;
+  border-radius: 39rpx;
+  box-shadow: 1rpx 10rpx 24rpx 0rpx rgba(60, 129, 254, 0.35);
+}
+.data-v-2912d7a6 .input-placeholder {
+  font-size: 30rpx;
+  color: #C6D1D8;
+}
+.tn-slider__custom-block.data-v-2912d7a6 {
+  width: auto;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 10rpx;
+  border-radius: 20px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.tn-footerfixeddd.data-v-2912d7a6 {
+  bottom: 10px;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 1rpx 6rpx rgba(0, 0, 0, 0);
+}
+/* 标签内容 end*/
+

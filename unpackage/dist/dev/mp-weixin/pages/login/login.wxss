@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.page.data-v-b237504c {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  overflow: hidden;
+}
+.page .title.data-v-b237504c {
+  position: relative;
+  margin-top: 84rpx;
+}
+.page .title .text.data-v-b237504c {
+  position: relative;
+  z-index: 10;
+  padding-left: 112rpx;
+  font-size: 60rpx;
+  font-weight: bold;
+  color: #000000;
+  line-height: 66rpx;
+}
+.page .title .after.data-v-b237504c {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 246rpx;
+  height: 16rpx;
+}
+.page .input-group-block.data-v-b237504c {
+  margin-top: 126rpx;
+  padding: 0 110rpx;
+}
+.page .input-group-block .input-item.data-v-b237504c {
+  display: flex;
+  padding-top: 46rpx;
+  padding-left: 0.2em;
+  border-bottom: 1px solid #c2c2c2;
+}
+.page .input-group-block .input-item .input-dom.data-v-b237504c {
+  flex: 1;
+  font-size: 28rpx;
+  height: 70rpx;
+  padding-left: 0.2em;
+  padding-right: 1em;
+}
+.page .input-group-block .input-item .text.data-v-b237504c {
+  font-size: 30rpx;
+  color: #2c2c2c;
+}
+.page .fh-apple-login-mainsd.data-v-b237504c {
+  width: 200pt;
+  height: 32pt;
+  border-radius: 6pt;
+  border: 1rpx solid #55aa00;
+}
+.page .fh-apple-login-mainsd .fh-apple-login-button.data-v-b237504c {
+  width: 200pt;
+  height: 32pt;
+  border-radius: 6pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 32pt;
+  font-family: PingFangSC-Medium;
+  font-size: 14pt;
+  color: #333333;
+}
+.page .fh-apple-login-mainsd .fh-apple-login-button .fh-apple-icon.data-v-b237504c {
+  color: #55aa00;
+  font-size: 40px;
+  margin-right: 15pt;
+}
+.page .btn-dom.data-v-b237504c {
+  margin: 66rpx 56rpx;
+  text-align: center !important;
+  height: 113rpx;
+  line-height: 113rpx !important;
+  color: #ffffff;
+  border-radius: 1000px !important;
+}
+.page .zIndex10.data-v-b237504c {
+  position: relative;
+  z-index: 10;
+}
+.page .login-third.data-v-b237504c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page .login-third .weixin-login-btn.data-v-b237504c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page .login-third .weixin-login-btn .icon-blcok.data-v-b237504c {
+  width: 80rpx;
+  height: 80rpx;
+  background: #28c445;
+  border-radius: 1000rpx;
+}
+.page .login-third .weixin-login-btn .icon-blcok image.data-v-b237504c {
+  width: 100%;
+  height: 100%;
+}
+.page .login-third .weixin-login-btn .text.data-v-b237504c {
+  font-size: 24rpx;
+  color: #848484;
+  line-height: 2;
+}
+.page .reg-block.data-v-b237504c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+.page .reg-block .description-text.data-v-b237504c {
+  font-size: 26rpx;
+  color: #686a68;
+}
+.page .reg-block .description-text .text.data-v-b237504c {
+  display: inline-block;
+  text-decoration: underline;
+}
+

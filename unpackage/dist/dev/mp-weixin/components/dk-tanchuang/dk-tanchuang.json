@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "sanshui-fireworks": "/components/sanshui-fireworks/sanshui-fireworks"
+  }
+}

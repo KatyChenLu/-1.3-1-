@@ -1,0 +1,1 @@
+<view class="lime-svga"><block wx:if="{{use2dCanvas}}"><canvas class="lime-svga__canvas" id="{{canvasId}}" type="2d"></canvas></block><block wx:else><canvas class="lime-svga__canvas" canvas-id="{{canvasId}}" id="{{canvasId}}"></canvas></block></view>

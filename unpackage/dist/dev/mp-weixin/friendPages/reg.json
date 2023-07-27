@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "完善信息",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "ksp-cropper": "/uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper",
+    "tn-slider": "/tuniao-ui/components/tn-slider/tn-slider",
+    "tn-tag": "/tuniao-ui/components/tn-tag/tn-tag",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "get-tel": "/components/loginFn/get-tel"
+  }
+}

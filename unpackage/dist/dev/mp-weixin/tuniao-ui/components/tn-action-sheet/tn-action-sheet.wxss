@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.tn-action-sheet__tips.data-v-08b2de74 {
+  font-size: 26rpx;
+  text-align: center;
+  padding: 34rpx 0;
+  line-height: 1;
+  color: #838383;
+}
+.tn-action-sheet__item.data-v-08b2de74 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  padding: 34rpx 0;
+}
+.tn-action-sheet__item__subtext.data-v-08b2de74 {
+  font-size: 24rpx;
+  color: #838383;
+  margin-top: 20rpx;
+}
+.tn-action-sheet__cancel.data-v-08b2de74 {
+  color: #000000;
+}
+.tn-action-sheet__cancel--gab.data-v-08b2de74 {
+  height: 12rpx;
+  background-color: #eaeaec;
+}
+

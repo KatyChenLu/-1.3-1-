@@ -1,0 +1,21 @@
+{
+  "navigationBarTitleText": "主页",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-tag": "/tuniao-ui/components/tn-tag/tn-tag",
+    "tn-empty": "/tuniao-ui/components/tn-empty/tn-empty",
+    "quan-list": "/components/quan-list/quan-list",
+    "tn-popup": "/tuniao-ui/components/tn-popup/tn-popup",
+    "gift-list": "/components/gift-list/gift-list",
+    "dk-tanchuang": "/components/dk-tanchuang/dk-tanchuang",
+    "l-svga": "/uni_modules/lime-svga/components/l-svga/l-svga",
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "share-btn": "/components/share-btn/share-btn",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal",
+    "tn-number-box": "/tuniao-ui/components/tn-number-box/tn-number-box",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body",
+    "l-painter": "/components/lime-painter/index"
+  }
+}

@@ -1,0 +1,151 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.tn-calendar.data-v-26db8440 {
+  color: #000000;
+}
+.tn-calendar__header.data-v-26db8440 {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  background-color: #FFFFFF;
+  color: #01BEFF;
+}
+.tn-calendar__header__text.data-v-26db8440 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30rpx;
+  padding: 0 60rpx;
+}
+.tn-calendar__action.data-v-26db8440 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 40rpx 0 40rpx 0;
+}
+.tn-calendar__action__icon.data-v-26db8440 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 16rpx;
+  width: 32rpx;
+  height: 32rpx;
+  font-size: 20rpx;
+  border-radius: 50%;
+  color: #FFFFFF;
+}
+.tn-calendar__action__text.data-v-26db8440 {
+  padding: 0 16rpx;
+  color: #000000;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.tn-calendar__week-day-zh.data-v-26db8440 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12rpx 0;
+  overflow: hidden;
+  box-shadow: 16rpx 6rpx 8rpx 0 #E6E6E6;
+  margin-bottom: 2rpx;
+}
+.tn-calendar__week-day-zh__text.data-v-26db8440 {
+  flex: 1;
+  text-align: center;
+}
+.tn-calendar__content.data-v-26db8440 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 12rpx 0;
+  box-sizing: border-box;
+  background-color: #F7F7F7;
+  position: relative;
+}
+.tn-calendar__content__item.data-v-26db8440 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 14.2857%;
+  padding: 12rpx 0;
+  margin: 6rpx 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+.tn-calendar__content__item__text.data-v-26db8440 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  font-size: 32rpx;
+  position: relative;
+}
+.tn-calendar__content__item__tips.data-v-26db8440 {
+  position: absolute;
+  width: 100%;
+  line-height: 24rpx;
+  left: 0;
+  bottom: 8rpx;
+  text-align: center;
+  z-index: 2;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+.tn-calendar__content--start-date.data-v-26db8440 {
+  border-top-left-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+}
+.tn-calendar__content--end-date.data-v-26db8440 {
+  border-top-right-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+}
+.tn-calendar__content__month--bg.data-v-26db8440 {
+  position: absolute;
+  font-size: 200rpx;
+  line-height: 200rpx;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #E6E6E6;
+  z-index: 1;
+}
+.tn-calendar__bottom.data-v-26db8440 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #F7F7F7;
+  padding: 0 40rpx 30rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #AAAAAA;
+}
+.tn-calendar__bottom__choose.data-v-26db8440 {
+  height: 50rpx;
+}
+.tn-calendar__bottom__btn.data-v-26db8440 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60rpx;
+  border-radius: 40rpx;
+  color: #FFFFFF;
+  font-size: 28rpx;
+}
+

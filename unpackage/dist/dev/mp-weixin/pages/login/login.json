@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "登录",
+  "disableScroll": true,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-checkbox-group": "/tuniao-ui/components/tn-checkbox-group/tn-checkbox-group",
+    "tn-checkbox": "/tuniao-ui/components/tn-checkbox/tn-checkbox",
+    "fh-apple-login": "/components/fh-apple-login/fh-apple-login",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal",
+    "tn-list-cell": "/tuniao-ui/components/tn-list-cell/tn-list-cell",
+    "tn-switch": "/tuniao-ui/components/tn-switch/tn-switch"
+  }
+}

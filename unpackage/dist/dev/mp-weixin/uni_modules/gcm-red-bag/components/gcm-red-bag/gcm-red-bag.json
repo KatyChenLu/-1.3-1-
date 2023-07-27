@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-count-scroll": "/tuniao-ui/components/tn-count-scroll/tn-count-scroll"
+  }
+}

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.xunzhang.data-v-1c7725fa {
+  width: 20px;
+}
+.blogger__desc__label--prefix.data-v-1c7725fa {
+  color: #00FFC8;
+  padding-right: 5px;
+}
+.blogger__desc__label.data-v-1c7725fa {
+  height: 24px;
+  padding: 4px 6px;
+  margin: 5px 9px 0 0;
+}
+.blogger__item.data-v-1c7725fa {
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+}
+.blogger__main-image--2.data-v-1c7725fa {
+  max-width: 45%;
+  max-height: 130px;
+}
+.blogger__main-image--3.data-v-1c7725fa {
+  height: 106px;
+  width: 100%;
+}
+.blogger__main-image.data-v-1c7725fa {
+  border-radius: 8px;
+}
+.fufei.data-v-1c7725fa {
+  -webkit-filter: blur(2px);
+  /*像素值越大，越模糊*/
+  -moz-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(3px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=2, MakeShadow=false);
+}
+.blogger__main-image--1.data-v-1c7725fa {
+  max-width: 100%;
+  max-height: 150px;
+}
+

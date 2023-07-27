@@ -1,0 +1,1 @@
+<block wx:if="{{show}}"><view data-event-opts="{{[['tap',[['appleLogin',['$event']]]]]}}" class="fh-apple-login-main data-v-4ab7fbe4" bindtap="__e"><view class="fh-apple-login-button data-v-4ab7fbe4"><view class="fh-apple-icon data-v-4ab7fbe4"></view>{{''+content+''}}</view></view></block>

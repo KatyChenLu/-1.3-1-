@@ -1,0 +1,19 @@
+{
+  "navigationBarTitleText": "群聊",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-avatar": "/tuniao-ui/components/tn-avatar/tn-avatar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal",
+    "tn-popup": "/tuniao-ui/components/tn-popup/tn-popup",
+    "gift-listchat": "/components/gift-listchat/gift-listchat",
+    "tn-tabs": "/tuniao-ui/components/tn-tabs/tn-tabs",
+    "tn-tag": "/tuniao-ui/components/tn-tag/tn-tag",
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "share-btn": "/components/share-btn/share-btn",
+    "dk-tanchuang": "/components/dk-tanchuang/dk-tanchuang",
+    "l-svga": "/uni_modules/lime-svga/components/l-svga/l-svga",
+    "ege-index": "/components/ege-index/ege-index",
+    "l-painter": "/components/lime-painter/index"
+  }
+}

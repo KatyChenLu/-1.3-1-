@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "会员中心",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-popup": "/tuniao-ui/components/tn-popup/tn-popup",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal",
+    "almost-lottery": "/components/almost-lottery/almost-lottery",
+    "dk-tanchuang": "/components/dk-tanchuang/dk-tanchuang"
+  }
+}

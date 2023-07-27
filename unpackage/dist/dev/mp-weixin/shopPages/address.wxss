@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.bb15 {
+  padding-bottom: 30rpx;
+}
+.right {
+  margin-right: 18rpx;
+}
+.content {
+  position: relative;
+}
+.list-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 15px;
+}
+.list {
+  display: flex;
+  align-items: center;
+  padding: 14px 15px;
+  background: #fff;
+  position: relative;
+}
+.chaoguo {
+  color: #ff0000;
+}
+.wrapper_fanwei {
+  color: #0081FF;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.address-box {
+  display: flex;
+  align-items: center;
+}
+.address-box .tag {
+  font-size: 24rpx;
+  color: #fffafb;
+  margin-right: 10rpx;
+  background: #fffafb;
+  border: 1px solid #ffc107;
+  border-radius: 4rpx;
+  padding: 4rpx 10rpx;
+  line-height: 1;
+}
+.address-box .address {
+  font-size: 30rpx;
+  color: #000000;
+}
+.u-box {
+  font-size: 28rpx;
+  color: #000000;
+  margin-top: 16rpx;
+}
+.u-box .name {
+  margin-right: 30rpx;
+}
+.icon-edit {
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  font-size: 40rpx;
+  color: #fffafb;
+  padding-left: 30rpx;
+}
+.add-btn {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  background: linear-gradient(45deg, #ffd900, #ffc107);
+}
+

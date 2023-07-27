@@ -1,0 +1,256 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.topBg.data-v-79e15621 {
+  width: 100%;
+  height: 400rpx;
+  padding-top: 20rpx 0 20rpx 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.b-card.data-v-79e15621 {
+  background-color: #fefefe;
+  background-image: linear-gradient(-45deg, #e8e9ec, #f2f2f2);
+  padding: 30rpx 40rpx;
+  margin: 0 30rpx;
+  height: 500rpx;
+  border-radius: 20rpx;
+  box-shadow: 2rpx 2rpx 2rpx #efeef3;
+  color: #9a9ca1;
+}
+.b-card .heard.data-v-79e15621 {
+  color: #6f7275;
+}
+.b-card .outer.data-v-79e15621 {
+  background-color: #d8dcdd;
+}
+.b-card .outer .inside.data-v-79e15621 {
+  background-color: #6f7275;
+}
+.b-card .rangle .rangle-text.data-v-79e15621 {
+  background-color: #6f7275;
+}
+.b-level-1.data-v-79e15621 {
+  background-image: linear-gradient(45deg, #dde1ea, #a3abb8);
+  color: #34424b;
+}
+.b-level-1 .heard.data-v-79e15621 {
+  color: #34424b;
+}
+.b-level-1 .outer.data-v-79e15621 {
+  background-color: #e4e9ed;
+}
+.b-level-1 .outer .inside.data-v-79e15621 {
+  background-color: #34424b;
+}
+.b-level-1 .rangle .rangle-text.data-v-79e15621 {
+  background-color: #34424b;
+}
+.b-level-2.data-v-79e15621 {
+  background-image: linear-gradient(45deg, #f0daa4, #d1a165);
+  color: #323b4a;
+}
+.b-level-2 .heard.data-v-79e15621 {
+  color: #313a49;
+}
+.b-level-2 .outer.data-v-79e15621 {
+  background-color: #e4e7ec;
+}
+.b-level-2 .outer .inside.data-v-79e15621 {
+  background-color: #313a49;
+}
+.b-level-2 .rangle .rangle-text.data-v-79e15621 {
+  background-color: #323b4a;
+}
+.b-level-3.data-v-79e15621 {
+  background-image: linear-gradient(45deg, #ddc1b5, #c59073);
+  color: #333333;
+}
+.b-level-3 .heard.data-v-79e15621 {
+  color: #333333;
+}
+.b-level-3 .text.data-v-79e15621 {
+  background-color: #e8e8e8;
+}
+.b-level-3 .outer.data-v-79e15621 {
+  background-color: #e8e8e8;
+}
+.b-level-3 .outer .inside.data-v-79e15621 {
+  background-color: #333333;
+}
+.b-level-3 .rangle .rangle-text.data-v-79e15621 {
+  background-color: #333333;
+}
+.b-level-4.data-v-79e15621 {
+  background-image: linear-gradient(45deg, #303030, #1a1a1a);
+  color: #f0daa4;
+}
+.b-level-4 .heard.data-v-79e15621 {
+  color: #f0daa4;
+}
+.b-level-4 .text.data-v-79e15621 {
+  background-color: #f2e3c4;
+  color: #77582a;
+}
+.b-level-4 .outer.data-v-79e15621 {
+  background-color: #f2e3c4;
+}
+.b-level-4 .outer .inside.data-v-79e15621 {
+  background-color: #f2e3c4;
+}
+.b-level-4 .rangle .rangle-text.data-v-79e15621 {
+  background-color: #77582a;
+}
+.warp .swiper.data-v-79e15621 {
+  height: 600rpx;
+}
+.warp .swiper .progress .heard.data-v-79e15621 {
+  font-size: 36rpx;
+  font-weight: 600;
+  text-align: center;
+  line-height: 120rpx;
+}
+.warp .swiper .progress .title.data-v-79e15621 {
+  font-size: 28rpx;
+}
+.warp .swiper .progress .progress-artice.data-v-79e15621 {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+}
+.warp .swiper .progress .progress-artice .outer.data-v-79e15621 {
+  height: 10rpx;
+  border-radius: 20rpx;
+  margin: 0;
+  overflow: hidden;
+}
+.warp .swiper .progress .progress-artice .outer .inside.data-v-79e15621 {
+  height: 100%;
+}
+.warp .swiper .progress .progress-artice .content.data-v-79e15621 {
+  margin: 0;
+  display: flex;
+  text-align: right;
+}
+.warp .swiper .progress .progress-artice .content .content-item.data-v-79e15621 {
+  display: flex;
+  flex-direction: column;
+}
+.warp .swiper .progress .progress-artice .content .content-item .rangle.data-v-79e15621 {
+  height: 10rpx;
+  line-height: 10rpx;
+  margin-top: -10rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.warp .swiper .progress .progress-artice .content .content-item .rangle .rangle-text.data-v-79e15621 {
+  width: 10rpx;
+  height: 10rpx;
+  display: inline-block;
+  border-radius: 50%;
+  display: none;
+}
+.warp .swiper .progress .progress-artice .content .content-item .rangle .rangle-gift.data-v-79e15621 {
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #cacdd0;
+  display: inline-block;
+  border-radius: 50%;
+}
+.warp .swiper .progress .progress-artice .content .content-item .rangle .achieveClass.data-v-79e15621 {
+  background-color: #765528;
+}
+.warp .swiper .progress .progress-artice .content .content-item .level.data-v-79e15621 {
+  margin-top: 50rpx;
+  margin-right: -20rpx;
+}
+.warp .swiper .progress .progress-artice .content .content-item:nth-child(4) .level.data-v-79e15621 {
+  margin-right: 0rpx;
+}
+.warp .swiper .progress .text.data-v-79e15621 {
+  padding: 2rpx 20rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.warp .swiper .progress .text .text-des.data-v-79e15621 {
+  font-size: 20rpx;
+  font-weight: 300;
+}
+.warp .medal.data-v-79e15621 {
+  margin: 10rpx 30rpx;
+}
+.warp .medal .medal-title.data-v-79e15621 {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #30333b;
+  padding: 0 10rpx;
+}
+.warp .medal .medal-title .text.data-v-79e15621 {
+  font-size: 28rpx;
+  font-weight: 300;
+  color: #7c7f81;
+  margin-left: 10rpx;
+}
+.warp .medal .medal-box.data-v-79e15621 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.warp .medal .medal-box .medal-item.data-v-79e15621 {
+  width: 33.3333333333333%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40rpx;
+}
+.warp .medal .medal-box .medal-item .img.data-v-79e15621 {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+.warp .medal .medal-box .medal-item .title.data-v-79e15621 {
+  font-size: 24rpx;
+  line-height: 60rpx;
+  font-weight: 600;
+  color: #30333b;
+}
+.warp .medal .medal-box .medal-item .text.data-v-79e15621 {
+  font-size: 24rpx;
+  color: #7c7f81;
+}
+.money-area.data-v-79e15621 {
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+.money-area .item.data-v-79e15621 {
+  height: 150rpx;
+  background: #f5f5f5;
+  border-radius: 14rpx;
+}
+.money-area .item .price.data-v-79e15621 {
+  color: #333;
+  margin-bottom: 10rpx;
+}
+.money-area .item text.data-v-79e15621 {
+  color: #9a9a9a;
+}
+.money-area .item.data-v-79e15621:nth-child(2) {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.money-area .active.data-v-79e15621 {
+  background-image: repeating-linear-gradient(45deg, #E83A30, #E72F8C);
+  color: #FFFFFF;
+}
+.money-area .active .price.data-v-79e15621,
+.money-area .active text.data-v-79e15621 {
+  color: #fff !important;
+}
+

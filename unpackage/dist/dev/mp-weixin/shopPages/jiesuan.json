@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "结算",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-input": "/tuniao-ui/components/tn-input/tn-input",
+    "tn-goods-nav": "/tuniao-ui/components/tn-goods-nav/tn-goods-nav",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal"
+  }
+}

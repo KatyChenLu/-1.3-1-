@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.tn-checkbox.data-v-314d0a6a {
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  -webkit-user-select: none;
+          user-select: none;
+  line-height: 1.8;
+}
+.tn-checkbox__icon-wrap.data-v-314d0a6a {
+  color: #000000;
+  flex: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 42rpx;
+  height: 42rpx;
+  color: transparent;
+  text-align: center;
+  transition-property: color, border-color, background-color;
+  border: 1px solid #AAAAAA;
+  transition-duration: 0.2s;
+}
+.tn-checkbox__icon-wrap--circle.data-v-314d0a6a {
+  border-radius: 100%;
+}
+.tn-checkbox__icon-wrap--square.data-v-314d0a6a {
+  border-radius: 6rpx;
+}
+.tn-checkbox__icon-wrap--checked.data-v-314d0a6a {
+  color: #FFFFFF;
+  background-color: #01BEFF;
+  border-color: #01BEFF;
+}
+.tn-checkbox__icon-wrap--disabled.data-v-314d0a6a {
+  background-color: #E6E6E6;
+  border-color: #AAAAAA;
+}
+.tn-checkbox__icon-wrap--disabled--checked.data-v-314d0a6a {
+  color: #AAAAAA !important;
+}
+.tn-checkbox__label.data-v-314d0a6a {
+  word-wrap: break-word;
+  margin-left: 10rpx;
+  margin-right: 24rpx;
+  color: #000000;
+  font-size: 30rpx;
+}
+.tn-checkbox__label--disabled.data-v-314d0a6a {
+  color: #AAAAAA;
+}
+

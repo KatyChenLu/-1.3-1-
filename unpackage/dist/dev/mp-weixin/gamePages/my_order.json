@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "订单中心",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-tabs-swiper": "/tuniao-ui/components/tn-tabs-swiper/tn-tabs-swiper",
+    "tn-tag": "/tuniao-ui/components/tn-tag/tn-tag",
+    "tn-avatar": "/tuniao-ui/components/tn-avatar/tn-avatar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body"
+  }
+}

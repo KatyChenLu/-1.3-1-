@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "申请认证",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-tag": "/tuniao-ui/components/tn-tag/tn-tag",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-badge": "/tuniao-ui/components/tn-badge/tn-badge",
+    "tn-popup": "/tuniao-ui/components/tn-popup/tn-popup",
+    "nb-voice-record": "/uni_modules/nb-voice-record/components/nb-voice-record/nb-voice-record",
+    "tn-cropper": "/tuniao-ui/components/tn-cropper/tn-cropper"
+  }
+}

@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+/* 资讯主图 start*/
+.image-article.data-v-db6391b8 {
+  border-radius: 8rpx;
+  width: 200rpx;
+  height: 250rpx;
+  position: relative;
+}
+.image-pic.data-v-db6391b8 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  border-radius: 10rpx;
+}
+.article-shadow.data-v-db6391b8 {
+  border-radius: 15rpx;
+  box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.07);
+}
+/* 文字截取*/
+.clamp-text-1.data-v-db6391b8 {
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.clamp-text-2.data-v-db6391b8 {
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* 标签内容 start*/
+.tn-tag-content__item.data-v-db6391b8 {
+  display: inline-block;
+  line-height: 35rpx;
+  padding: 5rpx 25rpx;
+}
+.tn-tag-content__item--prefix.data-v-db6391b8 {
+  padding-right: 10rpx;
+}
+

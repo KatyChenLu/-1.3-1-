@@ -1,0 +1,28 @@
+
+.withdraw-main {
+	padding-top: 80rpx;
+}
+.withdraw-status {
+	width: 300rpx;
+	height: 300rpx;
+}
+.money-icon {
+	width: 80rpx;
+	height: 80rpx;
+}
+.tag-money {
+	width: 180rpx;
+	height: 100rpx;
+	background: #ffffff;
+	border-radius: 50rpx;
+	border: 4rpx solid #e6e6e6;
+	color: #333333;
+	font-size: 32rpx;
+	font-weight: 600;
+}
+.tag-money.on {
+	border: none;
+	background: #ff6d00;
+	color: #ffffff;
+}
+

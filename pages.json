@@ -1,0 +1,671 @@
+{
+  "easycom": {
+    "^tn-(.*)": "@/tuniao-ui/components/tn-$1/tn-$1.vue"
+  },
+  "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index",
+     "style": {
+    	"enablePullDownRefresh": false,
+     	"navigationStyle": "custom",
+		"navigationBarTitleText": "首页"
+     }
+    },
+	{
+	  "path": "pages/diaoyou",
+	 "style": {
+		"enablePullDownRefresh": false,
+	 	"navigationStyle": "custom",
+		"navigationBarTitleText": "线下"
+	 }
+	},{
+	  "path": "pages/liaotian",
+	 "style": {
+		"enablePullDownRefresh": false,
+	 	"navigationStyle": "custom",
+		"navigationBarTitleText": "同城"
+	 }
+	},
+	{
+	  "path": "pages/mine/mine",
+	 "style": {
+	 	"enablePullDownRefresh": false,
+	 	"navigationStyle": "custom",
+		"navigationBarTitleText": "我的"
+	 }
+	},{
+	  "path": "pages/activity/activity",
+	 "style": {
+	 	"enablePullDownRefresh": false,
+	 	"navigationStyle": "custom",
+		"navigationBarTitleText": "广场"
+	 }
+	},
+	{
+	  "path": "pages/circle/circle",
+	 "style": {
+	 	"enablePullDownRefresh": false,
+	 	"navigationStyle": "custom",
+		"navigationBarTitleText": "内容"
+	 }
+	}	,
+	{
+	  "path": "pages/preferred/preferred",
+	 "style": {
+	 	"enablePullDownRefresh": false,
+	 	"navigationStyle": "custom",
+		"navigationBarTitleText": "消息"
+	 }
+	}	
+	,{
+            "path": "uni_modules/rt-uni-update/components/rt-uni-update/rt-uni-update",
+            "style": {
+                "disableScroll": true,
+                "app-plus": {
+                    "backgroundColorTop": "transparent",
+                    "background": "transparent",
+                    "titleNView": false,
+                    "scrollIndicator": false,
+                    "popGesture": "none",
+                    "animationType": "fade-in",
+                    "animationDuration": 200
+
+                }
+            }
+        }
+	, {
+		"path": "pages/login/login",
+		"style": {
+			"navigationBarTitleText": "登录",
+			"disableScroll": true
+		}
+	}, {
+		"path": "pages/login/tags",
+		"style": {
+			"navigationBarTitleText": "兴趣标签",
+			"disableScroll": true
+		}
+	}, {
+		"path": "pages/url",
+		"style": {
+			"navigationBarTitleText": "网页",
+			"disableScroll": true
+		}
+	}
+  ],
+   
+  "subPackages": [{
+    "root": "homePages",
+    "pages": [
+		{
+		    "path" : "vod/vod",
+		    "style" :                                                                                    
+		    {
+		        "app-plus":{
+		        	"titleNView":false,
+		        	"bounce":"none"
+		        }
+		    }
+		    
+		},{
+        "path": "planet",
+        "style": {
+          "navigationBarTitleText": "灵魂采集",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "paihang",
+        "style": {
+          "navigationBarTitleText": "排行榜",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "quanclass",
+        "style": {
+          "navigationBarTitleText": "圈子",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "party",
+        "style": {
+          "navigationBarTitleText": "派对",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "about",
+        "style": {
+          "navigationBarTitleText": "关于我们",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "music",
+        "style": {
+          "navigationBarTitleText": "播放器",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "huodng",
+        "style": {
+          "navigationBarTitleText": "活动列表",
+          "enablePullDownRefresh": false
+        }
+      },
+      {
+        "path": "search",
+        "style": {
+          "navigationBarTitleText": "全局搜索",
+          "enablePullDownRefresh": false
+        }
+      } 
+      
+    ]
+  }, {
+    "root": "shopPages",
+    "pages": [ 
+		{
+        "path": "index",
+        "style": {
+          "navigationBarTitleText": "商城首页",
+          "enablePullDownRefresh": false
+			}
+		},{
+        "path": "order",
+        "style": {
+          "navigationBarTitleText": "我的订单",
+          "enablePullDownRefresh": false
+			}
+		},
+		{
+		"path": "address",
+		"style": {
+		  "navigationBarTitleText": "收货地址",
+		  "enablePullDownRefresh": false
+			}
+		},
+		{
+		"path": "address_add",
+		"style": {
+		  "navigationBarTitleText": "添加地址",
+		  "enablePullDownRefresh": false
+		}
+		},
+		{
+		"path": "jiesuan",
+		"style": {
+		  "navigationBarTitleText": "结算",
+		  "enablePullDownRefresh": false
+		}
+		},
+		{
+		"path": "classify",
+		"style": {
+		  "navigationBarTitleText": "分类首页",
+		  "enablePullDownRefresh": false
+		}
+		},
+		{
+		"path": "product",
+		"style": {
+		  "navigationBarTitleText": "产品详情",
+		  "enablePullDownRefresh": false
+		}
+		} ,
+		{
+		"path": "list",
+		"style": {
+		  "navigationBarTitleText": "分类",
+		  "enablePullDownRefresh": false
+		}
+		},
+		{
+		"path": "order_show",
+		"style": {
+		  "navigationBarTitleText": "订单详情",
+		  "enablePullDownRefresh": false
+		}
+		}   
+	 ]
+	 }, {
+    "root": "gamePages",
+    "pages": [ 
+		{
+		"path": "team_shouru",
+		"style": {
+		  "navigationBarTitleText": "工会提现",
+		  "enablePullDownRefresh": false
+			}
+		},
+		{
+		"path": "team_money_log",
+		"style": {
+		  "navigationBarTitleText": "工会收入明细",
+		  "enablePullDownRefresh": false
+			}
+		},
+		{
+		"path": "team_index",
+		"style": {
+		  "navigationBarTitleText": "工会中心",
+		  "enablePullDownRefresh": false
+			}
+		},
+		{
+		"path": "team_user",
+		"style": {
+		  "navigationBarTitleText": "旗下陪陪",
+		  "enablePullDownRefresh": false
+			}
+		},		
+		{
+		"path": "shenqing",
+		"style": {
+		  "navigationBarTitleText": "申请认证",
+		  "enablePullDownRefresh": false
+			}
+		}
+		,{
+		"path": "shenqing_add",
+		"style": {
+		  "navigationBarTitleText": "申请认证",
+		  "enablePullDownRefresh": false
+			}
+		},
+		
+		{
+        "path": "index",
+        "style": {
+          "navigationBarTitleText": "陪玩",
+          "enablePullDownRefresh": false
+			}
+		},
+		{
+		"path": "my_goods",
+		"style": {
+		  "navigationBarTitleText": "服务中心",
+		  "enablePullDownRefresh": false
+			}
+		},
+		{
+		"path": "my_order",
+		"style": {
+		  "navigationBarTitleText": "订单中心",
+		  "enablePullDownRefresh": false
+			}
+		},
+		{
+		"path": "my_order_fuwu",
+		"style": {
+		  "navigationBarTitleText": "我的服务订单",
+		  "enablePullDownRefresh": false
+			}
+		},
+		{
+		"path": "order_show",
+		"style": {
+		  "navigationBarTitleText": "订单详情",
+		  "enablePullDownRefresh": false
+			}
+		}
+	]
+	},
+	 {
+    "root": "circlePages",
+    "pages": [  {
+        "path": "gift_user",
+        "style": {
+          "navigationBarTitleText": "礼物列表",
+          "enablePullDownRefresh": false
+        }
+      },  
+	  {
+	      "path": "reservelist",
+	      "style": {
+	        "navigationBarTitleText": "报名表",
+	        "enablePullDownRefresh": false
+	      }
+	    },  
+      {
+        "path": "group_fans",
+        "style": {
+          "navigationBarTitleText": "粉丝列表",
+          "enablePullDownRefresh": false
+        }
+      }, {
+        "path": "keep_user",
+        "style": {
+          "navigationBarTitleText": "守护列表",
+          "enablePullDownRefresh": false
+        }
+      },
+      {
+        "path": "group",
+        "style": {
+          "navigationBarTitleText": "圈子详情",
+          "enablePullDownRefresh": false
+        }
+      },
+	  {
+	    "path": "tags_list",
+	    "style": {
+	      "navigationBarTitleText": "话题列表",
+	      "enablePullDownRefresh": false
+	    }
+	  },
+	  {
+	    "path": "group_list",
+	    "style": {
+	      "navigationBarTitleText": "圈子列表",
+	      "enablePullDownRefresh": false
+	    }
+	  },
+	  {
+	    "path": "edit_quan",
+	    "style": {
+	      "navigationBarTitleText": "圈子列表",
+	      "enablePullDownRefresh": false
+	    }
+	  },
+      {
+        "path": "fans",
+        "style": {
+          "navigationBarTitleText": "粉丝列表",
+          "enablePullDownRefresh": false
+        }
+      },         
+      {
+        "path": "blogger_other",
+        "style": {
+          "navigationBarTitleText": "主页",
+          "enablePullDownRefresh": false
+        }
+      }, {
+        "path": "blogger_other_user",
+        "style": {
+          "navigationBarTitleText": "主页",
+          "enablePullDownRefresh": false
+        }
+      },
+      {
+        "path": "details",
+        "style": {
+          "navigationBarTitleText": "详情",
+          "enablePullDownRefresh": false
+        }
+      },
+      {
+        "path": "reserve",
+        "style": {
+          "navigationBarTitleText": "详情",
+          "enablePullDownRefresh": false
+        }
+      },
+	  {
+	    "path": "medal",
+	    "style": {
+	      "navigationBarTitleText": "勋章",
+	      "enablePullDownRefresh": false
+	    }
+	  },
+      {
+        "path": "edit",
+        "style": {
+          "navigationBarTitleText": "发布",
+          "enablePullDownRefresh": false
+        }
+      },
+      {
+        "path": "create",
+        "style": {
+          "navigationBarTitleText": "活动创建",
+          "enablePullDownRefresh": false
+        }
+      },
+      {
+        "path": "build",
+        "style": {
+          "navigationBarTitleText": "创建圈子",
+          "enablePullDownRefresh": false
+        }
+      }
+    ]
+  },{
+    "root": "friendPages",
+    "pages": [
+		{
+        "path": "index",
+        "style": {
+          "navigationBarTitleText": "交友",
+          "enablePullDownRefresh": false
+        }
+      },
+	  {
+	    "path": "huhuan",
+	    "style": {
+	      "navigationBarTitleText": "呼唤聊天",
+	      "enablePullDownRefresh": false
+	    }
+	  },
+	  {
+	    "path": "reg",
+	    "style": {
+	      "navigationBarTitleText": "完善信息",
+	      "enablePullDownRefresh": false
+	    }
+	  },{
+	    "path": "call",
+	    "style": {
+	      "navigationBarTitleText": "聊天",
+	      "enablePullDownRefresh": false
+	    }
+	  },
+	  {
+	    "path": "pipei",
+	    "style": {
+	      "navigationBarTitleText": "语音匹配",
+	      "enablePullDownRefresh": false
+	    }
+	  }
+	  ]
+	  }
+	  
+  ,{
+    "root": "minePages",
+    "pages": [{
+        "path": "money_log_shouru",
+        "style": {
+          "navigationBarTitleText": "收入",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "ai/pipei",
+        "style": {
+          "navigationBarTitleText": "语音匹配",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "share",
+        "style": {
+          "navigationBarTitleText": "邀请",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "shouru_ti",
+        "style": {
+          "navigationBarTitleText": "提现",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "shouru",
+        "style": {
+          "navigationBarTitleText": "我的收入",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "daojubag",
+        "style": {
+          "navigationBarTitleText": "我的背包",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "money_log",
+        "style": {
+          "navigationBarTitleText": "使用明细",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "regone",
+        "style": {
+          "navigationBarTitleText": "完善资料",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "set",
+        "style": {
+          "navigationBarTitleText": "设置",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "daoju",
+        "style": {
+          "navigationBarTitleText": "道具商城",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "qiandao",
+        "style": {
+          "navigationBarTitleText": "任务中心",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "vip",
+        "style": {
+          "navigationBarTitleText": "会员中心",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "edit",
+        "style": {
+          "navigationBarTitleText": "个人资料修改",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "gift/chongzhi",
+        "style": {
+          "navigationBarTitleText": "设置",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "my_group",
+        "style": {
+          "navigationBarTitleText": "我的圈子",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "my_msg",
+        "style": {
+          "navigationBarTitleText": "我的消息",
+          "enablePullDownRefresh": false
+        }
+      },{
+        "path": "my_star",
+        "style": {
+          "navigationBarTitleText": "我的点赞",
+          "enablePullDownRefresh": false
+        }
+      },
+	 {
+	    "path": "chat/room_reg",
+	    "style": {
+	      "navigationBarTitleText": "申请房间",
+	      "enablePullDownRefresh": false
+	    }
+	  }, {
+	    "path": "chat/talkkefu",
+	    "style": {
+	      "navigationBarTitleText": "官方客服",
+	      "enablePullDownRefresh": false
+	    }
+	  },
+	  {
+	    "path": "chat/talk",
+	    "style": {
+	      "navigationBarTitleText": "聊天",
+	      "enablePullDownRefresh": false
+	    }
+	  },
+	  {
+	    "path": "chat/room",
+	    "style": {
+	      "navigationBarTitleText": "群聊",
+	      "enablePullDownRefresh": false
+	    }
+	  },
+	  {
+	    "path": "chat/room_text",
+	    "style": {
+	      "navigationBarTitleText": "群聊",
+	      "enablePullDownRefresh": false
+	    }
+	  },
+	  {
+	    "path": "chat/touser",
+	    "style": {
+	      "navigationBarTitleText": "私聊",
+	      "enablePullDownRefresh": false
+	    }
+	  }
+    ]
+  }],
+  "globalStyle": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#000000",
+    "backgroundColor": "#000000"
+  },
+  "tabBar": {
+	  "fontSize":"14px",
+  	"color": "#8b8b8b",
+  	"selectedColor": "#000000",
+  	"borderStyle": "black",
+  	"backgroundColor": "#ffffff",
+
+  	"list": [{
+  			"pagePath": "pages/index",
+  			"iconPath": "static/tabbar/home_tn.png",
+  			"selectedIconPath": "static/tabbar/home_tn.png",
+  			"text": "首页"
+  		},
+  		{
+  				"pagePath": "pages/circle/circle",
+  				"iconPath": "static/tabbar/circle_tn.png",
+  				"selectedIconPath": "static/tabbar/circle_tn.png",  		
+  				"text": "聊天室"
+  		},
+  		
+		
+	
+		  {
+				"pagePath": "pages/activity/activity",
+				"iconPath": "static/tabbar/add.png",
+				"selectedIconPath": "static/tabbar/add.png",  		
+				"text": "动态"
+		  },
+		
+  
+  		{
+  			"pagePath": "pages/preferred/preferred",
+  			"iconPath": "static/tabbar/preferred_tn.png",
+  			"selectedIconPath": "static/tabbar/preferred_tn.png",
+  			"text": "消息"
+  		},
+  
+  		{
+  			"pagePath": "pages/mine/mine",
+  			"iconPath": "static/tabbar/mine_tn.png",
+  			"selectedIconPath": "static/tabbar/mine_tn.png",
+  			"text": "我的"
+  		}
+  	]	
+  }
+}

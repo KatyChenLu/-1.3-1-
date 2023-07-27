@@ -1,0 +1,224 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.xuanfuyou.data-v-65af556c {
+  z-index: 200741;
+  position: fixed;
+  bottom: 35px;
+  right: 40px;
+  width: 120px;
+}
+.xunzhang.data-v-65af556c {
+  width: 20px;
+}
+.blogger__desc__label--prefix.data-v-65af556c {
+  color: #00FFC8;
+  padding-right: 5px;
+}
+.blogger__desc__label.data-v-65af556c {
+  height: 24px;
+  padding: 4px 6px;
+  margin: 5px 9px 0 0;
+}
+.blogger__item.data-v-65af556c {
+  padding: 15px;
+}
+.blogger__main-image--2.data-v-65af556c {
+  max-width: 130px;
+  max-height: 130px;
+}
+.blogger__main-image--3.data-v-65af556c {
+  height: 106px;
+  width: 100%;
+}
+.blogger__main-image.data-v-65af556c {
+  border-radius: 8px;
+}
+.blogger__main-image--1.data-v-65af556c {
+  max-width: 80%;
+  max-height: 150px;
+}
+.bottom-emoji.data-v-65af556c {
+  position: relative;
+}
+.bottom-emoji .emojis.data-v-65af556c {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+.bottom-emoji .emojis .emoji.data-v-65af556c {
+  width: 25%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.bottom-emoji .emojis .bigemoji.data-v-65af556c {
+  height: 20vw;
+  width: 20vw;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.emoji-tab.data-v-65af556c {
+  box-sizing: border-box;
+}
+.bottom-image.data-v-65af556c {
+  box-sizing: border-box;
+}
+.bottom-image .images.data-v-65af556c {
+  box-sizing: border-box;
+  display: flex;
+  padding: 0 12px;
+  margin-top: 16px;
+}
+.bottom-image .images.data-v-65af556c:last-child {
+  margin-bottom: 16px;
+}
+.bottom-image .images .block.data-v-65af556c {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 12px;
+}
+.bottom-image .images .block .name.data-v-65af556c {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #000000;
+  text-align: center;
+}
+.bottom-image .images .block .image.data-v-65af556c {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: white;
+  padding: 3vw;
+}
+.bottom-image .images .block .icon.data-v-65af556c {
+  width: 26px;
+  height: 26px;
+}
+.tn-shadow-blurddd.data-v-65af556c {
+  margin: 10px;
+  padding: 10px;
+  background-color: #505050;
+}
+.swiper.data-v-65af556c {
+  width: 100%;
+  height: 410rpx;
+  padding-top: 20rpx;
+}
+.swiper-item.data-v-65af556c {
+  display: flex;
+  flex-wrap: wrap;
+}
+.swiper-item-view.data-v-65af556c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 23%;
+  margin-top: 5px;
+  height: 180rpx;
+}
+.swiper-imgdd.data-v-65af556c {
+  width: 80rpx;
+  height: 80rpx;
+}
+/* 轮播圆点样式修改 */
+.dots.data-v-65af556c {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+  display: flex;
+  justify-content: center;
+}
+.dots .dot.data-v-65af556c {
+  margin: 0 5rpx;
+  width: 40rpx;
+  height: 6rpx;
+  border-radius: 20%;
+  transition: all 0.6s;
+}
+.dots .dot.active.data-v-65af556c {
+  width: 40rpx;
+}
+.input-box.data-v-65af556c {
+  text-align: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100rpx;
+  padding: 0 1%;
+  justify-content: space-between;
+  display: flex;
+  position: fixed;
+  z-index: 120;
+  bottom: -2rpx;
+}
+.input-box .voice.data-v-65af556c {
+  width: 140px;
+  padding: 10px;
+}
+.input-box .send.data-v-65af556c {
+  flex-shrink: 0;
+  width: 40%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.input-box .send .btn_dd.data-v-65af556c {
+  font-weight: bold;
+  border-radius: 2500px !important;
+  width: 100%;
+  height: 56rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffff00;
+  color: #000000;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+}
+.input-box .send .btn.data-v-65af556c {
+  font-weight: bold;
+  border-radius: 2500px !important;
+  width: 100%;
+  height: 56rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9f9f9f;
+  color: #000000;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+}
+.dk-ban.data-v-65af556c {
+  margin: 5px;
+  width: 130px;
+  border-radius: 0.3125rem;
+  background-color: #636363;
+}
+.dk-bantext.data-v-65af556c {
+  font-size: 12px;
+  background: rgba(216, 216, 216, 0.08);
+  border-right: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  cursor: pointer;
+  padding: 0px 10px;
+}
+.tn-shadow-blurdddssd.data-v-65af556c {
+  background-color: #ffff00;
+  color: #000000;
+}
+

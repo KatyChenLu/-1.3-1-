@@ -1,0 +1,16 @@
+{
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "消息",
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-empty": "/tuniao-ui/components/tn-empty/tn-empty",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-swipe-action": "/tuniao-ui/components/tn-swipe-action/tn-swipe-action",
+    "tn-swipe-action-item": "/tuniao-ui/components/tn-swipe-action-item/tn-swipe-action-item",
+    "tn-avatar": "/tuniao-ui/components/tn-avatar/tn-avatar",
+    "tn-tag": "/tuniao-ui/components/tn-tag/tn-tag",
+    "tn-popup": "/tuniao-ui/components/tn-popup/tn-popup",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body"
+  }
+}

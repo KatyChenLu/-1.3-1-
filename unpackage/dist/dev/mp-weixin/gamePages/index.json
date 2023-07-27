@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "陪玩",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "quan-news": "/components/quan-news/quan-news",
+    "tn-popup": "/tuniao-ui/components/tn-popup/tn-popup",
+    "tn-tag": "/tuniao-ui/components/tn-tag/tn-tag",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal",
+    "tn-number-box": "/tuniao-ui/components/tn-number-box/tn-number-box",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body",
+    "nav-index-button": "/libs/components/nav-index-button"
+  }
+}

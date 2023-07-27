@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "全局搜索",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-tabs-swiper": "/tuniao-ui/components/tn-tabs-swiper/tn-tabs-swiper",
+    "quan-list": "/components/quan-list/quan-list",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body"
+  }
+}

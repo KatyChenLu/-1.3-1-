@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+/* 底部分享 */
+.sharebtn .uni-share {
+  margin: 30rpx;
+  border-radius: 30rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+.sharebtn .uni-share .uni-share-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 15px 50rpx;
+}
+.sharebtn .uni-share .uni-share-content .uni-share-content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40rpx;
+}
+.sharebtn .uni-share .uni-share-content .uni-share-content-box:nth-last-child(1) {
+  margin-right: 0;
+}
+.sharebtn .uni-share .uni-share-content .uni-share-content-box .uni-share-content-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90rpx;
+  height: 90rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+.sharebtn .uni-share .uni-share-content .uni-share-content-box .uni-share-content-image .content-image {
+  width: 90rpx;
+  height: 90rpx;
+}
+.sharebtn .uni-share .uni-share-content .uni-share-content-box:nth-last-child(1) .uni-share-content-image .content-image {
+  width: 50rpx !important;
+  height: 50rpx !important;
+}
+.sharebtn .uni-share .uni-share-content .uni-share-content-box .uni-share-content-text {
+  font-size: 26rpx;
+  color: #333;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+

@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "设置",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-list-cell": "/tuniao-ui/components/tn-list-cell/tn-list-cell",
+    "dk-shezhi": "/components/dk-shezhi/dk-shezhi",
+    "tn-form": "/tuniao-ui/components/tn-form/tn-form",
+    "tn-form-item": "/tuniao-ui/components/tn-form-item/tn-form-item",
+    "tn-input": "/tuniao-ui/components/tn-input/tn-input",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-switch": "/tuniao-ui/components/tn-switch/tn-switch",
+    "get-tel": "/components/loginFn/get-tel"
+  }
+}

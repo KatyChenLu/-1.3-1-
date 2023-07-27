@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "语音匹配",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-avatar": "/tuniao-ui/components/tn-avatar/tn-avatar",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal",
+    "tn-loading": "/tuniao-ui/components/tn-loading/tn-loading",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-popup": "/tuniao-ui/components/tn-popup/tn-popup",
+    "nav-index-button": "/libs/components/nav-index-button"
+  }
+}

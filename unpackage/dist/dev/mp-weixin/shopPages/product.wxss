@@ -1,0 +1,351 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.tn-tabbar-height.data-v-1ebacfb0 {
+  min-height: 120rpx;
+  height: calc(140rpx + env(safe-area-inset-bottom) / 2);
+}
+/* 用户头像 start */
+.logo-image.data-v-1ebacfb0 {
+  width: 110rpx;
+  height: 110rpx;
+  position: relative;
+}
+.logo-pic.data-v-1ebacfb0 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  box-shadow: 0rpx 0rpx 80rpx 0rpx rgba(0, 0, 0, 0.15);
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+/* 胶囊*/
+.tn-custom-nav-bar__back.data-v-1ebacfb0 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 1000rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.5);
+  color: #FFFFFF;
+  font-size: 18px;
+}
+.tn-custom-nav-bar__back .icon.data-v-1ebacfb0 {
+  display: block;
+  flex: 1;
+  margin: auto;
+  text-align: center;
+}
+.tn-custom-nav-bar__back.data-v-1ebacfb0:before {
+  content: " ";
+  width: 1rpx;
+  height: 110%;
+  position: absolute;
+  top: 22.5%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  opacity: 0.7;
+  background-color: #FFFFFF;
+}
+.tn-shadow-blurddd.data-v-1ebacfb0 {
+  border: 2px solid black;
+}
+/* 底部tabbar start*/
+.footerfixed.data-v-1ebacfb0 {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 999;
+  background-color: #FFFFFF;
+  box-shadow: 0rpx 0rpx 30rpx 0rpx rgba(0, 0, 0, 0.07);
+}
+/* 毛玻璃*/
+.dd-glass.data-v-1ebacfb0 {
+  width: 100%;
+  backdrop-filter: blur(20rpx);
+  -webkit-backdrop-filter: blur(20rpx);
+}
+.tn-goods-nav.data-v-1ebacfb0 {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 88rpx;
+  width: 100%;
+  box-sizing: content-box;
+}
+.tn-goods-nav--shadow.data-v-1ebacfb0 {
+  box-shadow: 0rpx -10rpx 30rpx 0rpx rgba(0, 0, 0, 0.05);
+}
+.tn-goods-nav--shadow.data-v-1ebacfb0::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: transparent;
+  z-index: -1;
+}
+.tn-goods-nav--fixed.data-v-1ebacfb0 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.tn-goods-nav .options.data-v-1ebacfb0 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  color: #AAAAAA;
+}
+.tn-goods-nav .options__item.data-v-1ebacfb0 {
+  padding: 0 26rpx;
+}
+.tn-goods-nav .options__item--avatar.data-v-1ebacfb0 {
+  padding: 0rpx 0rpx 0rpx 26rpx !important;
+}
+.tn-goods-nav .options__item__icon.data-v-1ebacfb0 {
+  position: relative;
+  font-size: 36rpx;
+  margin-bottom: 6rpx;
+}
+.tn-goods-nav .options__item__text.data-v-1ebacfb0 {
+  font-size: 22rpx;
+}
+.tn-goods-nav .buttons.data-v-1ebacfb0 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+.tn-goods-nav .buttons__item.data-v-1ebacfb0 {
+  flex: 1;
+  padding: 0 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tn-goods-nav .buttons__item--rect.data-v-1ebacfb0 {
+  height: 100%;
+}
+.tn-goods-nav .buttons__item--padding-rect.data-v-1ebacfb0 {
+  height: 80%;
+}
+.tn-goods-nav .buttons__item--round.data-v-1ebacfb0 {
+  height: 75%;
+}
+.tn-goods-nav .buttons__item--round.data-v-1ebacfb0:first-child {
+  border-top-left-radius: 100rpx;
+  border-bottom-left-radius: 100rpx;
+}
+.tn-goods-nav .buttons__item--round.data-v-1ebacfb0:last-child {
+  border-top-right-radius: 100rpx;
+  border-bottom-right-radius: 100rpx;
+}
+.tn-goods-nav .buttons__item__text.data-v-1ebacfb0 {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 30rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* 轮播视觉差 start */
+.card-swiper.data-v-1ebacfb0 {
+  height: 750rpx !important;
+}
+.card-swiper swiper-item.data-v-1ebacfb0 {
+  width: 750rpx !important;
+  left: 0rpx;
+  box-sizing: border-box;
+  overflow: initial;
+}
+.card-swiper swiper-item .swiper-item.data-v-1ebacfb0 {
+  width: 100%;
+  display: block;
+  height: 100%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: all 0.2s ease-in 0s;
+  overflow: hidden;
+}
+.card-swiper swiper-item.cur .swiper-item.data-v-1ebacfb0 {
+  -webkit-transform: none;
+          transform: none;
+  transition: all 0.2s ease-in 0s;
+}
+.image-banner.data-v-1ebacfb0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-banner image.data-v-1ebacfb0 {
+  width: 100%;
+  height: 100%;
+}
+/* 轮播指示点 start*/
+.indication.data-v-1ebacfb0 {
+  z-index: 9999;
+  width: 100%;
+  height: 36rpx;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.spot.data-v-1ebacfb0 {
+  background-color: #FFFFFF;
+  opacity: 0.6;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 20rpx;
+  top: -60rpx;
+  margin: 0 8rpx !important;
+  position: relative;
+}
+.spot.active.data-v-1ebacfb0 {
+  opacity: 1;
+  width: 30rpx;
+  background-color: #FFFFFF;
+}
+/* 间隔线 start*/
+.tn-strip-bottom.data-v-1ebacfb0 {
+  width: 100%;
+  border-bottom: 20rpx solid rgba(241, 241, 241, 0.8);
+}
+/* 间隔线 end*/
+/* 标题 start */
+.nav_title.data-v-1ebacfb0 {
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.nav_title--wrap.data-v-1ebacfb0 {
+  position: relative;
+  display: flex;
+  height: 120rpx;
+  font-size: 46rpx;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-image: url(https://tnuiimage.tnkjapp.com/title_bg/title44.png);
+  background-size: cover;
+}
+/* 标题 end */
+/* 底部tabbar start*/
+.footerfixed.data-v-1ebacfb0 {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 999;
+  background-color: #FFFFFF;
+  box-shadow: 0rpx 0rpx 30rpx 0rpx rgba(0, 0, 0, 0.07);
+}
+/* 标签内容 start*/
+.tn-tag-content__item.data-v-1ebacfb0 {
+  display: inline-block;
+  line-height: 45rpx;
+  padding: 10rpx 30rpx;
+  margin: 20rpx 20rpx 5rpx 0rpx;
+}
+.tn-tag-content__item--prefix.data-v-1ebacfb0 {
+  padding-right: 10rpx;
+}
+/* 标签内容 end*/
+/* 内容图 start */
+.content-backgroup.data-v-1ebacfb0 {
+  z-index: -1;
+}
+.content-backgroup .backgroud-image.data-v-1ebacfb0 {
+  border-radius: 15rpx;
+  width: 100%;
+}
+/* 内容图 end */
+/* 商家商品 start*/
+.tn-blogger-content__wrap.data-v-1ebacfb0 {
+  box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.07);
+  border-radius: 20rpx;
+  margin: 15rpx;
+}
+.tn-blogger-content__info__btn.data-v-1ebacfb0 {
+  margin-right: -12rpx;
+  opacity: 0.5;
+}
+.tn-blogger-content__label__item.data-v-1ebacfb0 {
+  line-height: 45rpx;
+  padding: 0 10rpx;
+  margin: 5rpx 18rpx 0 0;
+}
+.tn-blogger-content__label__item--prefix.data-v-1ebacfb0 {
+  color: #E83A30;
+  padding-right: 10rpx;
+}
+.tn-blogger-content__label__desc.data-v-1ebacfb0 {
+  line-height: 35rpx;
+}
+.tn-blogger-content__main-image.data-v-1ebacfb0 {
+  border-radius: 16rpx 16rpx 0 0;
+}
+.tn-blogger-content__main-image--1.data-v-1ebacfb0 {
+  max-width: 690rpx;
+  min-width: 690rpx;
+  max-height: 400rpx;
+  min-height: 400rpx;
+}
+.tn-blogger-content__main-image--2.data-v-1ebacfb0 {
+  max-width: 260rpx;
+  max-height: 260rpx;
+}
+.tn-blogger-content__main-image--3.data-v-1ebacfb0 {
+  height: 212rpx;
+  width: 100%;
+}
+.tn-blogger-content__count-icon.data-v-1ebacfb0 {
+  font-size: 24rpx;
+  padding-right: 5rpx;
+}
+.image-book.data-v-1ebacfb0 {
+  padding: 150rpx 0rpx;
+  font-size: 16rpx;
+  font-weight: 300;
+  position: relative;
+}
+.image-picbook.data-v-1ebacfb0 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  border-radius: 15rpx 15rpx 0 0;
+}
+/* 毛玻璃*/
+.dd-glass.data-v-1ebacfb0 {
+  width: 100%;
+  backdrop-filter: blur(20rpx);
+  -webkit-backdrop-filter: blur(20rpx);
+}
+.clamp-text-2.data-v-1ebacfb0 {
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+

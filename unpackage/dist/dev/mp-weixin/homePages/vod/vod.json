@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "share-btn": "/components/share-btn/share-btn",
+    "tn-popup": "/tuniao-ui/components/tn-popup/tn-popup",
+    "tn-empty": "/tuniao-ui/components/tn-empty/tn-empty",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal"
+  }
+}

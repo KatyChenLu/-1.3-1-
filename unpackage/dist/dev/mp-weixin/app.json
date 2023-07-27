@@ -1,0 +1,179 @@
+{
+  "pages": [
+    "pages/index",
+    "pages/diaoyou",
+    "pages/liaotian",
+    "pages/mine/mine",
+    "pages/activity/activity",
+    "pages/circle/circle",
+    "pages/preferred/preferred",
+    "uni_modules/rt-uni-update/components/rt-uni-update/rt-uni-update",
+    "pages/login/login",
+    "pages/login/tags",
+    "pages/url"
+  ],
+  "subPackages": [
+    {
+      "root": "homePages",
+      "pages": [
+        "vod/vod",
+        "planet",
+        "paihang",
+        "quanclass",
+        "party",
+        "about",
+        "music",
+        "huodng",
+        "search"
+      ]
+    },
+    {
+      "root": "shopPages",
+      "pages": [
+        "index",
+        "order",
+        "address",
+        "address_add",
+        "jiesuan",
+        "classify",
+        "product",
+        "list",
+        "order_show"
+      ]
+    },
+    {
+      "root": "gamePages",
+      "pages": [
+        "team_shouru",
+        "team_money_log",
+        "team_index",
+        "team_user",
+        "shenqing",
+        "shenqing_add",
+        "index",
+        "my_goods",
+        "my_order",
+        "my_order_fuwu",
+        "order_show"
+      ]
+    },
+    {
+      "root": "circlePages",
+      "pages": [
+        "gift_user",
+        "reservelist",
+        "group_fans",
+        "keep_user",
+        "group",
+        "tags_list",
+        "group_list",
+        "edit_quan",
+        "fans",
+        "blogger_other",
+        "blogger_other_user",
+        "details",
+        "reserve",
+        "medal",
+        "edit",
+        "create",
+        "build"
+      ]
+    },
+    {
+      "root": "friendPages",
+      "pages": [
+        "index",
+        "huhuan",
+        "reg",
+        "call",
+        "pipei"
+      ]
+    },
+    {
+      "root": "minePages",
+      "pages": [
+        "money_log_shouru",
+        "ai/pipei",
+        "share",
+        "shouru_ti",
+        "shouru",
+        "daojubag",
+        "money_log",
+        "regone",
+        "set",
+        "daoju",
+        "qiandao",
+        "vip",
+        "edit",
+        "gift/chongzhi",
+        "my_group",
+        "my_msg",
+        "my_star",
+        "chat/room_reg",
+        "chat/talkkefu",
+        "chat/talk",
+        "chat/room",
+        "chat/room_text",
+        "chat/touser"
+      ]
+    }
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#000000",
+    "backgroundColor": "#000000"
+  },
+  "tabBar": {
+    "fontSize": "14px",
+    "color": "#8b8b8b",
+    "selectedColor": "#000000",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index",
+        "iconPath": "static/tabbar/home_tn.png",
+        "selectedIconPath": "static/tabbar/home_tn.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/circle/circle",
+        "iconPath": "static/tabbar/circle_tn.png",
+        "selectedIconPath": "static/tabbar/circle_tn.png",
+        "text": "聊天室"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "iconPath": "static/tabbar/add.png",
+        "selectedIconPath": "static/tabbar/add.png",
+        "text": "动态"
+      },
+      {
+        "pagePath": "pages/preferred/preferred",
+        "iconPath": "static/tabbar/preferred_tn.png",
+        "selectedIconPath": "static/tabbar/preferred_tn.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "static/tabbar/mine_tn.png",
+        "selectedIconPath": "static/tabbar/mine_tn.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "requiredPrivateInfos": [
+    "chooseLocation",
+    "getFuzzyLocation"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "推荐附近的人"
+    }
+  },
+  "usingComponents": {
+    "login-fn": "/components/loginFn/index"
+  }
+}

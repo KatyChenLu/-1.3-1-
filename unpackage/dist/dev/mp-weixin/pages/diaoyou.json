@@ -1,0 +1,13 @@
+{
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "线下",
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "add-tip": "/components/add-tip/add-tip",
+    "tn-tabs": "/tuniao-ui/components/tn-tabs/tn-tabs",
+    "quan-news": "/components/quan-news/quan-news",
+    "tn-landscape": "/tuniao-ui/components/tn-landscape/tn-landscape",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body"
+  }
+}

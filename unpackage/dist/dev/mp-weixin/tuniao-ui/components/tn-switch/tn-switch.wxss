@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.tn-switch.data-v-b279ce68 {
+  display: inline-block;
+  position: relative;
+  box-sizing: initial;
+  width: 2em;
+  height: 1em;
+  font-size: 50rpx;
+  background-color: #AAAAAA;
+  transition: background-color 0.3s;
+}
+.tn-switch__node.data-v-b279ce68 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #FFFFFF;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  box-shadow: 0 6rpx 2rpx 0 rgba(0, 0, 0, 0.05), 0 4rpx 4rpx 0 rgba(0, 0, 0, 0.1), 0 6rpx 6rpx 0 rgba(0, 0, 0, 0.05);
+  transition: -webkit-transform 0.3s cubic-bezier(0.3, 1.05, 0.4, 1.05);
+  transition: transform 0.3s cubic-bezier(0.3, 1.05, 0.4, 1.05);
+  transition: transform 0.3s cubic-bezier(0.3, 1.05, 0.4, 1.05), -webkit-transform 0.3s cubic-bezier(0.3, 1.05, 0.4, 1.05);
+  -webkit-transition: transform 0.3s cubic-bezier(0.3, 1.05, 0.4, 1.05);
+}
+.tn-switch__node__loading.data-v-b279ce68 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.tn-switch__node--circle.data-v-b279ce68 {
+  border-radius: 100%;
+}
+.tn-switch__node--square.data-v-b279ce68 {
+  border-radius: 15%;
+}
+.tn-switch__icon.data-v-b279ce68 {
+  color: #FFFFFF;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  height: 100%;
+  vertical-align: middle;
+  position: absolute;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.tn-switch__icon--left.data-v-b279ce68 {
+  top: 0;
+  left: 10rpx;
+}
+.tn-switch__icon--right.data-v-b279ce68 {
+  top: 0;
+  right: 10rpx;
+}
+.tn-switch__icon--show.data-v-b279ce68 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.tn-switch--circle.data-v-b279ce68 {
+  border-radius: 1em;
+}
+.tn-switch--square.data-v-b279ce68 {
+  border-radius: 0.1em;
+}
+.tn-switch--on.data-v-b279ce68 {
+  background-color: #01BEFF;
+}
+.tn-switch--on .tn-switch__node.data-v-b279ce68 {
+  -webkit-transform: translateX(100%) scale(0.9);
+          transform: translateX(100%) scale(0.9);
+}
+.tn-switch--disabled.data-v-b279ce68 {
+  opacity: 0.4;
+}
+

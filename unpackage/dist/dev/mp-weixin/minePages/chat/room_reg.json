@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "申请房间",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal"
+  }
+}

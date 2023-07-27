@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "网页",
+  "disableScroll": true,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar"
+  }
+}

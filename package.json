@@ -1,0 +1,16 @@
+{
+    "id": "zs-poster",
+    "displayName": "海报生成",
+    "version": "1.0.0",
+    "description": "一个自动生成海报的页面",
+    "keywords": [
+        "Canvas",
+        "海报"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    }
+}

@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.tantan-slide-box-item-bg.data-v-4f02b7f4 {
+  height: 160rpx;
+  background-image: linear-gradient(to bottom, transparent, rgba(56, 56, 56, 0.7));
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  bottom: 6px;
+  margin: auto;
+  border-radius: 0 0 20rpx 20rpx;
+  z-index: 1;
+}
+.tn-blogger-content__wrap.data-v-4f02b7f4 {
+  box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.07);
+  border-radius: 20rpx;
+  margin: 15rpx;
+}
+.tn-blogger-content__info__btn.data-v-4f02b7f4 {
+  margin-right: -12rpx;
+  opacity: 0.5;
+}
+.tn-blogger-content__label__item.data-v-4f02b7f4 {
+  line-height: 45rpx;
+  padding: 0 10rpx;
+  margin: 5rpx 18rpx 0 0;
+}
+.tn-blogger-content__label__item--prefix.data-v-4f02b7f4 {
+  color: #E83A30;
+  padding-right: 10rpx;
+}
+.tn-blogger-content__label__desc.data-v-4f02b7f4 {
+  line-height: 35rpx;
+}
+.tn-blogger-content__main-image.data-v-4f02b7f4 {
+  border-radius: 16rpx 16rpx 0 0;
+}
+.tn-blogger-content__main-image--1.data-v-4f02b7f4 {
+  max-width: 690rpx;
+  min-width: 690rpx;
+  max-height: 400rpx;
+  min-height: 400rpx;
+}
+.tn-blogger-content__main-image--2.data-v-4f02b7f4 {
+  max-width: 260rpx;
+  max-height: 260rpx;
+}
+.tn-blogger-content__main-image--3.data-v-4f02b7f4 {
+  height: 212rpx;
+  width: 100%;
+}
+.tn-blogger-content__count-icon.data-v-4f02b7f4 {
+  font-size: 24rpx;
+  padding-right: 5rpx;
+}
+.image-book.data-v-4f02b7f4 {
+  padding: 10rpx 0rpx;
+  font-size: 16rpx;
+  font-weight: 300;
+  position: relative;
+}
+.image-picbook.data-v-4f02b7f4 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  border-radius: 15rpx 15rpx 0 0;
+}
+

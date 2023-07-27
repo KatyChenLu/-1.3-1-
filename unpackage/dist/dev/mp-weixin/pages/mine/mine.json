@@ -1,0 +1,15 @@
+{
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-avatar": "/tuniao-ui/components/tn-avatar/tn-avatar",
+    "tn-tag": "/tuniao-ui/components/tn-tag/tn-tag",
+    "tn-line-progress": "/tuniao-ui/components/tn-line-progress/tn-line-progress",
+    "tn-list-cell": "/tuniao-ui/components/tn-list-cell/tn-list-cell",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body"
+  }
+}

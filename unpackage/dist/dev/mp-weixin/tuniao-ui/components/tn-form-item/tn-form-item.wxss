@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.tn-form-item.data-v-3a5efd9c {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  color: #000000;
+  box-sizing: border-box;
+  line-height: 70rpx;
+}
+.tn-form-item__border-bottom--error.data-v-3a5efd9c:after {
+  border-color: #E83A30;
+}
+.tn-form-item__body.data-v-3a5efd9c {
+  display: flex;
+  flex-direction: row;
+}
+.tn-form-item--left.data-v-3a5efd9c {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tn-form-item--left__content.data-v-3a5efd9c {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  padding-right: 18rpx;
+  flex: 1;
+}
+.tn-form-item--left__content--required.data-v-3a5efd9c {
+  position: relative;
+  right: 0;
+  vertical-align: middle;
+  color: #E83A30;
+}
+.tn-form-item--left__content__icon.data-v-3a5efd9c {
+  color: #AAAAAA;
+  margin-right: 8rpx;
+}
+.tn-form-item--right.data-v-3a5efd9c {
+  flex: 1;
+}
+.tn-form-item--right__content.data-v-3a5efd9c {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+.tn-form-item--right__content__slot.data-v-3a5efd9c {
+  flex: 1;
+}
+.tn-form-item--right__content__icon.data-v-3a5efd9c {
+  margin-left: 10rpx;
+  color: #AAAAAA;
+  font-size: 30rpx;
+}
+.tn-form-item__message.data-v-3a5efd9c {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #E83A30;
+  margin-top: 12rpx;
+}
+

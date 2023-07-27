@@ -1,0 +1,18 @@
+{
+  "navigationBarTitleText": "聊天",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-action-sheet": "/tuniao-ui/components/tn-action-sheet/tn-action-sheet",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-loading": "/tuniao-ui/components/tn-loading/tn-loading",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal",
+    "tn-popup": "/tuniao-ui/components/tn-popup/tn-popup",
+    "tn-empty": "/tuniao-ui/components/tn-empty/tn-empty",
+    "tn-list-cell": "/tuniao-ui/components/tn-list-cell/tn-list-cell",
+    "tn-tabs": "/tuniao-ui/components/tn-tabs/tn-tabs",
+    "gift-list": "/components/gift-list/gift-list",
+    "dk-tanchuang": "/components/dk-tanchuang/dk-tanchuang",
+    "l-svga": "/uni_modules/lime-svga/components/l-svga/l-svga"
+  }
+}

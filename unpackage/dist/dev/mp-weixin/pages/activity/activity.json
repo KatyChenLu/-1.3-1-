@@ -1,0 +1,11 @@
+{
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "广场",
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-tabs-swiper": "/tuniao-ui/components/tn-tabs-swiper/tn-tabs-swiper",
+    "quan-list": "/components/quan-list/quan-list",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body"
+  }
+}

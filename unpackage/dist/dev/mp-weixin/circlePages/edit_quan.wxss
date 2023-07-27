@@ -1,0 +1,430 @@
+page {
+	height: 100%;
+	box-sizing: border-box; /* 避免设置padding出现双滚动条的问题 */
+}
+.mescroll-uni-warp{
+	height: 100%;
+}
+.mescroll-uni {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-height: 200rpx;
+	overflow-y: auto;
+	box-sizing: border-box; /* 避免设置padding出现双滚动条的问题 */
+}
+
+/* 定位的方式固定高度 */
+.mescroll-uni-fixed{
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: auto; /* 使right生效 */
+	height: auto; /* 使bottom生效 */
+}
+
+/* 下拉刷新区域 */
+.mescroll-downwarp {
+	position: absolute;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+/* 下拉刷新--内容区,定位于区域底部 */
+.mescroll-downwarp .downwarp-content {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	min-height: 60rpx;
+	padding: 20rpx 0;
+	text-align: center;
+}
+
+/* 下拉刷新--提示文本 */
+.mescroll-downwarp .downwarp-tip {
+	display: inline-block;
+	font-size: 28rpx;
+	vertical-align: middle;
+	margin-left: 16rpx;
+	/* color: gray; 已在style设置color,此处删去*/
+}
+
+/* 下拉刷新--旋转进度条 */
+.mescroll-downwarp .downwarp-progress {
+	display: inline-block;
+	width: 32rpx;
+	height: 32rpx;
+	border-radius: 50%;
+	border: 2rpx solid gray;
+	border-bottom-color: transparent !important; /*已在style设置border-color,此处需加 !important*/
+	vertical-align: middle;
+}
+
+/* 旋转动画 */
+.mescroll-downwarp .mescroll-rotate {
+	-webkit-animation: mescrollDownRotate 0.6s linear infinite;
+	        animation: mescrollDownRotate 0.6s linear infinite;
+}
+@-webkit-keyframes mescrollDownRotate {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+@keyframes mescrollDownRotate {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+
+/* 上拉加载区域 */
+.mescroll-upwarp {
+	min-height: 60rpx;
+	padding: 30rpx 0;
+	text-align: center;
+	clear: both;
+}
+
+/*提示文本 */
+.mescroll-upwarp .upwarp-tip{
+	display: inline-block;
+	font-size: 28rpx;
+	vertical-align: middle;
+	/* color: gray; 已在style设置color,此处删去*/
+}
+.mescroll-upwarp .upwarp-nodata {
+	display: inline-block;
+	font-size: 28rpx;
+	vertical-align: middle;
+	/* color: gray; 已在style设置color,此处删去*/
+}
+.mescroll-upwarp .upwarp-tip {
+	margin-left: 16rpx;
+}
+
+/*旋转进度条 */
+.mescroll-upwarp .upwarp-progress {
+	display: inline-block;
+	width: 32rpx;
+	height: 32rpx;
+	border-radius: 50%;
+	border: 2rpx solid gray;
+	border-bottom-color: transparent !important; /*已在style设置border-color,此处需加 !important*/
+	vertical-align: middle;
+}
+
+/* 旋转动画 */
+.mescroll-upwarp .mescroll-rotate {
+	-webkit-animation: mescrollUpRotate 0.6s linear infinite;
+	        animation: mescrollUpRotate 0.6s linear infinite;
+}
+@-webkit-keyframes mescrollUpRotate {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+@keyframes mescrollUpRotate {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+/* 胶囊*/
+.tn-custom-nav-bar__back.data-v-301d2ccd {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 1000rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.5);
+  color: #FFFFFF;
+  font-size: 18px;
+}
+.tn-custom-nav-bar__back .icon.data-v-301d2ccd {
+  display: block;
+  flex: 1;
+  margin: auto;
+  text-align: center;
+}
+.tn-custom-nav-bar__back.data-v-301d2ccd:before {
+  content: " ";
+  width: 1rpx;
+  height: 110%;
+  position: absolute;
+  top: 22.5%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  opacity: 0.7;
+  background-color: #FFFFFF;
+}
+/* 轮播 start*/
+.card-swiper.data-v-301d2ccd {
+  height: 570rpx !important;
+}
+.card-swiper swiper-item.data-v-301d2ccd {
+  width: 450rpx !important;
+  left: 30rpx;
+  box-sizing: border-box;
+  padding: 0rpx 0rpx 80rpx 0rpx;
+  overflow: initial;
+}
+.card-swiper swiper-item .swiper-item.data-v-301d2ccd {
+  width: 100%;
+  display: block;
+  height: 100%;
+  border-radius: 10rpx;
+  -webkit-transform: scale(0.7) translate(0rpx, -104rpx);
+          transform: scale(0.7) translate(0rpx, -104rpx);
+  transition: all 0.3s ease-in 0s;
+}
+.card-swiper swiper-item.cur .swiper-item.data-v-301d2ccd {
+  -webkit-transform: none;
+          transform: none;
+  transition: all 0.3s ease-in 0s;
+}
+.card-swiper swiper-item .swiper-item-text.data-v-301d2ccd {
+  margin-top: -100rpx;
+  width: 100%;
+  display: block;
+  height: 50%;
+  border-radius: 10rpx;
+  -webkit-transform: translate(20rpx, -30rpx) scale(0.7, 0.7);
+          transform: translate(20rpx, -30rpx) scale(0.7, 0.7);
+  transition: all 0.4s ease 0s;
+  overflow: hidden;
+  color: #000000;
+  height: 140rpx;
+}
+.card-swiper swiper-item.cur .swiper-item-text.data-v-301d2ccd {
+  margin-top: -150rpx;
+  padding-left: 30rpx;
+  width: 500rpx !important;
+  -webkit-transform: translate(-25rpx, 20rpx) scale(0.9, 0.9);
+          transform: translate(-25rpx, 20rpx) scale(0.9, 0.9);
+  transition: all 0.4s ease 0s;
+  color: #FFFFFF;
+  text-shadow: 0rpx 10rpx 20rpx rgba(0, 0, 0, 0.1);
+  height: 137rpx;
+}
+.image-banner.data-v-301d2ccd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-banner image.data-v-301d2ccd {
+  width: 100%;
+  height: 100%;
+}
+/* 轮播指示点 start*/
+.indication.data-v-301d2ccd {
+  z-index: 9999;
+  width: 100%;
+  height: 36rpx;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.spot.data-v-301d2ccd {
+  background-color: #000;
+  opacity: 0.4;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 20rpx;
+  margin: 0 8rpx !important;
+  right: -270rpx;
+  top: -100rpx;
+  position: relative;
+}
+.spot.active.data-v-301d2ccd {
+  opacity: 1;
+  width: 10rpx;
+  background-color: #000;
+}
+/* 计划内容 start*/
+.tn-plan-content__item.data-v-301d2ccd {
+  display: inline-block;
+  line-height: 45rpx;
+  padding: 10rpx 30rpx;
+  margin: 20rpx 20rpx 5rpx 0rpx;
+}
+.tn-plan-content__item--prefix.data-v-301d2ccd {
+  padding-right: 10rpx;
+}
+.tn-plan-content2__item.data-v-301d2ccd {
+  line-height: 45rpx;
+  padding: 15rpx 30rpx;
+  margin: 30rpx 0rpx 10rpx 0rpx;
+}
+.tn-plan-content2__item--prefix.data-v-301d2ccd {
+  padding-right: 10rpx;
+}
+/* 计划内容 end*/
+/* 资讯主图 start*/
+.image-article.data-v-301d2ccd {
+  border-radius: 8rpx;
+  border: 1rpx solid #F8F7F8;
+  width: 200rpx;
+  height: 200rpx;
+  position: relative;
+}
+.image-pic.data-v-301d2ccd {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  border-radius: 10rpx;
+}
+.article-shadow.data-v-301d2ccd {
+  border-radius: 15rpx;
+  box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.07);
+}
+/* 文字截取*/
+.clamp-text-1.data-v-301d2ccd {
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.clamp-text-2.data-v-301d2ccd {
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* 标签内容 start*/
+.tn-tag-content__item.data-v-301d2ccd {
+  display: inline-block;
+  line-height: 35rpx;
+  padding: 5rpx 25rpx;
+}
+.tn-tag-content__item--prefix.data-v-301d2ccd {
+  padding-right: 10rpx;
+}
+/* 组件导航列表 start*/
+.nav-list.data-v-301d2ccd {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0rpx 12rpx 0rpx;
+  justify-content: space-between;
+  /* 列表元素 start */
+  /* 列表元素 end */
+}
+.nav-list .nav-list-item.data-v-301d2ccd {
+  padding: 95rpx 30rpx 5rpx 30rpx;
+  border-radius: 12rpx;
+  width: 45%;
+  margin: 0 18rpx 40rpx;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 99;
+  /* 元素标题 start */
+  /* 元素标题 end */
+  /* 元素图标 start */
+  /* 元素图标 end */
+}
+.nav-list .nav-list-item .nav-link.data-v-301d2ccd {
+  font-size: 32rpx;
+  text-transform: capitalize;
+  padding: 0 0 10rpx 0;
+  position: relative;
+}
+.nav-list .nav-list-item .nav-link .title.data-v-301d2ccd {
+  color: #FFFFFF;
+  margin-top: 80rpx;
+  text-align: center;
+}
+.nav-list .nav-list-item .nav-link .join.data-v-301d2ccd {
+  color: #FFFFFF;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+  padding: 10rpx;
+  text-align: center;
+}
+.nav-list .nav-list-item .icon.data-v-301d2ccd {
+  font-variant: small-caps;
+  position: absolute;
+  top: 60rpx;
+  right: 50rpx;
+  left: 37%;
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  font-size: 50rpx;
+  color: #FFFFFF;
+  white-space: nowrap;
+  opacity: 0.9;
+  background-color: rgba(0, 0, 0, 0.05);
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 5000rpx;
+}
+.nav-list .nav-list-item .icon.data-v-301d2ccd::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  border-radius: inherit;
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  background-size: 100% 100%;
+  background-image: url(https://tnuiimage.tnkjapp.com/cool_bg_image/icon_bg2.png);
+}
+/* 组件导航列表 end*/
+

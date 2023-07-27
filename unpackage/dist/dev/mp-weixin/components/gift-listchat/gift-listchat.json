@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-avatar": "/tuniao-ui/components/tn-avatar/tn-avatar",
+    "tn-tabs": "/tuniao-ui/components/tn-tabs/tn-tabs",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal"
+  }
+}

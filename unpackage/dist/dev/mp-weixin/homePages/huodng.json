@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "活动列表",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-avatar-group": "/tuniao-ui/components/tn-avatar-group/tn-avatar-group",
+    "tn-landscape": "/tuniao-ui/components/tn-landscape/tn-landscape",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body"
+  }
+}

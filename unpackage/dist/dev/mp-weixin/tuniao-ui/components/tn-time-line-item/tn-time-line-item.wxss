@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.tn-time-line-item.data-v-6d785e08 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  margin-bottom: 32rpx;
+}
+.tn-time-line-item__node.data-v-6d785e08 {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 12rpx;
+  left: -40rpx;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  -webkit-transform-origin: 0;
+          transform-origin: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 1;
+  background-color: transparent;
+}
+.tn-time-line-item__node--dot.data-v-6d785e08 {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 100rpx;
+  background-color: #AAAAAA;
+}
+

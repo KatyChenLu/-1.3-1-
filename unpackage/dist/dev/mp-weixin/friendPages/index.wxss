@@ -1,0 +1,148 @@
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.template-wave.data-v-17c8f92b {
+  position: relative;
+  background-color: #000000;
+  width: 100vw;
+  height: 100vh;
+}
+/* 组件导航列表 start*/
+.nav-list.data-v-17c8f92b {
+  display: flex;
+  padding: 0rpx 12rpx 0rpx;
+  justify-content: space-between;
+  /* 列表元素 start */
+  /* 列表元素 end */
+}
+.nav-list .nav-list-item.data-v-17c8f92b {
+  padding: 35rpx 30rpx 5rpx 30rpx;
+  border-radius: 12rpx;
+  width: 33%;
+  margin: 0 18rpx 40rpx;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 99;
+  /* 元素标题 start */
+  /* 元素标题 end */
+  /* 元素图标 start */
+  /* 元素图标 end */
+}
+.nav-list .nav-list-item .nav-link.data-v-17c8f92b {
+  font-size: 32rpx;
+  text-transform: capitalize;
+  padding: 0 0 10rpx 0;
+  position: relative;
+}
+.nav-list .nav-list-item .nav-link .title.data-v-17c8f92b {
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  margin-top: 30rpx;
+  text-align: center;
+}
+.nav-list .nav-list-item .nav-link .author.data-v-17c8f92b {
+  font-size: 25rpx;
+  color: #FFFFFF;
+  margin-top: 50rpx;
+  margin-left: -10rpx;
+  text-align: center;
+}
+.nav-list .nav-list-item .icon.data-v-17c8f92b {
+  font-variant: small-caps;
+  position: absolute;
+  top: 20rpx;
+  right: 50rpx;
+  left: 37%;
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  font-size: 50rpx;
+  color: #FFFFFF;
+  white-space: nowrap;
+  opacity: 0.9;
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 5000rpx;
+}
+/* 组件导航列表 end*/
+/* 业务展示 start */
+.tn-info__container.data-v-17c8f92b {
+  margin-top: 10rpx;
+  margin-bottom: 50rpx;
+}
+.tn-info__item.data-v-17c8f92b {
+  width: 48%;
+  margin: 15rpx 0rpx;
+  padding: 40rpx 30rpx;
+  border-radius: 15rpx;
+  position: relative;
+  z-index: 1;
+}
+.tn-info__item.data-v-17c8f92b::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  border-radius: inherit;
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  background-size: 100% 100%;
+}
+.tn-info__item__left--icon.data-v-17c8f92b {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  font-size: 40rpx;
+  margin-right: 20rpx;
+  position: relative;
+  z-index: 1;
+}
+.tn-info__item__left--icon.data-v-17c8f92b::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  border-radius: inherit;
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  background-size: 100% 100%;
+}
+.tn-info__item__left__content.data-v-17c8f92b {
+  font-size: 30rpx;
+}
+.tn-info__item__left__content--data.data-v-17c8f92b {
+  margin-top: 5rpx;
+  font-weight: bold;
+}
+.tn-info__item__right--icon.data-v-17c8f92b {
+  position: absolute;
+  right: 0rpx;
+  top: 50rpx;
+  font-size: 100rpx;
+  width: 108rpx;
+  height: 108rpx;
+  text-align: center;
+  line-height: 60rpx;
+  opacity: 0.15;
+}
+/* 业务展示 end */
+

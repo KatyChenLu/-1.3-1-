@@ -1,0 +1,19 @@
+{
+  "navigationBarTitleText": "详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-avatar": "/tuniao-ui/components/tn-avatar/tn-avatar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "gcm-red-bag": "/uni_modules/gcm-red-bag/components/gcm-red-bag/gcm-red-bag",
+    "tn-line-progress": "/tuniao-ui/components/tn-line-progress/tn-line-progress",
+    "tn-grid": "/tuniao-ui/components/tn-grid/tn-grid",
+    "tn-grid-item": "/tuniao-ui/components/tn-grid-item/tn-grid-item",
+    "tn-avatar-group": "/tuniao-ui/components/tn-avatar-group/tn-avatar-group",
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "share-btn": "/components/share-btn/share-btn",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body",
+    "l-painter": "/components/lime-painter/index"
+  }
+}

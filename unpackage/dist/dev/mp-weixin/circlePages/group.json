@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "圈子详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-notice-bar": "/tuniao-ui/components/tn-notice-bar/tn-notice-bar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "quan-list": "/components/quan-list/quan-list",
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "share-btn": "/components/share-btn/share-btn",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body",
+    "l-painter": "/components/lime-painter/index"
+  }
+}

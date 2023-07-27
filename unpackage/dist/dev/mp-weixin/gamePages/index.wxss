@@ -1,0 +1,561 @@
+page {
+	height: 100%;
+	box-sizing: border-box; /* 避免设置padding出现双滚动条的问题 */
+}
+.mescroll-uni-warp{
+	height: 100%;
+}
+.mescroll-uni {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-height: 200rpx;
+	overflow-y: auto;
+	box-sizing: border-box; /* 避免设置padding出现双滚动条的问题 */
+}
+
+/* 定位的方式固定高度 */
+.mescroll-uni-fixed{
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: auto; /* 使right生效 */
+	height: auto; /* 使bottom生效 */
+}
+
+/* 下拉刷新区域 */
+.mescroll-downwarp {
+	position: absolute;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+/* 下拉刷新--内容区,定位于区域底部 */
+.mescroll-downwarp .downwarp-content {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	min-height: 60rpx;
+	padding: 20rpx 0;
+	text-align: center;
+}
+
+/* 下拉刷新--提示文本 */
+.mescroll-downwarp .downwarp-tip {
+	display: inline-block;
+	font-size: 28rpx;
+	vertical-align: middle;
+	margin-left: 16rpx;
+	/* color: gray; 已在style设置color,此处删去*/
+}
+
+/* 下拉刷新--旋转进度条 */
+.mescroll-downwarp .downwarp-progress {
+	display: inline-block;
+	width: 32rpx;
+	height: 32rpx;
+	border-radius: 50%;
+	border: 2rpx solid gray;
+	border-bottom-color: transparent !important; /*已在style设置border-color,此处需加 !important*/
+	vertical-align: middle;
+}
+
+/* 旋转动画 */
+.mescroll-downwarp .mescroll-rotate {
+	-webkit-animation: mescrollDownRotate 0.6s linear infinite;
+	        animation: mescrollDownRotate 0.6s linear infinite;
+}
+@-webkit-keyframes mescrollDownRotate {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+@keyframes mescrollDownRotate {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+
+/* 上拉加载区域 */
+.mescroll-upwarp {
+	min-height: 60rpx;
+	padding: 30rpx 0;
+	text-align: center;
+	clear: both;
+}
+
+/*提示文本 */
+.mescroll-upwarp .upwarp-tip{
+	display: inline-block;
+	font-size: 28rpx;
+	vertical-align: middle;
+	/* color: gray; 已在style设置color,此处删去*/
+}
+.mescroll-upwarp .upwarp-nodata {
+	display: inline-block;
+	font-size: 28rpx;
+	vertical-align: middle;
+	/* color: gray; 已在style设置color,此处删去*/
+}
+.mescroll-upwarp .upwarp-tip {
+	margin-left: 16rpx;
+}
+
+/*旋转进度条 */
+.mescroll-upwarp .upwarp-progress {
+	display: inline-block;
+	width: 32rpx;
+	height: 32rpx;
+	border-radius: 50%;
+	border: 2rpx solid gray;
+	border-bottom-color: transparent !important; /*已在style设置border-color,此处需加 !important*/
+	vertical-align: middle;
+}
+
+/* 旋转动画 */
+.mescroll-upwarp .mescroll-rotate {
+	-webkit-animation: mescrollUpRotate 0.6s linear infinite;
+	        animation: mescrollUpRotate 0.6s linear infinite;
+}
+@-webkit-keyframes mescrollUpRotate {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+@keyframes mescrollUpRotate {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+
+@charset "UTF-8";
+/**
+ * VnyPaIi1下方引入的为Tuniao UI的集成样式文件，为scss预处理器，其中包含了一些"tn-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
+ */
+.tn-cool-bg-color-51.data-v-bab56052 {
+  background-image: repeating-linear-gradient(45deg, #26003a, #15003f);
+  color: #FFFFFF;
+}
+/* 自定义导航栏内容 start */
+.custom-nav.data-v-bab56052 {
+  height: 100%;
+}
+.custom-nav__back.data-v-bab56052 {
+  margin: auto 5rpx;
+  font-size: 40rpx;
+  margin-right: 10rpx;
+  margin-left: 30rpx;
+  flex-basis: 5%;
+}
+.custom-nav__search.data-v-bab56052 {
+  flex-basis: 60%;
+  width: 100%;
+  height: 100%;
+}
+.custom-nav__search__box.data-v-bab56052 {
+  width: 100%;
+  height: 70%;
+  padding: 15rpx 0;
+  margin: 0 30rpx;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+}
+.custom-nav__search__icon.data-v-bab56052 {
+  padding-right: 10rpx;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}
+.custom-nav__search__text.data-v-bab56052 {
+  color: #AAAAAA;
+}
+.logo-image.data-v-bab56052 {
+  width: 95rpx;
+  height: 65rpx;
+  position: relative;
+}
+.logo-pic.data-v-bab56052 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  border-radius: 50%;
+}
+/* 自定义导航栏内容 end */
+/* 轮播视觉差 start */
+.card-swiper.data-v-bab56052 {
+  height: 400rpx !important;
+}
+.card-swiper swiper-item.data-v-bab56052 {
+  width: 750rpx !important;
+  left: 0rpx;
+  box-sizing: border-box;
+  padding: 0rpx 30rpx 90rpx 30rpx;
+  overflow: initial;
+}
+.card-swiper swiper-item .swiper-item.data-v-bab56052 {
+  width: 100%;
+  display: block;
+  height: 100%;
+  border-radius: 30rpx;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: all 0.2s ease-in 0s;
+  overflow: hidden;
+}
+.card-swiper swiper-item.cur .swiper-item.data-v-bab56052 {
+  -webkit-transform: none;
+          transform: none;
+  transition: all 0.2s ease-in 0s;
+}
+.card-swiper swiper-item .swiper-item-text.data-v-bab56052 {
+  margin-top: -220rpx;
+  width: 100%;
+  display: block;
+  height: 50%;
+  border-radius: 10rpx;
+  -webkit-transform: translate(100rpx, -60rpx) scale(0.9, 0.9);
+          transform: translate(100rpx, -60rpx) scale(0.9, 0.9);
+  transition: all 0.6s ease 0s;
+  overflow: hidden;
+}
+.card-swiper swiper-item.cur .swiper-item-text.data-v-bab56052 {
+  margin-top: -280rpx;
+  width: 100%;
+  -webkit-transform: translate(0rpx, 0rpx) scale(0.9, 0.9);
+          transform: translate(0rpx, 0rpx) scale(0.9, 0.9);
+  transition: all 0.6s ease 0s;
+}
+.image-banner.data-v-bab56052 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-banner image.data-v-bab56052 {
+  width: 100%;
+  height: 100%;
+}
+/* 轮播指示点 start*/
+.indication.data-v-bab56052 {
+  z-index: 9999;
+  width: 100%;
+  height: 36rpx;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.spot.data-v-bab56052 {
+  background-color: #FFFFFF;
+  opacity: 0.6;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 20rpx;
+  top: -130rpx;
+  margin: 0 8rpx !important;
+  position: relative;
+}
+.spot.active.data-v-bab56052 {
+  opacity: 1;
+  width: 30rpx;
+  background-color: #FFFFFF;
+}
+/* 图标容器7 start */
+.icon7__item.data-v-bab56052 {
+  width: 30%;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  margin: 20rpx 10rpx;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.icon7__item--icon.data-v-bab56052 {
+  width: 120rpx;
+  height: 120rpx;
+  font-size: 50rpx;
+  border-radius: 0;
+  margin-bottom: -10rpx;
+  position: relative;
+  z-index: 1;
+}
+.image-capsule.data-v-bab56052 {
+  padding: 120rpx 0rpx;
+  font-size: 40rpx;
+  font-weight: 300;
+  position: relative;
+}
+.image-pic.data-v-bab56052 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+/* 胶囊背景图 start */
+.image-div.data-v-bab56052 {
+  height: 450rpx;
+  z-index: -1;
+}
+.image-div .image.data-v-bab56052 {
+  width: 100%;
+  height: 667rpx;
+}
+/* 胶囊背景图 end */
+/* 标题 start */
+.nav_title.data-v-bab56052 {
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.nav_title--wrap.data-v-bab56052 {
+  position: relative;
+  display: flex;
+  height: 120rpx;
+  font-size: 46rpx;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-image: url(https://tnuiimage.tnkjapp.com/title_bg/title44.png);
+  background-size: cover;
+}
+/* 标题 end */
+/* 文章内容 start*/
+.tn-blogger-content__wrap.data-v-bab56052 {
+  box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.12);
+  border-radius: 20rpx;
+  margin: 15rpx;
+}
+.tn-blogger-content__info__btn.data-v-bab56052 {
+  margin-right: -12rpx;
+  opacity: 0.5;
+}
+.tn-blogger-content__label__item.data-v-bab56052 {
+  line-height: 45rpx;
+  padding: 0 20rpx;
+  margin: 5rpx 18rpx 0 0;
+}
+.tn-blogger-content__label__item--prefix.data-v-bab56052 {
+  color: #82B2FF;
+  padding-right: 10rpx;
+}
+.tn-blogger-content__label__desc.data-v-bab56052 {
+  line-height: 35rpx;
+}
+.tn-blogger-content__main-image.data-v-bab56052 {
+  border-radius: 16rpx 16rpx 0 0;
+}
+.tn-blogger-content__main-image--1.data-v-bab56052 {
+  max-width: 690rpx;
+  min-width: 690rpx;
+  max-height: 400rpx;
+  min-height: 400rpx;
+}
+.tn-blogger-content__main-image--2.data-v-bab56052 {
+  max-width: 260rpx;
+  max-height: 260rpx;
+}
+.tn-blogger-content__main-image--3.data-v-bab56052 {
+  height: 212rpx;
+  width: 100%;
+}
+.tn-blogger-content__count-icon.data-v-bab56052 {
+  font-size: 30rpx;
+  padding-right: 5rpx;
+}
+.image-book.data-v-bab56052 {
+  padding: 10rpx;
+  font-size: 16rpx;
+  font-weight: 300;
+  position: relative;
+}
+.image-picbook.data-v-bab56052 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  border-radius: 20rpx 20rpx 0 0;
+}
+/* 文章内容 end*/
+/* 底部tabbar start*/
+.footerfixed.data-v-bab56052 {
+  position: fixed;
+  margin: 40rpx 5%;
+  width: 90%;
+  bottom: 0;
+  z-index: 999;
+  background-color: #FFFFFF;
+  box-shadow: 0rpx 0rpx 30rpx 0rpx rgba(0, 0, 0, 0.07);
+}
+.tabbar.data-v-bab56052 {
+  display: flex;
+  align-items: center;
+  min-height: 110rpx;
+  justify-content: space-between;
+  padding: 0;
+  height: calc(110rpx + env(safe-area-inset-bottom) / 2);
+  padding-bottom: calc(env(safe-area-inset-bottom) / 2);
+}
+.tabbar .action.data-v-bab56052 {
+  font-size: 22rpx;
+  position: relative;
+  flex: 1;
+  text-align: center;
+  padding: 0;
+  display: block;
+  height: auto;
+  line-height: 1;
+  margin: 0;
+  overflow: initial;
+}
+.tabbar .action .bar-icon.data-v-bab56052 {
+  width: 100rpx;
+  position: relative;
+  display: block;
+  height: auto;
+  margin: 0 auto 10rpx;
+  text-align: center;
+  font-size: 42rpx;
+}
+.tabbar .action .bar-icon image.data-v-bab56052 {
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+}
+.zhzhao.data-v-bab56052 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 0.25s linear;
+  transition-property: opacity;
+  z-index: 999991;
+}
+.demo__tips__icon.data-v-bab56052 {
+  position: absolute;
+  top: 20rpx;
+  right: 16rpx;
+  width: 39rpx;
+  height: 39rpx;
+  line-height: 39rpx;
+  font-size: 39rpx;
+}
+.demo__tips__icon .icon.data-v-bab56052 {
+  background: linear-gradient(-45deg, #FF8359 0%, #FFDF40 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0rpx 10rpx 10rpx rgba(255, 156, 82, 0.2);
+}
+.demo__tips__contentttags.data-v-bab56052 {
+  position: relative;
+  top: 180rpx;
+  left: 500rpx;
+  width: 200rpx;
+  font-size: 20rpx;
+  margin-left: 20rpx;
+  word-wrap: normal;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  transition: -webkit-transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1), -webkit-transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  z-index: 999999;
+}
+.demo__tips__contentsex.data-v-bab56052 {
+  position: relative;
+  top: 180rpx;
+  left: 300rpx;
+  width: 200rpx;
+  font-size: 20rpx;
+  margin-left: 20rpx;
+  word-wrap: normal;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  transition: -webkit-transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1), -webkit-transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  z-index: 999999;
+}
+.demo__tips__content.data-v-bab56052 {
+  position: relative;
+  top: 180rpx;
+  right: 16rpx;
+  width: 200rpx;
+  font-size: 20rpx;
+  margin-left: 20rpx;
+  word-wrap: normal;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  transition: -webkit-transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1), -webkit-transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  z-index: 999999;
+}
+.demo__tips__content--hide.data-v-bab56052 {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+.demo__tips__content--show.data-v-bab56052 {
+  -webkit-transform: scaleY(100%);
+          transform: scaleY(100%);
+}
+.demo__tips__content--show.data-v-bab56052::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: transparent transparent rgba(149, 149, 149, 0.1) transparent;
+  position: absolute;
+  top: -8px;
+  right: 6px;
+}
+

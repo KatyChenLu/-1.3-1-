@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "分类",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-tabs": "/tuniao-ui/components/tn-tabs/tn-tabs",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body"
+  }
+}

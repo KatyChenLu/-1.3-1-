@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "邀请",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
+    "tn-avatar": "/tuniao-ui/components/tn-avatar/tn-avatar",
+    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
+    "tn-modal": "/tuniao-ui/components/tn-modal/tn-modal",
+    "tn-list-cell": "/tuniao-ui/components/tn-list-cell/tn-list-cell",
+    "tn-popup": "/tuniao-ui/components/tn-popup/tn-popup",
+    "mescroll-body": "/components/mescroll-uni/mescroll-body"
+  }
+}

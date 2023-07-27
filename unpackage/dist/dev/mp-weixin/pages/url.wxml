@@ -1,0 +1,1 @@
+<view><tn-nav-bar vue-id="c5ca8680-1" fixed="{{true}}" isBack="{{true}}" bind:__l="__l" vue-slots="{{['default']}}">外部网页</tn-nav-bar><web-view webview-styles="{{webviewStyles}}" src="{{url}}"></web-view></view>

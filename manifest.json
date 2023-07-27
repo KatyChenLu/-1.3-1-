@@ -1,0 +1,257 @@
+{
+    "name" : "多客陪玩系统",
+    "appid" : "__UNI__B70865C",
+    "description" : "多客陪玩系统",
+    "versionName" : "4.0.3",
+    "versionCode" : 403,
+    "transformPx" : false,
+    "app-plus" : {
+        "usingComponents" : true,
+        "nvueStyleCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : true,
+            "waiting" : true,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        "compatible" : {
+            "ignoreVersion" : true
+        },
+        "permissionExternalStorage" : {
+            "request" : "once",
+            "prompt" : "应用保存运行状态等信息，需要获取读写手机存储（系统提示为访问设备上的照片、媒体内容和文件）权限，请允许。"
+        },
+        "privacy" : {
+            "prompt" : "template",
+            "template" : {
+                "title" : "用户协议和隐私政策",
+                "message" : "请你务必审慎阅读、充分理解“隐私政策”各条款，包括但不限于：为了更好的向你提供服务，我们需要收集你的设备标识、操作日志等信息用于分析、优化应用性能。<br/>　　你可阅读<a href='https://quan.51duoke.cn/user.html'>《用户协议》</a>和<a href='https://quan.51duoke.cn/yinsi.html'>《隐私政策》</a>了解详细信息。如果你同意，请点击下面按钮开始接受我们的服务。",
+                "buttonAccept" : "同意",
+                "buttonRefuse" : "拒绝"
+            }
+        },
+        "modules" : {
+            "Geolocation" : {},
+            "Push" : {},
+            "Maps" : {},
+            "VideoPlayer" : {},
+            "Payment" : {},
+            "Share" : {},
+            "OAuth" : {},
+            "Camera" : {},
+            "Record" : {}
+        },
+        "distribute" : {
+            "android" : {
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.INSTALL_PACKAGES\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.REQUEST_INSTALL_PACKAGES\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_VOICEMAIL\"/>"
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ]
+            },
+            "ios" : {
+                "idfa" : false,
+                "dSYMs" : false,
+                "privacyDescription" : {
+                    "NSPhotoLibraryUsageDescription" : "上传头像和发布图片时使用",
+                    "NSCameraUsageDescription" : "发布帖子时拍摄图片",
+                    "NSMicrophoneUsageDescription" : "发布语音帖子时需要你录音",
+                    "NSPhotoLibraryAddUsageDescription" : "保存您认为有用的图片",
+                    "NSLocationAlwaysAndWhenInUseUsageDescription" : "为你查找附近的好友"
+                },
+                "capabilities" : {
+                    "entitlements" : {
+                        "com.apple.developer.associated-domains" : [
+                            "applinks:static-mp-9329106a-8ae6-442a-9f2e-56ac1439133a.next.bspapp.com"
+                        ]
+                    }
+                }
+            },
+            "sdkConfigs" : {
+                "push" : {
+                    "unipush" : {}
+                },
+                "share" : {
+                    "weixin" : {
+                        "appid" : "live.0527.www",
+                        "UniversalLinks" : "https://static-mp-9329106a-8ae6-442a-9f2e-56ac1439133a.next.bspapp.com/uni-universallinks/__UNI__05075FC/"
+                    }
+                },
+                "ad" : {
+                    "sigmob" : {}
+                },
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "live.0527.www",
+                        "appkey_android" : "148ee4c1205104358ffef68aac80365e"
+                    }
+                },
+                "geolocation" : {
+                    "system" : {
+                        "__platform__" : [ "ios", "android" ]
+                    },
+                    "amap" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appkey_ios" : "live.0527.www",
+                        "appkey_android" : "148ee4c1205104358ffef68aac80365e"
+                    }
+                },
+                "payment" : {
+                    "weixin" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appid" : "live.0527.www",
+                        "UniversalLinks" : "https://static-mp-9329106a-8ae6-442a-9f2e-56ac1439133a.next.bspapp.com/uni-universallinks/__UNI__05075FC/"
+                    },
+                    "alipay" : {
+                        "__platform__" : [ "ios", "android" ]
+                    }
+                },
+                "oauth" : {
+                    "weixin" : {
+                        "appid" : "live.0527.www",
+                        "UniversalLinks" : "https://static-mp-9329106a-8ae6-442a-9f2e-56ac1439133a.next.bspapp.com/uni-universallinks/__UNI__05075FC/"
+                    },
+                    "apple" : {}
+                }
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            },
+            "splashscreen" : {
+                "androidStyle" : "common",
+                "android" : {
+                    "hdpi" : "C:/Users/T/Pictures/启动图.png",
+                    "xhdpi" : "C:/Users/T/Pictures/启动图.png",
+                    "xxhdpi" : "C:/Users/T/Pictures/启动图.png"
+                },
+                "useOriginalMsgbox" : true
+            }
+        },
+        "nativePlugins" : {
+            "TRTCCloudUniPlugin-TRTCCloudImpl" : {
+                "__plugin_info__" : {
+                    "name" : "【官方】腾讯云实时音视频SDK",
+                    "description" : "uni-app TRTC SDK 是腾讯云实时音视频通讯解决方案在 uni-app 上的 SDK，提供实时音视频服务",
+                    "platforms" : "Android,iOS",
+                    "url" : "https://ext.dcloud.net.cn/plugin?id=7774",
+                    "android_package_name" : "game.duoke.cn",
+                    "ios_bundle_id" : "game.duoke.cn",
+                    "isCloud" : true,
+                    "bought" : 1,
+                    "pid" : "7774",
+                    "parameters" : {}
+                }
+            }
+        }
+    },
+    "quickapp" : {},
+    "mp-weixin" : {
+        "requiredPrivateInfos" : [ "chooseLocation", "getFuzzyLocation" ],
+        "appid" : "wx87a6906be8ed43b5",
+        "optimization" : {
+            "subPackages" : true
+        },
+        "setting" : {
+            "urlCheck" : false,
+            "es6" : true,
+            "postcss" : true,
+            "minified" : true
+        },
+        "usingComponents" : true,
+        "unipush" : {
+            "enable" : false
+        },
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "推荐附近的人"
+            }
+        }
+    },
+    "mp-alipay" : {
+        "usingComponents" : true
+    },
+    "mp-baidu" : {
+        "usingComponents" : true
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true,
+        "appid" : "tt739c0521eca3804d01",
+        "setting" : {
+            "urlCheck" : true,
+            "es6" : true,
+            "postcss" : true
+        }
+    },
+    "uniStatistics" : {
+        "enable" : false
+    },
+    "vueVersion" : "2",
+    "h5" : {
+        "router" : {
+            "mode" : "hash",
+            "base" : "/h5/"
+        },
+        "title" : "多客圈子",
+        "devServer" : {
+            "https" : false
+        },
+        "sdkConfigs" : {
+            "maps" : {
+                "qqmap" : {
+                    "key" : "6AEBZ-4AQRI-GKQGB-5XGW3-OFRN2-EBF3H"
+                }
+            }
+        }
+    },
+    "_spaceID" : "mp-9329106a-8ae6-442a-9f2e-56ac1439133a"
+}
