@@ -161,12 +161,83 @@ page {
  * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
  * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
  */
+.warm-text1.data-v-2a183b29 {
+  margin-left: 22.67rpx;
+  height: 32rpx;
+  font-size: 23rpx;
+  font-weight: bold;
+  color: #493C45;
+  line-height: 29rpx;
+}
+.warm-text2.data-v-2a183b29 {
+  width: 23rpx;
+  height: 54rpx;
+  font-size: 39rpx;
+  font-weight: bold;
+  color: #FC357C;
+  line-height: 49rpx;
+  margin-left: 4rpx;
+}
+.warm-text3.data-v-2a183b29 {
+  width: 22rpx;
+  height: 31rpx;
+  font-size: 22rpx;
+  font-weight: bold;
+  color: #FC357C;
+  line-height: 37rpx;
+  margin-left: 2rpx;
+}
+.warm-box.data-v-2a183b29 {
+  display: flex;
+  padding: 0 20rpx;
+  margin-bottom: -20rpx;
+  align-items: center;
+}
+.warm-img.data-v-2a183b29 {
+  width: 105.33rpx;
+  height: 42rpx;
+}
+.tab_first.data-v-2a183b29 {
+  width: 72.81rpx;
+  height: 34.92rpx;
+  margin-left: 24rpx;
+}
+.list-tab-box.data-v-2a183b29 {
+  display: flex;
+  margin-bottom: 26rpx;
+}
+.list-tab-right.data-v-2a183b29 {
+  width: 653rpx;
+  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  text-align: center;
+}
+.list-tab.data-v-2a183b29 {
+  display: inline-block;
+  padding: 6rpx 14rpx;
+  font-size: 20rpx;
+  font-weight: bold;
+  color: #202542;
+  background-color: #ECDEFC;
+  border-radius: 7.33rpx;
+  margin-left: 20rpx;
+}
+.jingang-text.data-v-2a183b29 {
+  width: 88rpx;
+  height: 31rpx;
+  font-size: 22rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 31rpx;
+}
 .indexbg.data-v-2a183b29 {
-  background-image: linear-gradient(180deg, #982FD8 0%, #D52F9A 58%, #B263E2 73%, #FFFFFF 100%);
+  background-image: url(/static/newUI/bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .top-tab-view-normal.data-v-2a183b29 {
   font-size: 32rpx;
-  font-family: PingFang SC-Bold, PingFang SC;
   font-weight: bold;
   color: #FFFFFF;
   margin-right: 32rpx;
@@ -174,7 +245,6 @@ page {
 }
 .top-tab-view-select.data-v-2a183b29 {
   font-size: 60rpx;
-  font-family: PingFang SC-Bold, PingFang SC;
   font-weight: bold;
   color: #FFFFFF;
   margin-right: 32rpx;
@@ -183,7 +253,7 @@ page {
   display: flex;
   background-color: transparent;
   height: 100rpx;
-  align-items: flex-end;
+  align-items: center;
   margin-left: 22rpx;
   justify-content: space-between;
   margin-bottom: 20rpx;
@@ -213,7 +283,6 @@ page {
   position: absolute;
   height: 32rpx;
   font-size: 23rpx;
-  font-family: PingFang SC-Bold, PingFang SC;
   font-weight: bold;
   color: #FFFFFF;
   line-height: 24rpx;
@@ -230,53 +299,53 @@ page {
   height: 52.54rpx;
 }
 .index-top-left.data-v-2a183b29 {
-  align-items: flex-end;
+  align-items: center;
 }
 .index-top-right.data-v-2a183b29 {
   align-items: center;
   height: 66rpx;
 }
 .bulletin_box.data-v-2a183b29 {
-  position: relative;
   padding: 0 20rpx;
+  width: 710rpx;
+}
+.bull_box.data-v-2a183b29 {
+  position: relative;
   width: 710rpx;
   height: 54rpx;
 }
 .bulletin-bg.data-v-2a183b29 {
   position: absolute;
   top: 0;
-  left: 20rpx;
+  left: 0rpx;
   width: 710rpx;
-  height: 52.67rpx;
+  height: 66rpx;
   opacity: 0.3;
 }
 .bulletin-tip.data-v-2a183b29 {
   position: absolute;
-  top: 8rpx;
-  left: 60rpx;
+  top: 12rpx;
+  left: 28rpx;
   width: 770rpx;
-  height: 41rpx;
+  height: 40rpx;
   font-size: 29rpx;
-  font-family: PingFang SC-Bold, PingFang SC;
   font-weight: bold;
   color: #EEFF00;
-  line-height: 30rpx;
+  line-height: 40rpx;
 }
 .bulletin-tip-text.data-v-2a183b29 {
   margin-left: 24rpx;
   width: 541rpx;
   height: 30rpx;
   font-size: 21rpx;
-  font-family: PingFang SC-Bold, PingFang SC;
   font-weight: bold;
   color: #FFFFFF;
-  line-height: 22rpx;
+  line-height: 30rpx;
 }
 .tn-text-color.data-v-2a183b29 {
   width: 68rpx;
   height: 31rpx;
   font-size: 22rpx;
-  font-family: PingFang SC-Bold, PingFang SC;
   font-weight: bold;
   color: #FFFFFF;
   line-height: 41rpx;
@@ -557,8 +626,8 @@ page {
 .image-article.data-v-2a183b29 {
   border-radius: 8rpx;
   border: 1rpx solid #F8F7F8;
-  width: 200rpx;
-  height: 200rpx;
+  width: 186rpx;
+  height: 202rpx;
   position: relative;
 }
 .image-pic.data-v-2a183b29 {
@@ -898,17 +967,29 @@ to {
 .nav-list.data-v-2a183b29 {
   display: flex;
   justify-content: space-between;
+  padding: 0 24rpx;
+  margin-bottom: 26rpx;
   /* 列表元素 start */
   /* 列表元素 end */
 }
 .nav-list .image-bg.data-v-2a183b29 {
   background-image: url(/static/newUI/nac_list_1.png);
+  width: 240.87rpx;
+  height: 109.29rpx;
+}
+.nav-list .image-bg1.data-v-2a183b29 {
+  background-image: url(/static/newUI/nac_list_2.png);
+  width: 238.3rpx;
+  height: 109.81rpx;
+  margin-left: -10rpx;
+}
+.nav-list .image-bg2.data-v-2a183b29 {
+  background-image: url(/static/newUI/nac_list_3.png);
+  width: 240.87rpx;
+  height: 109.29rpx;
+  margin-left: -10rpx;
 }
 .nav-list .nav-list-item.data-v-2a183b29 {
-  padding: 35rpx 30rpx 5rpx 30rpx;
-  border-radius: 12rpx;
-  width: 50%;
-  margin: 0 18rpx 40rpx;
   background-size: cover;
   background-position: center;
   position: relative;

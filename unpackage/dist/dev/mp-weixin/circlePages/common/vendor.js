@@ -7516,7 +7516,7 @@ var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ 13);
     /******/])
   );
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"], __webpack_require__(/*! ./../../../下载/HBuilderX.3.8.7.20230703/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/module.js */ 513)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"], __webpack_require__(/*! (webpack)/buildin/module.js */ 513)(module)))
 
 /***/ }),
 

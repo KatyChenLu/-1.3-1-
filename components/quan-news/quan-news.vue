@@ -1,118 +1,144 @@
 <template>
-	  <view class="template-group">
+	<view class="template-group">
 
-	<!-- 不建议写时间，因为写了时间，你就要经常更新文章了鸭-->
-	<view class="" >
-	  <block v-for="(item, index) in list" :key="index" v-if="item.goods">
-	    <view class="article-shadow tn-margin-top-sm tn-margin-right tn-margin-bottom-sm tn-padding-sm " @click="navigateToFn({ url: '/circlePages/blogger_other_user?id='+item.user_id+'&game_id='+item.id, checkLogin: false })">
-	      <view class="tn-flex">
-	        <view class="image-pic tn-margin-sm" style="position: relative;" :style="'background-image:url(' + item.avatar + ')'">
-	          <view class="image-article">
-	          </view>
-	
-			  
-			  <view @click.stop="bofang(item.voc,index)"  style="right: 3px;
+		<!-- 不建议写时间，因为写了时间，你就要经常更新文章了鸭-->
+		<view class="tn-padding-top-sm">
+			<block v-for="(item, index) in list" :key="index" v-if="item.goods">
+				<view class="  tn-margin-right tn-padding-left-sm tn-padding-right-sm "
+					@click="navigateToFn({ url: '/circlePages/blogger_other_user?id='+item.user_id+'&game_id='+item.id, checkLogin: false })">
+					<view class="tn-flex">
+						<view class="image-pic tn-margin-sm"
+							style="position: relative;margin-left: 0;margin-right: 26rpx;"
+							:style="'background-image:url(' + item.avatar + ')'">
+							<view class="image-article">
+							</view>
+
+
+							<view @click.stop="bofang(item.voc,index)" style="left: 0px;
 			  position: absolute;
-			  bottom: 5px;
+			  bottom: 0px;
 			  font-size: 20px;
 			  z-index: 1;">
-			  	<tn-button backgroundColor="#ffffff" padding="20rpx 0" width="190rpx" shadow fontBold
-			  		v-if="item.voc">
-			  		<view class="voice-line-wrap"
-			  			style="--line-height:15px;--line-start-color:royalblue ;--line-end-color:indianred">
-			  			<block v-if="item.isplay">
-			  				<view class="voice-line one"></view>
-			  				<view class="voice-line two"></view>
-			  				<view class="voice-line three"></view>
-			  				<view class="voice-line four"></view>
-			  				<view class="voice-line five"></view>
-			  				<view class="voice-line six"></view>
-			  				<view class="voice-line seven"></view>
-			  				<view class="voice-line six"></view>			  				
-			  			</block>
-			  			<block v-else>
-			  				<view class="tn-icon-play-fill tn-color-green"></view>
-			  			</block>
-			  			<text class="tn-color-black" style="margin-left: 15px;">{{item.vocsen}} ''</text>
-			  		</view>
-			  
-			  	</tn-button>
-			  </view>
-			  
-		
-			  
-	        </view>
-	        <view class="tn-margin-top-sm tn-padding-top-xs" style="width: 100%;">			  
-			  <view class="tn-flex tn-flex-row-between tn-flex-col-between ">
-			    <view class="justify-content-item" >
-			      <text class="tn-color-cat tn-text-lg  tn-text-bold">{{item.nickname}}</text>
-				
-			    </view>
-			      <view class="justify-content-item "  >
-			  		<text v-if="item.distance">{{item.distance}}</text>
-			    <text v-if="item.is_online" class="tn-color-green">●在线</text>
-			    <text v-else class="tn-color-gray tn-text-sm">●离线</text>
-			    
-			     </view>
-			  </view>
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-	          <view class="tn-padding-top-xs" style="min-height: 100rpx;">
-				  <tn-tag v-if="item.sex==1" shape="circle" backgroundColor="rgb(139 247 207 /0.3)"  margin="10rpx" height="32rpx" width="90rpx">
-				<text class="tn-icon-sex-male" style="font-size:24rpx;color:rgb(0 138 112);">{{item.shengri}}</text>
-				</tn-tag>
-				 <tn-tag v-if="item.sex==2" shape="circle" backgroundColor="rgb(212 149 251 /0.3)"  margin="10rpx" height="32rpx" width="90rpx">
-				<text class="tn-icon-sex-female" style="font-size:24rpx;color:rgb(197 0 192);">{{item.shengri}}</text>
-				</tn-tag>
-				<block v-for="(itemdd, indexd) in item.tags" :key="indexd" >
-				<tn-tag :plain="true" shape="radius" size="sm"  backgroundColor="rgb(255 96 88 /0.3)"  margin="5rpx"  >
-				<text  style="font-size:12px;color:rgb(255 12 0);">{{itemdd.title}}</text>
-				</tn-tag>	
-					</block>	
-	          <!--  <text class=" tn-text-sm clamp-text-1 tn-padding-top-sm">
-	             好评率：{{item.order_baifenbi}}%   <text class="tn-margin-left">服务{{item.order_num}}人</text>
-	            </text> -->
-				<text class=" tn-text-sm clamp-text-1 tn-padding-top-sm">
-				{{item.dec}} 
-				</text>
-	          </view>
-	          <view class="tn-flex tn-flex-row-between tn-flex-col-between tn-padding-top-sm">
-	            <view 
-	              class="justify-content-item tn-margin-right tn-round tn-text-sm tn-text-bold" :class="[`tn-bg-${item.color}--light tn-color-${item.color}`]">
-	   
-			 <view class="capsule" >				
-	           <tn-tag class="capsule-tag"  :originLeft="true"  padding="10px" width="160rpx"  shape="circleLeft" backgroundColor="#5d5e7d" fontColor="#FFFFFF" :plain="false">
-	        	<view>
-					<image :src="item.game_image" style="width: 20px;height: 20px;margin-left: 8px;" mode="heightFix" ></image>
-				</view> 
-				<text class="  ">{{item.game_title}}</text>
-	           </tn-tag>
-	           <tn-tag   class="capsule-tag" padding="10px"  shape="circleRight" backgroundColor="tn-cool-bg-color-6" fontColor="#ffffff" :plain="false">
-	         		<text class=" ">{{item.goods.duanwei}}</text>									
-	           </tn-tag>
-	         </view>
-			 
-	            </view>
-	            <view class="justify-content-item tn-color-gray tn-text-center tn-color-gray--disabled" style="padding-top: 5rpx;">
-	            
-	              <text class="tn-text-lg tn-color-red tn-text-bold">{{ item.goods.price }}</text>
-	              <text class="tn-color-red">币</text>
-	            </view>
-	          </view>
-	        </view>
-	      </view>
-	    </view>
-	  </block>
-	</view>
+								<image src="../../static/newUI/voc_bg.png" mode="" v-if="item.voc" class="voc-img">
+									<!-- tn-button backgroundColor="#ffffff" padding="20rpx 0" width="190rpx" shadow
+										fontBold v-if="item.voc"> -->
+										<!-- <view class="voice-line-wrap"
+											style="--line-height:15px;--line-start-color:royalblue ;--line-end-color:indianred"> -->
+											<view class="voice-line-wrap"
+												style="">
+											<block v-if="item.isplay">
+												<view class="voice-line one"></view>
+												<view class="voice-line two"></view>
+												<view class="voice-line three"></view>
+												<view class="voice-line four"></view>
+												<view class="voice-line five"></view>
+												<view class="voice-line six"></view>
+												<view class="voice-line seven"></view>
+												<view class="voice-line six"></view>
+											</block>
+											<block v-else>
+												<!-- <view class="tn-icon-play-fill tn-color-green"></view> -->
+											</block>
+											<text class=" vocsen" >{{item.vocsen}}''</text>
+										</view>
+								</image>
+								<!-- </tn-button> -->
+							</view>
+
+
+
+						</view>
+						<view class="tn-margin-top-sm " style="width: 100%;">
+							<view class="tn-flex tn-flex-row-between tn-flex-col-between ">
+								<view class="justify-content-item" style="align-items: center;
+    display: flex;">
+									<text class="tn-color-cat tn-text-lg  tn-text-bold">{{item.nickname}}</text>
+									<image class="sex-icon" src="../../static/newUI/nv.png" mode='aspectFit'></image>
+								</view>
+
+								<view class="justify-content-item zaixian-text">
+									<text v-if="item.distance">{{item.distance}}</text>
+									<text v-if="item.is_online">● 在线</text>
+									<text v-else>● 离线</text>
+
+								</view>
+							</view>
+
+
+
+							<view class="capsule1">
+								<view class="capsule1-left">
+									<image :src="item.game_image" style="width: 20rpx;height: 20rpx;" mode="heightFix">
+									</image>
+									<text class="game_title">{{item.game_title}}</text>
+								</view>
+
+								<text class="duanwei">{{item.goods.duanwei}}</text>
+								<!--  <tn-tag class="capsule-tag"  :originLeft="true"  padding="10px" width="160rpx"  shape="circleLeft"  fontColor="#653716;" :plain="false">
+			  	        	<view>
+			  					<image :src="item.game_image" style="width: 20px;height: 20px;margin-left: 8px;" mode="heightFix" ></image>
+			  				</view> 
+			  				<text class="  ">{{item.game_title}}</text>
+			    </tn-tag>
+			    <tn-tag   class="capsule-tag" padding="10px"  shape="circleRight" fontColor="#38311F;" :plain="false">
+			  		<text class=" ">{{item.goods.duanwei}}</text>									
+			    </tn-tag> -->
+							</view>
+
+
+
+
+
+
+
+							<view class="tn-padding-top-xs tags-box" style=" margin-top: 20rpx;">
+								<!-- 	<tn-tag v-if="item.sex==1" shape="circle" backgroundColor="rgb(139 247 207 /0.3)"
+									margin="10rpx" height="32rpx" width="90rpx">
+									<text class="tn-icon-sex-male"
+										style="font-size:24rpx;color:rgb(0 138 112);">{{item.shengri}}</text>
+								</tn-tag>
+								<tn-tag v-if="item.sex==2" shape="circle" backgroundColor="rgb(212 149 251 /0.3)"
+									margin="10rpx" height="32rpx" width="90rpx">
+									<text class="tn-icon-sex-female"
+										style="font-size:24rpx;color:rgb(197 0 192);">{{item.shengri}}</text>
+								</tn-tag> -->
+								<block v-for="(itemdd, indexd) in item.tags" :key="indexd">
+									<!-- <tn-tag :plain="true" shape="radius" size="sm" backgroundColor="rgb(255 96 88 /0.3)"
+										margin="5rpx">
+										<text style="font-size:12px;color:rgb(255 12 0);">{{itemdd.title}}</text>
+									</tn-tag> -->
+									<view class="tags">
+										{{itemdd.title}}
+									</view>
+								</block>
+
+								<!-- <text class=" tn-text-sm clamp-text-1 tn-padding-top-sm">
+									{{item.dec}}
+								</text> -->
+							</view>
+							<view class="tn-flex tn-flex-row-between tn-flex-col-between tn-padding-top-sm"
+								style="    align-items: flex-end;">
+								<view
+									class="justify-content-item  tn-text-sm tn-text-bold tn-flex tn-text-sm clamp-text-1 tn-padding-top-sm fen-class ">
+									<text class="ping-margin-right">
+										{{item.ping_num}}分
+									</text>
+									<text class="ping-margin-right">·</text>
+									<text class=""> 服务{{item.order_num}}人</text>
+
+								</view>
+								<view class="justify-content-item tn-color-gray tn-text-center tn-color-gray--disabled"
+									style="padding-top: 5rpx;">
+
+									<text class="price-text">{{ item.goods.price }}</text>
+									<text class="price-text">币</text>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</block>
+		</view>
 	</view>
 </template>
 
@@ -121,17 +147,17 @@
 
 	export default {
 		props: ['list', 'type'],
-	
+
 		data() {
 			return {
 				noClick: true,
 				videoPlay: false,
 				isplay: false,
-				body:''
+				body: ''
 			}
 		},
 		created() {
-		
+
 		},
 		methods: {
 
@@ -264,28 +290,28 @@
 
 
 			dianzantiezi(item) {
-				
-				
+
+
 				let that = this;
 				if (that.noClick) {
-				    // 第一次点击
-				    that.noClick= false;	
-					console.log('点击',that.noClick)
-				     that.dianzantiezi_pass(item);				  
-				    setTimeout(()=> {
-				        that.noClick= true;
-				    }, 2000)
+					// 第一次点击
+					that.noClick = false;
+					console.log('点击', that.noClick)
+					that.dianzantiezi_pass(item);
+					setTimeout(() => {
+						that.noClick = true;
+					}, 2000)
 				} else {
-					console.log('重复',that.noClick)
-				    // 这里是重复点击的判断
+					console.log('重复', that.noClick)
+					// 这里是重复点击的判断
 				}
-				
-				
-				
-				
+
+
+
+
 			},
 
-			tiezi(){
+			tiezi() {
 				console.log(333)
 			},
 
@@ -306,33 +332,33 @@
 			},
 
 
-	bofang(vocurl, index) {
-	
-		if (this.list[index].isplay) {
-			audioContext.stop()
-			this.list[index].isplay = false
-			return
-		}
-	
-	
-		for (let i in this.list) {
-			this.list[i].isplay = false
-		}
-	
-		this.list[index].isplay = !this.list[index].isplay;
-	
-		let that = this
-		audioContext.src = vocurl
-		audioContext.play()
-		audioContext.onPlay(() => {})
-		audioContext.onEnded(() => {
-			this.list[index].isplay = false
-		})
-		audioContext.onError(() => {
-			this.list[index].isplay = false
-			that.msg('不支持播放该音频格式')
-		})
-	},
+			bofang(vocurl, index) {
+
+				if (this.list[index].isplay) {
+					audioContext.stop()
+					this.list[index].isplay = false
+					return
+				}
+
+
+				for (let i in this.list) {
+					this.list[i].isplay = false
+				}
+
+				this.list[index].isplay = !this.list[index].isplay;
+
+				let that = this
+				audioContext.src = vocurl
+				audioContext.play()
+				audioContext.onPlay(() => {})
+				audioContext.onEnded(() => {
+					this.list[index].isplay = false
+				})
+				audioContext.onError(() => {
+					this.list[index].isplay = false
+					that.msg('不支持播放该音频格式')
+				})
+			},
 
 
 
@@ -342,57 +368,164 @@
 
 
 <style scoped lang="scss">
+	.vocsen{
+		margin-left: 60rpx;
+		margin-bottom: 16rpx;
+		width: 100%;
+		
+		font-size: 23rpx;
+		
+		font-weight: bold;
+		color: #FFFFFF;
+		line-height: 23rpx;
+		z-index: 99;
+	}
+	.voc-img {
+		width: 112rpx;
+		height: 50rpx;
+		position: absolute;
+		    bottom: 0;
+		    left: 0;
+	}
 
-  /* 资讯主图 start*/
-  .image-article {
-    border-radius: 8rpx;
-    width: 200rpx;
-    height: 250rpx;
-    position: relative;
-  }
+	.price-text {
+		font-size: 29rpx;
 
-  .image-pic {
-    background-size: cover;
-    background-repeat: no-repeat;
-    // background-attachment:fixed;
-    background-position: top;
-    border-radius: 10rpx;
-  }
+		font-weight: bold;
+		color: #DF3E34;
+		line-height: 38rpx;
+	}
 
-  .article-shadow {
-    border-radius: 15rpx;
-    box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.07);
-  }
+	.ping-margin-right {
+		margin-right: 12rpx;
+	}
 
-  /* 文字截取*/
-  .clamp-text-1 {
-    -webkit-line-clamp: 1;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
+	.fen-class {
+		font-size: 17rpx;
+		font-weight: bold;
+		color: #989896;
+		line-height: 29rpx;
+	}
 
-  .clamp-text-2 {
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
+	.tags-box {
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-  /* 标签内容 start*/
-  .tn-tag-content {
-    &__item {
-      display: inline-block;
-      line-height: 35rpx;
-      padding: 5rpx 25rpx;
+	.tags {
+		width: 98rpx;
+		height: 26rpx;
+		background: #FFFFFF;
+		border-radius: 16rpx 16rpx 16rpx 16rpx;
+		opacity: 1;
+		border: 1rpx solid #FFC2A8;
+		font-size: 15rpx;
+		margin-left: 6rpx;
+		margin-bottom: 10rpx;
+		font-weight: bold;
+		color: #DF3E34;
+		line-height: 26rpx;
+		text-align: center;
+	}
 
-      &--prefix {
-        padding-right: 10rpx;
-      }
-    }
-  }
+	.zaixian-text {
+		color: #34C401;
+		font-size: 17rpx;
+		font-weight: bold;
+		line-height: 29rpx;
+	}
 
-  
+	.sex-icon {
+		width: 30rpx;
+		height: 30rpx;
+		margin-left: 16rpx;
+	}
+
+	.capsule1-left {
+		display: flex;
+		align-items: center;
+	}
+
+	.game_title {
+		font-size: 17rpx;
+		// font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #653716;
+		line-height: 29rpx;
+		margin-left: 6rpx;
+	}
+
+	.duanwei {
+		font-size: 17rpx;
+		// font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #38311F;
+		line-height: 29rpx;
+	}
+
+	.capsule1 {
+		margin-top: 10rpx;
+		background-image: url('../../static/newUI/game_info_bg.png');
+		width: 249.33rpx;
+		height: 31.33rpx;
+		background-size: cover;
+		background-repeat: no-repeat;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 13rpx;
+		;
+	}
+
+	/* 资讯主图 start*/
+	.image-article {
+		border-radius: 8rpx;
+		width: 200rpx;
+		height: 250rpx;
+		position: relative;
+	}
+
+	.image-pic {
+		background-size: cover;
+		background-repeat: no-repeat;
+		// background-attachment:fixed;
+		background-position: top;
+		border-radius: 10rpx;
+	}
+
+	.article-shadow {
+		border-radius: 15rpx;
+		box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.07);
+	}
+
+	/* 文字截取*/
+	.clamp-text-1 {
+		-webkit-line-clamp: 1;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.clamp-text-2 {
+		-webkit-line-clamp: 2;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	/* 标签内容 start*/
+	.tn-tag-content {
+		&__item {
+			display: inline-block;
+			line-height: 35rpx;
+			padding: 5rpx 25rpx;
+
+			&--prefix {
+				padding-right: 10rpx;
+			}
+		}
+	}
 </style>

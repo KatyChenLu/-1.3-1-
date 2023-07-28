@@ -14,7 +14,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var objectKeys = ['qy', 'env', 'error', 'version', 'lanDebug', 'cloud', 'serviceMarket', 'router', 'worklet', '__webpack_require_UNI_MP_PLUGIN__'];
+var objectKeys = ['qy', 'env', 'error', 'version', 'lanDebug', 'cloud', 'serviceMarket', 'router', 'worklet'];
 var singlePageDisableKey = ['lanDebug', 'router', 'worklet'];
 var target = typeof globalThis !== 'undefined' ? globalThis : function () {
   return this;
@@ -7616,7 +7616,7 @@ var te = /*#__PURE__*/function () {
   }();
 exports.Player = ee;
 exports.Parser = te;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"], __webpack_require__(/*! ./../../../../../../下载/HBuilderX.3.8.7.20230703/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ 3)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"], __webpack_require__(/*! (webpack)/buildin/global.js */ 3)))
 
 /***/ }),
 
@@ -8917,7 +8917,7 @@ Schema.warning = warning;
 Schema.messages = messages;
 var _default = Schema;
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../下载/HBuilderX.3.8.7.20230703/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 1191)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/node-libs-browser/mock/process.js */ 1191)))
 
 /***/ }),
 
@@ -10979,8 +10979,8 @@ function populateParameters(result) {
     appVersion: "4.0.3",
     appVersionCode: "403",
     appLanguage: getAppLanguage(hostLanguage),
-    uniCompileVersion: "3.8.7",
-    uniRuntimeVersion: "3.8.7",
+    uniCompileVersion: "3.8.4",
+    uniRuntimeVersion: "3.8.4",
     uniPlatform: undefined || "mp-weixin",
     deviceBrand: deviceBrand,
     deviceModel: model,
@@ -12153,10 +12153,14 @@ function handleEvent(event) {
   }
 }
 var eventChannels = {};
+var eventChannelStack = [];
 function getEventChannel(id) {
-  var eventChannel = eventChannels[id];
-  delete eventChannels[id];
-  return eventChannel;
+  if (id) {
+    var eventChannel = eventChannels[id];
+    delete eventChannels[id];
+    return eventChannel;
+  }
+  return eventChannelStack.shift();
 }
 var hooks = ['onShow', 'onHide', 'onError', 'onPageNotFound', 'onThemeChange', 'onUnhandledRejection'];
 function initEventChannel() {
@@ -12623,7 +12627,7 @@ if (typeof Proxy !== 'undefined' && "mp-weixin" !== 'app-plus') {
       uni[name] = promisify(name, todoApis[name]);
     });
     Object.keys(extraApi).forEach(function (name) {
-      uni[name] = promisify(name, extraApi[name]);
+      uni[name] = promisify(name, todoApis[name]);
     });
   }
   Object.keys(eventApi).forEach(function (name) {
@@ -30851,7 +30855,7 @@ module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exp
 
 /***/ }),
 
-/***/ 937:
+/***/ 930:
 /*!***********************************************************************!*\
   !*** E:/verac/Documents/多客陪玩1.3前端(1)/tuniao-ui/libs/utils/emitter.js ***!
   \***********************************************************************/
@@ -30923,7 +30927,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 952:
+/***/ 945:
 /*!**************************************************************************!*\
   !*** E:/verac/Documents/多客陪玩1.3前端(1)/components/fh-apple-login/utils.js ***!
   \**************************************************************************/
@@ -30979,7 +30983,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 997:
+/***/ 990:
 /*!********************************************************************!*\
   !*** E:/verac/Documents/多客陪玩1.3前端(1)/components/mp-html/parser.js ***!
   \********************************************************************/

@@ -1,38 +1,41 @@
 <template>
-	<view class="template-circle tn-safe-area-inset-bottom ">	
-		<tn-nav-bar :isBack="false" :bottomShadow="false" backgroundColor="tn-cool-bg-color-5">
-		  <text class="">{{configInfo.shoname}}</text>		
+	<view class="template-circle tn-safe-area-inset-bottom ">
+		<tn-nav-bar :isBack="false" :bottomShadow="false" backgroundColor="transparent">
+			<!-- <text class="">{{configInfo.shoname}}</text>		
 		  <view slot="right" class="tn-flex tn-flex-col-right tn-flex-row-right ">
 		  	<view class="custom-nav__right" style="margin-left: 10px;" 
 			 @click="navigateToFn({ url: '/homePages/search', checkLogin: false })">
 		  		<text class="tn-icon-search" style="font-size: 18px;"></text>搜索
 		  </view>			
-		  </view>
+		  </view> -->
 		</tn-nav-bar>
-	
-	
-	
+
+
+
 		<!-- 推荐 -->
-				<mescroll-body ref="mescrollRef" @down="downCallback" @up="upCallback" >
-		<view  v-if="current==1" class="indexbg" :style="{paddingTop: vuex_custom_bar_height + 'px'}">
-		
-		<!-- #ifdef MP -->
-		<add-tip  />
-		<!-- #endif -->
+		<mescroll-body ref="mescrollRef" @down="downCallback" @up="upCallback">
+			<view v-if="current==1" class="indexbg" :style="{paddingTop: vuex_custom_bar_height + 'px'}">
+
+				<!-- #ifdef MP -->
+				<add-tip />
+				<!-- #endif -->
 
 				<!-- <view class="" style="padding: 10px 15px;" v-if="swiperList.length>0">
 					<tn-swiper :list="swiperList" imageMode="aspectFill" @click="hpicto" :height="200"></tn-swiper>
 				</view> -->
-				
+
 				<view class="index-top">
 					<view class="index-top-left flex-base">
-							<view :class="{'top-tab-view-select':topTabSelect==0,'top-tab-view-normal':topTabSelect!=0}" >交友</view>
-							<view :class="{'top-tab-view-select':topTabSelect==1,'top-tab-view-normal':topTabSelect!=1}" >电竞</view>
-							<view :class="{'top-tab-view-select':topTabSelect==2,'top-tab-view-normal':topTabSelect!=2}" >搭子</view>
+						<view :class="{'top-tab-view-select':topTabSelect==0,'top-tab-view-normal':topTabSelect!=0}">交友
+						</view>
+						<view :class="{'top-tab-view-select':topTabSelect==1,'top-tab-view-normal':topTabSelect!=1}">电竞
+						</view>
+						<view :class="{'top-tab-view-select':topTabSelect==2,'top-tab-view-normal':topTabSelect!=2}">搭子
+						</view>
 					</view>
 					<view class="index-top-right flex-base">
-						<view class="search-box">
-							
+						<view class="search-box" @click="navigateToFn({ url: '/homePages/search', checkLogin: false })">
+
 							<image src="../static/newUI/search_box.png" mode="" class="search-bg"></image>
 							<image src="../static/newUI/search_icon.png" mode="" class="search-icon"></image>
 							<view class="search-tip">
@@ -40,37 +43,23 @@
 							</view>
 						</view>
 						<view class="gift-box">
-							<image src="../static/newUI/gift.png" mode="" class="gift" ></image>
+							<image src="../static/newUI/gift.png" mode="" class="gift"></image>
 						</view>
 					</view>
 				</view>
 				<view class="bulletin_box">
-					<image src="../static/newUI/bulletin_bg.png" mode="" class="bulletin-bg"></image>
-					<view class="bulletin-tip">
-						公告 : <text class="bulletin-tip-text">测试内容.测试内容.测试内容.测试内容.测试内容.测试内容</text>
+					<view class="bull_box">
+						<image src="../static/newUI/bulletin_bg.png" mode="" class="bulletin-bg"></image>
+						<view class="bulletin-tip">
+							公告 : <text class="bulletin-tip-text">测试内容.测试内容.测试内容.测试内容.测试内容.测试内容</text>
+						</view>
 					</view>
+
 				</view>
-				
-					<view class="nav-list  tea-user__wrap">
-						 <view
-						       class="nav-list-item tn-shadow-blur tn-cool-bg-image image-bg"		       
-						     style="height: 100rpx;" @click="navigateToFn({ url: '/pages/diaoyou', checkLogin: false })">
-						       <view class="nav-link" style="margin-top:-30rpx;margin-left:-20rpx;">
-						         <view class='title'>线下钓友</view>					     
-						       </view>					      
-						     </view>
-						 
-						 <view
-						   class="nav-list-item tn-shadow-blur tn-cool-bg-image tn-main-gradient-indigo--single"		       
-						 style="height: 100rpx;" @click="navigateToFn({ url: '/pages/liaotian', checkLogin: false })">
-						   <view class="nav-link" style="margin-top:-30rpx;margin-left:-20rpx;">
-						     <view class='title'>同城交友</view>					 
-						   </view>
-						  
-						 </view>	
-					</view>
-				
-			<!-- 	<view class="nav-list  tea-user__wrap">
+
+
+
+				<!-- 	<view class="nav-list  tea-user__wrap">
 					 <view
 					       class="nav-list-item tn-shadow-blur tn-cool-bg-image tn-main-gradient-purplered--single"		       
 					     style="height: 100rpx;" @click="navigateToFn({ url: '/pages/diaoyou', checkLogin: false })">
@@ -88,39 +77,80 @@
 					  
 					 </view>	
 				</view> -->
-				
-				
-					<block v-if="configInfo.xcx_sh==1">
-					
-					
-						<view class="tn-flex tn-flex-wrap  tn-padding-sm" style=" box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.07);">
-											  <view class=" tn-radius" v-for="(item, indexsdf) in iconnew" :key="indexsdf"  :class="{
+
+
+				<block v-if="configInfo.xcx_sh==1">
+					<view class="tn-flex tn-flex-wrap  "
+						style=" box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.07);padding: 22rpx 22rpx 0;">
+						<view class=" tn-radius" v-for="(item, indexsdf) in iconnew" :key="indexsdf"
+							:class="{'sige': 1}" v-if="!item.appId">
+							<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
+								style="margin-bottom: 26rpx;"
+								@click="navigateToFn({ url: '/gamePages/index?type=0&id='+item.id+'&title='+item.title, checkLogin: false })">
+								<view class=" tn-flex tn-flex-row-center tn-flex-col-center"
+									style="height:66rpx;width: 66rpx;">
+									<image class="" :src='item.image' mode='aspectFit'
+										style="height:66rpx;width: 66rpx;"></image>
+								</view>
+								<view class=" tn-text-center" style="margin-top: 14rpx;">
+									<text class="jingang-text">{{item.title}}</text>
+								</view>
+							</view>
+						</view>
+						<view class=" tn-radius" :class="{'sige': 1}" v-if="1">
+							<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
+								style="margin-bottom: 26rpx;"
+								@click="navigateToFn({ url: ''+item.title, checkLogin: false })">
+								<view class=" tn-flex tn-flex-row-center tn-flex-col-center"
+									style="height:66rpx;width: 66rpx;">
+									<image class="" src="../static/newUI/more_game.png" mode='aspectFit'
+										style="height:66rpx;width: 66rpx;"></image>
+								</view>
+								<view class=" tn-text-center" style="margin-top: 14rpx;">
+									<text class="jingang-text">更多</text>
+								</view>
+							</view>
+						</view>
+					</view>
+
+					<!-- <view class="tn-flex tn-flex-wrap  tn-padding-sm"
+						style=" box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.07);">
+						<view class=" tn-radius" v-for="(item, indexsdf) in iconnew" :key="indexsdf" :class="{
 						'wuge': configInfo.daohanggeshu ==0,
 						'sige': configInfo.daohanggeshu ==1}" v-if="!item.appId">
-											    <view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center" @click="navigateToFn({ url: '/gamePages/index?type=0&id='+item.id+'&title='+item.title, checkLogin: false })">
-											      <view class="icon7__item--icon tn-flex tn-flex-row-center tn-flex-col-center">
-											        <image class="" :src='item.image' mode='aspectFit' style="height:90rpx;width: 90rpx;"></image>
-											      </view>
-											      <view class=" tn-text-center tn-margin-top-sm">
-											        <text class="tn-text-ellipsis tn-text-color">{{item.title}}</text>
-											      </view>
-											    </view>
-											  </view>
+							<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
+								@click="navigateToFn({ url: '/gamePages/index?type=0&id='+item.id+'&title='+item.title, checkLogin: false })">
+								<view class="icon7__item--icon tn-flex tn-flex-row-center tn-flex-col-center">
+									<image class="" :src='item.image' mode='aspectFit'
+										style="height:90rpx;width: 90rpx;"></image>
+								</view>
+								<view class=" tn-text-center" style="margin-top: 14rpx;">
+									<text class="tn-text-ellipsis tn-text-color">{{item.title}}</text>
+								</view>
+							</view>
 						</view>
-											
-					
-						
-					
-					</block>
-					
-					
-				
-				
-					
-	
-				<view class="tn-flex tn-flex-row-between tn-margin-sm" v-if="configInfo.yuyin_open==1&&configInfo.xcx_sh==1&&roomlist.length>0">
+					</view> -->
+				</block>
+				<view class="nav-list  tea-user__wrap">
+					<view class="nav-list-item  image-bg"
+						@click="navigateToFn({ url: '/pages/diaoyou', checkLogin: false })">
+					</view>
+					<view class="nav-list-item image-bg1"
+						@click="navigateToFn({ url: '/pages/liaotian', checkLogin: false })">
+					</view>
+					<view class="nav-list-item image-bg2"
+						@click="navigateToFn({ url: '/pages/liaotian', checkLogin: false })">
+					</view>
+				</view>
+
+
+
+
+
+				<view class="tn-flex tn-flex-row-between tn-margin-sm"
+					v-if="configInfo.yuyin_open==1&&configInfo.xcx_sh==1&&roomlist.length>0">
 					<view class="justify-content-item tn-text-bold tn-text-xl">
-					
+
 						<text class="">语音房间</text>
 					</view>
 					<view class="justify-content-item tn-text-lg"
@@ -173,35 +203,46 @@
 						</view>
 					</block>
 				</view>
-				<view>			
+				<view>
 				</view>
-				
-				
-				
-		
-				
-				
-				
-			
-	
+
+
+
+
+
+
+
+
+
 				<view class="tn-flex tn-flex-direction-column tn-margin-bottom">
-				
-				<view class="" style="width: 100%;position: relative;">
-					<tn-tabs :list="list" activeColor="#5500ff" inactiveColor="#000000" :isScroll="true" :current="currenttiezi" name="tab-name" 
-						@change="tabsChange"></tn-tabs>	
-				</view>		
+
+					<view class="" style="width: 100%;position: relative;">
+						<!-- 	<tn-tabs :list="list" activeColor="#5500ff" inactiveColor="#000000" :isScroll="true"
+							:current="currenttiezi" name="tab-name" @change="tabsChange"></tn-tabs> -->
+						<view class="list-tab-box">
+							<image src="../static/newUI/tap_first.png" mode="" class="tab_first"></image>
+							<view class="list-tab-right">
+								<view class="list-tab" v-for="(item, tabItem) in list" :key="tabItem"
+									@click="tabsChange(tabItem)">
+									{{item.name}}
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class="warm-box">
+						<image src="../static/newUI/warm_tips_bg.png" class="warm-img" mode=""></image>
+						<text class="warm-text1">每日可领券，天天享</text>
+						<text class="warm-text2">9</text>
+						<text class="warm-text3">折</text>
+					</view>
 					<quan-news :list="content" :index="true"></quan-news>
 				</view>
 
-				<!--      <view class='tn-tabbar-height'></view> -->
-		
-		</view>
+
+			</view>
 
 
-
-	
-		
-	</mescroll-body>
+		</mescroll-body>
 		<!-- 登录框组件 -->
 		<login-fn :is-show-login="loginBoxFlag" @loginSuccessCallback="refreshFn" @close="closeGlobalLoginFn">
 		</login-fn>
@@ -209,7 +250,7 @@
 		<tn-landscape :show="tanchuangshow" :maskCloseable="false" closePosition="rightTop" @close="closeLandscape">
 			<image :src="tanchuanglistimage" mode="widthFix" @click="tanchuang()"></image>
 		</tn-landscape>
-	<view style="height: 50px;"></view>
+		<view style="height: 50px;"></view>
 	</view>
 </template>
 
@@ -226,13 +267,13 @@
 	export default {
 		name: '',
 		mixins: [template_page_mixin, MescrollMixin],
-		components: {		
+		components: {
 			MescrollBody
 		},
 		data() {
 			return {
-				topTabSelect:1,
-				numindex:0,
+				topTabSelect: 1,
+				numindex: 0,
 				shoplist: [],
 				vodurl: '',
 				videoPlay: false,
@@ -240,8 +281,7 @@
 				activeItemStyle: {
 					fontSize: `36rpx`
 				},
-				list: [
-				],
+				list: [],
 				barStyle: {
 					boxShadow: `12rpx 12rpx 16rpx #01BEFF`
 				},
@@ -267,7 +307,7 @@
 						name: '热门'
 					},
 				],
-				tagsid:0,
+				tagsid: 0,
 				latestUserAvatar: [],
 				bloggerList: [],
 				// 内容默认隐藏显示的高度
@@ -279,9 +319,9 @@
 				mygrouplist: [],
 				bloggerhotList: [],
 				tanchuangshow: false,
-				msgcount:0,
-				iconnew:[],
-				title:''
+				msgcount: 0,
+				iconnew: [],
+				title: ''
 
 			}
 		},
@@ -291,54 +331,54 @@
 		onShareAppMessage(res) {
 			return {
 				title: this.item.share_title, //分享的名称
-				path: '/circlePages/details?id=' + this.id+'&daren_id='+uni.getStorageSync('user_id'),
+				path: '/circlePages/details?id=' + this.id + '&daren_id=' + uni.getStorageSync('user_id'),
 			}
 		},
 		//分享到朋友圈
 		onShareTimeline(res) {
 			return {
 				title: this.item.share_title, //分享的名称
-				path: '/circlePages/blogger_other?id=' + this.id+'&daren_id='+uni.getStorageSync('user_id'),
+				path: '/circlePages/blogger_other?id=' + this.id + '&daren_id=' + uni.getStorageSync('user_id'),
 			}
 		},
-	
-		
-		
-				
-		onLoad(option) {			
-			let that=this									
-	
-		uni.setNavigationBarTitle({
-			title:this.configInfo.shoname
-		})
-	
-	
-		// #ifdef H5
-		if (window.location.href.indexOf('?code=') !== -1 || window.location.href.indexOf('&code=') !== -1) {
-		let code;
-			if (window.location.href.indexOf('?code=') !== -1) {
-				code = window.location.href.split('?code=')[1].split('&')[0];
-				
-				uni.navigateTo({
-					url:'/pages/login/login?code='+code
-				})
-			} 
-			
-		}
+
+
+
+
+		onLoad(option) {
+			let that = this
+
+			uni.setNavigationBarTitle({
+				title: this.configInfo.shoname
+			})
+
+
+			// #ifdef H5
+			if (window.location.href.indexOf('?code=') !== -1 || window.location.href.indexOf('&code=') !== -1) {
+				let code;
+				if (window.location.href.indexOf('?code=') !== -1) {
+					code = window.location.href.split('?code=')[1].split('&')[0];
+
+					uni.navigateTo({
+						url: '/pages/login/login?code=' + code
+					})
+				}
+
+			}
 			// #endif
-		
-		if (option.daren_id){
-		uni.setStorageSync('daren_id',option.daren_id)
-		}
+
+			if (option.daren_id) {
+				uni.setStorageSync('daren_id', option.daren_id)
+			}
 			//手动刷新	uni.startPullDownRefresh();
 
 			uni.onTabBarMidButtonTap(() => {
-		 	uni.navigateTo({
+				uni.navigateTo({
 					url: '/circlePages/edit?tab=1',
 				});
 			})
 
-			
+
 		},
 		onPullDownRefresh() {
 			this.info()
@@ -346,11 +386,11 @@
 				uni.stopPullDownRefresh();
 			}, 1000);
 		},
-		
 
-	
-		
-		
+
+
+
+
 		mounted() {
 			let that = this;
 			that.info('rec')
@@ -363,40 +403,40 @@
 				that.loginBoxFlag = loginBoxFlag;
 			});
 			uni.$on('jianshacount', (shu) => {
-			if (shu==10000){
-			//this.paymp3('/static/shou.mp3', 0)
-			this.msgcount++
-			this.msggai(this.msgcount)
-			}else if (this.msgcount>0||shu>0){
-				this.msgcount = this.msgcount - shu	
-				this.msggai(this.msgcount)
+				if (shu == 10000) {
+					//this.paymp3('/static/shou.mp3', 0)
+					this.msgcount++
+					this.msggai(this.msgcount)
+				} else if (this.msgcount > 0 || shu > 0) {
+					this.msgcount = this.msgcount - shu
+					this.msggai(this.msgcount)
 				}
-				
+
 			});
 			// 注册接受消息监听
-			uni.$on('index', (message) => {			
-			uni.$emit('jianshacount',10000)
+			uni.$on('index', (message) => {
+				uni.$emit('jianshacount', 10000)
 			});
-			
-				//#ifdef APP-PLUS 
-		 this.$nextTick(() => {		
-		        that.gengxin()
-		     })
-				//#endif
+
+			//#ifdef APP-PLUS 
+			this.$nextTick(() => {
+				that.gengxin()
+			})
+			//#endif
 		},
 
 		methods: {
 			onTabItemTap(e) {
 				console.log('在首页点击按钮')
-				 console.log(e)
-			          if (e.index==2){
+				console.log(e)
+				if (e.index == 2) {
 					uni.navigateTo({
-						url:'/circlePages/edit?tab=1'
+						url: '/circlePages/edit?tab=1'
 					})
-					  }
-					
-			       },
-				   
+				}
+
+			},
+
 			screenChange(e) {
 				let _this = this;
 				let fullScreen = e.detail.fullScreen;
@@ -428,12 +468,22 @@
 				});
 				if (result.statusCode == 200) {
 					if (result.data.code == 200) {
-						that.swiperList = result.data.data.swiperList;					
+						that.swiperList = result.data.data.swiperList;
 						that.roomlist = result.data.data.roomlist;
 						that.tanchuanglist = result.data.data.tanchuanglist[0];
-					
+
 						that.list = result.data.data.tagslist;
-						that.iconnew = result.data.data.iconnew;						
+						let moreIcon = {
+							'create_time': 1685611505,
+							'id': 48,
+							'image': "../static/newUI/more_game.png",
+							'sort': 7,
+							'status': 1,
+							'title': "更多",
+							'url': "../static/newUI/more_game.png"
+						}
+						that.iconnew = result.data.data.iconnew.slice(0, 7);
+						// that.iconnew =that.iconnew.push(moreIcon)
 						if (result.data.data.tanchuanglist.length > 0) {
 							that.tanchuangshow = true
 							that.tanchuanglistimage = that.tanchuanglist.image
@@ -486,22 +536,22 @@
 						icon: 'none',
 						title: that.$errorMsg
 					});
-				}	
-			},
-		async msgcoutget() {
-			let that = this;
-			let result = await that.$request({
-				loading: 0,
-				method: 'post',
-				url: '/api/index/getmsgcount',
-				data: {}
-			});				
-			if (result.statusCode == 200) {
-				if (result.data.code == 200) {
-					this.msgcount = result.data.msg	
-					this.msggai(this.msgcount)
 				}
-			}
+			},
+			async msgcoutget() {
+				let that = this;
+				let result = await that.$request({
+					loading: 0,
+					method: 'post',
+					url: '/api/index/getmsgcount',
+					data: {}
+				});
+				if (result.statusCode == 200) {
+					if (result.data.code == 200) {
+						this.msgcount = result.data.msg
+						this.msggai(this.msgcount)
+					}
+				}
 			},
 			async myinfo() {
 				let that = this;
@@ -536,9 +586,9 @@
 			/// 列表调用
 
 			downCallback(mescroll) {
-				if (this.current==0){
+				if (this.current == 0) {
 					this.myinfo()
-				}	
+				}
 				mescroll.endSuccess();
 				mescroll.resetUpScroll();
 			},
@@ -549,14 +599,14 @@
 					method: 'post',
 					url: '/api/games/user_list',
 					data: {
-						searchKey:'',
-						xiaolei:'',
-						tesetitle:'',
-						sextitle:'',
-						paixutitle:'',
-						latitude:'',
-						longitude:'',
-						tagsindex: that.tagsid,					
+						searchKey: '',
+						xiaolei: '',
+						tesetitle: '',
+						sextitle: '',
+						paixutitle: '',
+						latitude: '',
+						longitude: '',
+						tagsindex: that.tagsid,
 						page: mescroll.num
 					}
 				});
@@ -721,7 +771,7 @@
 				if (this.swiperList[index].url && this.swiperList[index].leixing == 1) {
 					this.tn('/circlePages/group?id=' + this.swiperList[index].url + '')
 				}
-				if (this.swiperList[index].url && this.swiperList[index].leixing == 2) {				
+				if (this.swiperList[index].url && this.swiperList[index].leixing == 2) {
 					this.navigateToFn({
 						url: '/minePages/chat/room_text?id=' + this.swiperList[index].url,
 						checkLogin: true
@@ -742,7 +792,7 @@
 				if (this.tanchuanglist.url && this.tanchuanglist.leixing == 1) {
 					this.tn('/circlePages/group?id=' + this.tanchuanglist.url + '')
 				}
-				if (this.tanchuanglist.url && this.tanchuanglist.leixing == 2) {				
+				if (this.tanchuanglist.url && this.tanchuanglist.leixing == 2) {
 					this.navigateToFn({
 						url: '/minePages/chat/room_text?id=' + this.tanchuanglist.url,
 						checkLogin: true
@@ -754,9 +804,9 @@
 				if (this.tanchuanglist.url && this.tanchuanglist.leixing == 5) {
 					this.tn('/circlePages/team/show?id=' + this.tanchuanglist.url + '')
 				}
-				
-				
-				
+
+
+
 			},
 			refreshFn() {
 
@@ -769,109 +819,113 @@
 				})
 				// #endif
 				// #ifndef APP-PLUS		
-		
+
 				this.navigateToFn({
 					url: '/minePages/chat/room_text?id=' + id,
 					checkLogin: true
 				})
 				// #endif				
 			},
-			
+
 			geturl(item) {
-				if (item.appId){
+				if (item.appId) {
 					// #ifdef MP
 					uni.navigateToMiniProgram({
-					  appId:item.appId,
-					  path:item.page_url,				 
-					  success(res) {
-					    // 打开成功
-					  }
-					})	
+						appId: item.appId,
+						path: item.page_url,
+						success(res) {
+							// 打开成功
+						}
+					})
 					// #endif
 					// #ifndef MP
 					this.msg('小程序内使用')
 					// #endif
-					
-			
-				}else{
-			this.navigateToFn({
-				url: item.page_url,
-				checkLogin: true
-			})
-			}
+
+
+				} else {
+					this.navigateToFn({
+						url: item.page_url,
+						checkLogin: true
+					})
+				}
 			},
-			
-			
+
+
 
 
 			tabsChange(index) {
 				this.currenttiezi = index
-				this.tagsid=this.list[index].id
+				this.tagsid = this.list[index].id
 				this.mescroll.resetUpScroll()
 			},
-			
-			msggai(shuzi){
-				if (shuzi<=0){
-				uni.removeTabBarBadge({ index: 2 });//移除条数	
-					}else{					
-					uni.setTabBarBadge({					
-					index: 3,
-					text: `${shuzi}`
+
+			msggai(shuzi) {
+				if (shuzi <= 0) {
+					uni.removeTabBarBadge({
+						index: 2
+					}); //移除条数	
+				} else {
+					uni.setTabBarBadge({
+						index: 3,
+						text: `${shuzi}`
 					});
 				}
-			
-			},			
-			gengxin() {			
-			// 获取本地应用资源版本号
-					plus.runtime.getProperty(plus.runtime.appid, (inf) => {								
-						uni.request({
-							url: host + '/api/index/app_up', //示例接口
-							data: {
-								edition_type: plus.runtime.appid,
-								version_type: uni.getSystemInfoSync().platform, 
-								edition_number: inf.versionCode 
-							},
-							success: (res) => {	
-								//	console.log(res.data.data)
-								//	console.log(inf.versionCode)
-								
-								if (Number(res.data.data.edition_number) > Number(inf.versionCode) && res.data.data.edition_issue == 1) {
-									if (res.data.data.package_type == 1 && res.data.data.edition_silence == 1) {
-			
-										silenceUpdate(res.data.data.edition_url)
-			
-									} else {
-										//跳转更新页面 （注意！！！如果pages.json第一页的代码里有一打开就跳转其他页面的操作，下面这行代码最好写在setTimeout里面设置延时3到5秒再执行）
-										uni.navigateTo({
-											url: '/uni_modules/rt-uni-update/components/rt-uni-update/rt-uni-update?obj=' +
-												JSON.stringify(res.data.data)
-										});
-									}
-								} else {
-			
-								}
-							}
-			
-			
-						})
-			
-					});				
+
 			},
-			tiaozhuan(){
-				
-			uni.navigateToMiniProgram({
-			    appId:'wxd2ade0f25a874ee2',// 此为生活缴费appid
-			    path:'main/pages/nativeindex/nativeindex',// 此为生活缴费首页路径
-			    envVersion:"release",
-			    success: res => {				  
-			      console.log("打开成功", res)
-			    }
-			   
-			})			
+			gengxin() {
+				// 获取本地应用资源版本号
+				plus.runtime.getProperty(plus.runtime.appid, (inf) => {
+					uni.request({
+						url: host + '/api/index/app_up', //示例接口
+						data: {
+							edition_type: plus.runtime.appid,
+							version_type: uni.getSystemInfoSync().platform,
+							edition_number: inf.versionCode
+						},
+						success: (res) => {
+							//	console.log(res.data.data)
+							//	console.log(inf.versionCode)
+
+							if (Number(res.data.data.edition_number) > Number(inf.versionCode) && res
+								.data.data.edition_issue == 1) {
+								if (res.data.data.package_type == 1 && res.data.data.edition_silence ==
+									1) {
+
+									silenceUpdate(res.data.data.edition_url)
+
+								} else {
+									//跳转更新页面 （注意！！！如果pages.json第一页的代码里有一打开就跳转其他页面的操作，下面这行代码最好写在setTimeout里面设置延时3到5秒再执行）
+									uni.navigateTo({
+										url: '/uni_modules/rt-uni-update/components/rt-uni-update/rt-uni-update?obj=' +
+											JSON.stringify(res.data.data)
+									});
+								}
+							} else {
+
+							}
+						}
+
+
+					})
+
+				});
+			},
+			tiaozhuan() {
+
+				uni.navigateToMiniProgram({
+					appId: 'wxd2ade0f25a874ee2', // 此为生活缴费appid
+					path: 'main/pages/nativeindex/nativeindex', // 此为生活缴费首页路径
+					envVersion: "release",
+					success: res => {
+						console.log("打开成功", res)
+					}
+
+				})
 			}
-			
-		
-				
+
+
+
 
 
 
@@ -882,129 +936,236 @@
 </script>
 
 <style lang="scss" scoped>
-	.indexbg{
-		background-image:linear-gradient(180deg, #982FD8 0%, #D52F9A 58%, #B263E2 73%, #FFFFFF 100%);
+	.warm-text1{
+		margin-left: 22.67rpx;
+		height: 32rpx;
+		font-size: 23rpx;
+		// font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #493C45;
+		line-height: 29rpx;
 	}
-	.top-tab-view-normal{
+	.warm-text2{
+		width: 23rpx;
+		height: 54rpx;
+		font-size: 39rpx;
+		// font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #FC357C;
+		line-height: 49rpx;
+			margin-left: 4rpx;
+	}
+	.warm-text3{
+		width: 22rpx;
+		height: 31rpx;
+		font-size: 22rpx;
+		// font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #FC357C;
+		line-height: 37rpx;
+			margin-left: 2rpx;
+	}
+	
+	.warm-box{
+		display: flex;
+		padding: 0 20rpx;
+		margin-bottom: -20rpx;
+		align-items: center;
+	}
+	.warm-img{
+		width: 105.33rpx;
+		height: 42rpx;
+	}
+	.tab_first {
+		width: 72.81rpx;
+		height: 34.92rpx;
+		margin-left: 24rpx;
+	}
+
+	.list-tab-box {
+		display: flex;
+		margin-bottom: 26rpx;
+	}
+
+	.list-tab-right {
+		width: 653rpx;
+		overflow: hidden;
+		overflow-x: auto;
+		white-space: nowrap;
+		text-align: center;
+	}
+
+	.list-tab {
+		display: inline-block;
+		padding: 6rpx 14rpx;
+		font-size: 20rpx;
+		// font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #202542;
+		background-color: #ECDEFC;
+		border-radius: 7.33rpx;
+		// height: 28rpx;
+		// line-height: 20rpx;
+		margin-left: 20rpx;
+	}
+
+	.jingang-text {
+		width: 88rpx;
+		height: 31rpx;
+		font-size: 22rpx;
+		// font-family: PingFang SC-Bold, PingFang SC;
+		font-weight: bold;
+		color: #FFFFFF;
+		line-height: 31rpx;
+	}
+
+	.indexbg {
+		background-image: url('../static/newUI/bg.png');
+		background-size: contain;
+		background-repeat: no-repeat; 
+	}
+
+	.top-tab-view-normal {
 		font-size: 32rpx;
-		font-family: PingFang SC-Bold, PingFang SC;
+		// font-family: PingFang SC-Bold, PingFang SC;
 		font-weight: bold;
 		color: #FFFFFF;
 		margin-right: 32rpx;
 		opacity: 0.7;
 	}
-	.top-tab-view-select{
+
+	.top-tab-view-select {
 		font-size: 60rpx;
-		font-family: PingFang SC-Bold, PingFang SC;
+		// font-family: PingFang SC-Bold, PingFang SC;
 		font-weight: bold;
 		color: #FFFFFF;
 		margin-right: 32rpx;
 	}
-	.index-top{
+
+	.index-top {
 		display: flex;
 		background-color: transparent;
 		height: 100rpx;
-		align-items: flex-end;
+		align-items: center;
 		margin-left: 22rpx;
 		justify-content: space-between;
 		margin-bottom: 20rpx;
 	}
-	.flex-base{
+
+	.flex-base {
 		display: flex;
 	}
-	.search-box{
+
+	.search-box {
 		position: relative;
 		width: 176rpx;
 		height: 65rpx;
 	}
-	.search-bg{
+
+	.search-bg {
 		position: absolute;
 		width: 174.21rpx;
 		height: 64.64rpx;
-		opacity:0.3
+		opacity: 0.3
 	}
-	.search-icon{
+
+	.search-icon {
 		position: absolute;
 		width: 25.6rpx;
 		height: 25.67rpx;
-		    top: 22rpx;
-		    left: 24rpx;
+		top: 22rpx;
+		left: 24rpx;
 	}
-	.search-tip{
+
+	.search-tip {
 		position: absolute;
 		height: 32rpx;
 		font-size: 23rpx;
-		font-family: PingFang SC-Bold, PingFang SC;
+		// font-family: PingFang SC-Bold, PingFang SC;
 		font-weight: bold;
 		color: #FFFFFF;
 		line-height: 24rpx;
 		top: 22rpx;
-		    left: 70rpx;
+		left: 70rpx;
 	}
-	.gift-box{
+
+	.gift-box {
 		width: 53.92rpx;
 		height: 52.54rpx;
 		margin: 0 30rpx;
 	}
-	.gift{
+
+	.gift {
 		width: 53.92rpx;
 		height: 52.54rpx;
 	}
-	.index-top-left{
-		align-items:flex-end;
+
+	.index-top-left {
+		align-items: center;
 	}
-	.index-top-right{
-		align-items:center;
+
+	.index-top-right {
+		align-items: center;
 		height: 66rpx;
 	}
-	.bulletin_box{
-		position: relative;
+
+	.bulletin_box {
+
 		padding: 0 20rpx;
 		width: 710rpx;
-		height: 54rpx;
-		
+
 	}
-	.bulletin-bg{
+
+	.bull_box {
+		position: relative;
+		width: 710rpx;
+		height: 54rpx;
+	}
+
+	.bulletin-bg {
 		position: absolute;
 		top: 0;
-		left: 20rpx;
+		left: 0rpx;
 		width: 710rpx;
-		height: 52.67rpx;
+		height: 66rpx;
 		opacity: 0.3;
 	}
-	.bulletin-tip{
+
+	.bulletin-tip {
 		position: absolute;
-		top: 8rpx;
-		left: 60rpx;
+		top: 12rpx;
+		left: 28rpx;
 		width: 770rpx;
-		height: 41rpx;
+		height: 40rpx;
 		font-size: 29rpx;
-		font-family: PingFang SC-Bold, PingFang SC;
+		// font-family: PingFang SC-Bold, PingFang SC;
 		font-weight: bold;
 		color: #EEFF00;
-		line-height: 30rpx;
+		line-height: 40rpx;
 	}
-	.bulletin-tip-text{
+
+	.bulletin-tip-text {
 		margin-left: 24rpx;
 		width: 541rpx;
 		height: 30rpx;
 		font-size: 21rpx;
-		font-family: PingFang SC-Bold, PingFang SC;
+		// font-family: PingFang SC-Bold, PingFang SC;
 		font-weight: bold;
 		color: #FFFFFF;
-		line-height: 22rpx;
+		line-height: 30rpx;
 	}
-	.tn-text-color{
+
+	.tn-text-color {
 		width: 68rpx;
 		height: 31rpx;
 		font-size: 22rpx;
-		font-family: PingFang SC-Bold, PingFang SC;
+		// font-family: PingFang SC-Bold, PingFang SC;
 		font-weight: bold;
 		color: #FFFFFF;
 		line-height: 41rpx;
 	}
-	
-	
+
+
 	.template-circle {
 		max-height: 100vh;
 	}
@@ -1337,8 +1498,8 @@
 	.image-article {
 		border-radius: 8rpx;
 		border: 1rpx solid #F8F7F8;
-		width: 200rpx;
-		height: 200rpx;
+		width: 186rpx;
+		height: 202rpx;
 		position: relative;
 	}
 
@@ -1690,74 +1851,97 @@
 
 	/* 组件导航列表 start*/
 	.nav-list {
-	  display: flex;
-	  justify-content: space-between;
-	  .image-bg{
-		  background-image: url('../static/newUI/nac_list_1.png');
-	  }
-	  /* 列表元素 start */
-	  .nav-list-item {
-	    padding: 35rpx 30rpx 5rpx 30rpx;
-	    border-radius: 12rpx;
-	    width: 50%;
-	    margin: 0 18rpx 40rpx;
-	    background-size: cover;
-	    background-position: center;
-	    position: relative;
-	    z-index: 99;
-	    
-	    
-	    
-	    /* 元素标题 start */
-	    .nav-link {	
-	      text-transform: capitalize;
-	      padding: 0 0 10rpx 0;
-	      position: relative;
-	      
-	      .title {
-	        font-weight: bold;	       
-	        color: #FFFFFF;
-	        margin-top: 30rpx;
-	        text-align: center;
-	      }
-	      .author {	     
-	        color: #FFFFFF;
-	        margin-top: 50rpx;
-	        margin-left: -10rpx;
-	        text-align: center;
-	      }
-	    }
-	    /* 元素标题 end */
-	    
-	    /* 元素图标 start */
-	    .icon {
-	      font-variant: small-caps;
-	      position: absolute;
-	      top: 20rpx;
-	      right: 50rpx;
-	      left: 37%;
-	      width: 90rpx;
-	      height: 90rpx;
-	      line-height: 90rpx;
-	      margin: 0;
-	      padding: 0;
-	      display: inline-flex;
-	      text-align: center;
-	      justify-content: center;
-	      vertical-align: middle;
-	      font-size: 50rpx;
-	      color: #FFFFFF;
-	      white-space: nowrap;
-	      opacity: 0.9;
-	   
-	      background-size: cover;
-	      background-position: 50%;
-	      border-radius: 5000rpx;
-	    }
-	    /* 元素图标 end */
-	  }
-	  /* 列表元素 end */
+		display: flex;
+		justify-content: space-between;
+		padding: 0 24rpx;
+		margin-bottom: 26rpx;
+
+		.image-bg {
+			background-image: url('../static/newUI/nac_list_1.png');
+			width: 240.87rpx;
+			height: 109.29rpx;
+		}
+
+		.image-bg1 {
+			background-image: url('../static/newUI/nac_list_2.png');
+			width: 238.3rpx;
+			height: 109.81rpx;
+			margin-left: -10rpx;
+		}
+
+		.image-bg2 {
+			background-image: url('../static/newUI/nac_list_3.png');
+			width: 240.87rpx;
+			height: 109.29rpx;
+			margin-left: -10rpx;
+		}
+
+		/* 列表元素 start */
+		.nav-list-item {
+
+
+			background-size: cover;
+			background-position: center;
+			position: relative;
+			z-index: 99;
+
+
+
+			/* 元素标题 start */
+			.nav-link {
+				text-transform: capitalize;
+				padding: 0 0 10rpx 0;
+				position: relative;
+
+				.title {
+					font-weight: bold;
+					color: #FFFFFF;
+					margin-top: 30rpx;
+					text-align: center;
+				}
+
+				.author {
+					color: #FFFFFF;
+					margin-top: 50rpx;
+					margin-left: -10rpx;
+					text-align: center;
+				}
+			}
+
+			/* 元素标题 end */
+
+			/* 元素图标 start */
+			.icon {
+				font-variant: small-caps;
+				position: absolute;
+				top: 20rpx;
+				right: 50rpx;
+				left: 37%;
+				width: 90rpx;
+				height: 90rpx;
+				line-height: 90rpx;
+				margin: 0;
+				padding: 0;
+				display: inline-flex;
+				text-align: center;
+				justify-content: center;
+				vertical-align: middle;
+				font-size: 50rpx;
+				color: #FFFFFF;
+				white-space: nowrap;
+				opacity: 0.9;
+
+				background-size: cover;
+				background-position: 50%;
+				border-radius: 5000rpx;
+			}
+
+			/* 元素图标 end */
+		}
+
+		/* 列表元素 end */
 	}
+
 	/* 组件导航列表 end*/
 	/* 热门图片 start*/
 	.image-tuniao1 {
@@ -1788,73 +1972,74 @@
 		background-position: top;
 		border-radius: 10rpx;
 	}
+
 	.icon12 {
-	  &__item {
-	    width: 30%;
-	    background-color: #FFFFFF;
-	    border-radius: 10rpx;
-	    padding: 30rpx;
-	    margin: 20rpx 10rpx;
-	    transform: scale(1);
-	    transition: transform 0.3s linear;
-	    transform-origin: center center;
-	    
-	    &--icon {
-	      width: 100rpx;
-	      height: 100rpx;
-	      font-size: 60rpx;
-	      border-radius: 50%;
-	      margin-bottom: 18rpx;
-	      position: relative;
-	      z-index: 1;
-	      
-	      &::after {
-	        content: " ";
-	        position: absolute;
-	        z-index: -1;
-	        width: 100%;
-	        height: 100%;
-	        left: 0;
-	        bottom: 0;
-	        border-radius: inherit;
-	        opacity: 1;
-	        transform: scale(1, 1);
-	        background-size: 100% 100%;	    
-	          
-	      }
-	    }
-	  }
+		&__item {
+			width: 30%;
+			background-color: #FFFFFF;
+			border-radius: 10rpx;
+			padding: 30rpx;
+			margin: 20rpx 10rpx;
+			transform: scale(1);
+			transition: transform 0.3s linear;
+			transform-origin: center center;
+
+			&--icon {
+				width: 100rpx;
+				height: 100rpx;
+				font-size: 60rpx;
+				border-radius: 50%;
+				margin-bottom: 18rpx;
+				position: relative;
+				z-index: 1;
+
+				&::after {
+					content: " ";
+					position: absolute;
+					z-index: -1;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					bottom: 0;
+					border-radius: inherit;
+					opacity: 1;
+					transform: scale(1, 1);
+					background-size: 100% 100%;
+
+				}
+			}
+		}
 	}
-	
+
 	/* 图标容器7 start */
 	.icon7 {
-	  &__item {
-	    width: 30%;
-	    background-color: #FFFFFF;
-	    border-radius: 10rpx;
-	    padding: 10rpx;
-	    margin: 20rpx 10rpx;
-	    transform: scale(1);
-	    transition: transform 0.3s linear;
-	    transform-origin: center center;
-	    
-	    &--icon {
-	      width: 120rpx;
-	      height: 120rpx;
-	      font-size: 50rpx;
-	      border-radius: 0;
-	      margin-bottom: -10rpx;
-	      position: relative;
-	      z-index: 1;
-	    }
-	  }
-	}    
-	.wuge{
-	width: 20%;	
+		&__item {
+			width: 30%;
+			background-color: #FFFFFF;
+			border-radius: 10rpx;
+			padding: 10rpx;
+			margin: 20rpx 10rpx;
+			transform: scale(1);
+			transition: transform 0.3s linear;
+			transform-origin: center center;
+
+			&--icon {
+				width: 120rpx;
+				height: 120rpx;
+				font-size: 50rpx;
+				border-radius: 0;
+				margin-bottom: -10rpx;
+				position: relative;
+				z-index: 1;
+			}
+		}
 	}
-	.sige{
-	width: 25%;	
+
+	.wuge {
+		width: 20%;
 	}
-		
-	
+
+	.sige {
+		width: 25%;
+	}
 </style>
