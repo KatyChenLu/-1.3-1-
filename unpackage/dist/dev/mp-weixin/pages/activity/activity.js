@@ -101,13 +101,10 @@ var components
 try {
   components = {
     tnNavBar: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-nav-bar/tn-nav-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-nav-bar/tn-nav-bar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-nav-bar/tn-nav-bar.vue */ 770))
-    },
-    tnTabsSwiper: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-tabs-swiper/tn-tabs-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tabs-swiper/tn-tabs-swiper")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tabs-swiper/tn-tabs-swiper.vue */ 876))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-nav-bar/tn-nav-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-nav-bar/tn-nav-bar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-nav-bar/tn-nav-bar.vue */ 778))
     },
     quanList: function () {
-      return __webpack_require__.e(/*! import() | components/quan-list/quan-list */ "components/quan-list/quan-list").then(__webpack_require__.bind(null, /*! @/components/quan-list/quan-list.vue */ 883))
+      return __webpack_require__.e(/*! import() | components/quan-list/quan-list */ "components/quan-list/quan-list").then(__webpack_require__.bind(null, /*! @/components/quan-list/quan-list.vue */ 891))
     },
   }
 } catch (e) {
@@ -222,10 +219,28 @@ var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/component
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //引入静默更新
 var MescrollBody = function MescrollBody() {
   __webpack_require__.e(/*! require.ensure | components/mescroll-uni/mescroll-body */ "components/mescroll-uni/mescroll-body").then((function () {
-    return resolve(__webpack_require__(/*! @/components/mescroll-uni/mescroll-body.vue */ 806));
+    return resolve(__webpack_require__(/*! @/components/mescroll-uni/mescroll-body.vue */ 814));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -236,6 +251,7 @@ var _default = {
   },
   data: function data() {
     return {
+      topTabSelect: 0,
       activeItemStyle: {
         fontSize: "36rpx"
       },
@@ -550,12 +566,12 @@ var _mescrollUniOption = _interopRequireDefault(__webpack_require__(/*! ./mescro
 // 引入全局配置
 var MescrollEmpty = function MescrollEmpty() {
   __webpack_require__.e(/*! require.ensure | components/mescroll-uni/components/mescroll-empty */ "components/mescroll-uni/components/mescroll-empty").then((function () {
-    return resolve(__webpack_require__(/*! ./components/mescroll-empty.vue */ 813));
+    return resolve(__webpack_require__(/*! ./components/mescroll-empty.vue */ 821));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var MescrollTop = function MescrollTop() {
   __webpack_require__.e(/*! require.ensure | components/mescroll-uni/components/mescroll-top */ "components/mescroll-uni/components/mescroll-top").then((function () {
-    return resolve(__webpack_require__(/*! ./components/mescroll-top.vue */ 820));
+    return resolve(__webpack_require__(/*! ./components/mescroll-top.vue */ 828));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default2 = {

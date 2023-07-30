@@ -4,7 +4,6 @@
     "tn-button": "/tuniao-ui/components/tn-button/tn-button",
     "tn-avatar": "/tuniao-ui/components/tn-avatar/tn-avatar",
     "tn-grid": "/tuniao-ui/components/tn-grid/tn-grid",
-    "tn-grid-item": "/tuniao-ui/components/tn-grid-item/tn-grid-item",
-    "tn-avatar-group": "/tuniao-ui/components/tn-avatar-group/tn-avatar-group"
+    "tn-grid-item": "/tuniao-ui/components/tn-grid-item/tn-grid-item"
   }
 }

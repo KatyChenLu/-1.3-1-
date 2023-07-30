@@ -6,7 +6,6 @@
     "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
     "tn-tabs": "/tuniao-ui/components/tn-tabs/tn-tabs",
     "tn-avatar": "/tuniao-ui/components/tn-avatar/tn-avatar",
-    "tn-button": "/tuniao-ui/components/tn-button/tn-button",
     "mescroll-body": "/components/mescroll-uni/mescroll-body"
   }
 }

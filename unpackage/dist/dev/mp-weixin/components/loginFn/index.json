@@ -1,6 +1,6 @@
 {
+  "component": true,
   "usingComponents": {
     "tn-button": "/tuniao-ui/components/tn-button/tn-button"
-  },
-  "component": true
+  }
 }

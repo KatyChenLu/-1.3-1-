@@ -101,28 +101,28 @@ var components
 try {
   components = {
     tnNavBar: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-nav-bar/tn-nav-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-nav-bar/tn-nav-bar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-nav-bar/tn-nav-bar.vue */ 770))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-nav-bar/tn-nav-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-nav-bar/tn-nav-bar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-nav-bar/tn-nav-bar.vue */ 778))
     },
     tnEmpty: function () {
-      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-empty/tn-empty */ "tuniao-ui/components/tn-empty/tn-empty").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-empty/tn-empty.vue */ 897))
+      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-empty/tn-empty */ "tuniao-ui/components/tn-empty/tn-empty").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-empty/tn-empty.vue */ 905))
     },
     tnButton: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-button/tn-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-button/tn-button")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-button/tn-button.vue */ 841))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-button/tn-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-button/tn-button")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-button/tn-button.vue */ 877))
     },
     tnSwipeAction: function () {
-      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-swipe-action/tn-swipe-action */ "tuniao-ui/components/tn-swipe-action/tn-swipe-action").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-swipe-action/tn-swipe-action.vue */ 904))
+      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-swipe-action/tn-swipe-action */ "tuniao-ui/components/tn-swipe-action/tn-swipe-action").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-swipe-action/tn-swipe-action.vue */ 912))
     },
     tnSwipeActionItem: function () {
-      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-swipe-action-item/tn-swipe-action-item */ "tuniao-ui/components/tn-swipe-action-item/tn-swipe-action-item").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-swipe-action-item/tn-swipe-action-item.vue */ 909))
+      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-swipe-action-item/tn-swipe-action-item */ "tuniao-ui/components/tn-swipe-action-item/tn-swipe-action-item").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-swipe-action-item/tn-swipe-action-item.vue */ 917))
     },
     tnAvatar: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-avatar/tn-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-avatar/tn-avatar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-avatar/tn-avatar.vue */ 834))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-avatar/tn-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-avatar/tn-avatar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-avatar/tn-avatar.vue */ 842))
     },
     tnTag: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-tag/tn-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tag/tn-tag")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tag/tn-tag.vue */ 848))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-tag/tn-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tag/tn-tag")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tag/tn-tag.vue */ 849))
     },
     tnPopup: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-popup/tn-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-popup/tn-popup")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-popup/tn-popup.vue */ 918))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-popup/tn-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-popup/tn-popup")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-popup/tn-popup.vue */ 926))
     },
   }
 } catch (e) {
@@ -401,9 +401,26 @@ var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/component
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var MescrollBody = function MescrollBody() {
   __webpack_require__.e(/*! require.ensure | components/mescroll-uni/mescroll-body */ "components/mescroll-uni/mescroll-body").then((function () {
-    return resolve(__webpack_require__(/*! @/components/mescroll-uni/mescroll-body.vue */ 806));
+    return resolve(__webpack_require__(/*! @/components/mescroll-uni/mescroll-body.vue */ 814));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -1006,12 +1023,12 @@ var _mescrollUniOption = _interopRequireDefault(__webpack_require__(/*! ./mescro
 // 引入全局配置
 var MescrollEmpty = function MescrollEmpty() {
   __webpack_require__.e(/*! require.ensure | components/mescroll-uni/components/mescroll-empty */ "components/mescroll-uni/components/mescroll-empty").then((function () {
-    return resolve(__webpack_require__(/*! ./components/mescroll-empty.vue */ 813));
+    return resolve(__webpack_require__(/*! ./components/mescroll-empty.vue */ 821));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var MescrollTop = function MescrollTop() {
   __webpack_require__.e(/*! require.ensure | components/mescroll-uni/components/mescroll-top */ "components/mescroll-uni/components/mescroll-top").then((function () {
-    return resolve(__webpack_require__(/*! ./components/mescroll-top.vue */ 820));
+    return resolve(__webpack_require__(/*! ./components/mescroll-top.vue */ 828));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default2 = {

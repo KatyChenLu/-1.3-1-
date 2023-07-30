@@ -161,6 +161,39 @@ page {
  * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
  * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
  */
+.liaotian-image.data-v-23755146 {
+  width: 85.33rpx;
+  height: 37.33rpx;
+}
+.index_bg.data-v-23755146 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.nav-list.data-v-23755146 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32rpx;
+  margin-bottom: 26rpx;
+  /* 列表元素 start */
+}
+.nav-list .nav-list-item.data-v-23755146 {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 99;
+  width: 342.81rpx;
+  height: 155.55rpx;
+}
+.nav-list .nav-list-item .nav-list-item-image.data-v-23755146 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 342.81rpx;
+  height: 155.55rpx;
+}
 /* 底部悬浮按钮 start*/
 .tn-tabbar-height.data-v-23755146 {
   min-height: 100rpx;
@@ -231,29 +264,37 @@ input.data-v-23755146::placeholder {
           animation: msClock-data-v-23755146 1.2s linear infinite;
 }
 @-webkit-keyframes msClock-data-v-23755146 {
-0%, 90%, 100% {
+0%,
+  90%,
+  100% {
     -webkit-transform: rotate(0) scale(1);
             transform: rotate(0) scale(1);
 }
-20%, 40% {
+20%,
+  40% {
     -webkit-transform: rotate(-15deg) scale(1.2);
             transform: rotate(-15deg) scale(1.2);
 }
-30%, 50% {
+30%,
+  50% {
     -webkit-transform: rotate(15deg) scale(1.3);
             transform: rotate(15deg) scale(1.3);
 }
 }
 @keyframes msClock-data-v-23755146 {
-0%, 90%, 100% {
+0%,
+  90%,
+  100% {
     -webkit-transform: rotate(0) scale(1);
             transform: rotate(0) scale(1);
 }
-20%, 40% {
+20%,
+  40% {
     -webkit-transform: rotate(-15deg) scale(1.2);
             transform: rotate(-15deg) scale(1.2);
 }
-30%, 50% {
+30%,
+  50% {
     -webkit-transform: rotate(15deg) scale(1.3);
             transform: rotate(15deg) scale(1.3);
 }
@@ -458,16 +499,14 @@ input.data-v-23755146::placeholder {
   border: 1px solid transparent;
   background-image: linear-gradient(#040404, #040404), linear-gradient(282deg, #519fff 15.69%, #a25fff);
   background-origin: border-box;
-  background-clip: content-box,border-box;
+  background-clip: content-box, border-box;
   box-shadow: 0px 0px 10px rgba(125, 46, 255, 0.78);
 }
 /* 底部tabbar start*/
 .footerfixed.data-v-23755146 {
-  position: fixed;
-  width: 100%;
+  width: 50%;
   top: 50;
   z-index: 999;
-  background-color: #FFFFFF;
 }
 .tabbar.data-v-23755146 {
   display: flex;

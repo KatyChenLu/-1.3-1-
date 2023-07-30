@@ -161,6 +161,47 @@ page {
  * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
  * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
  */
+.index-top-left.data-v-00316766 {
+  align-items: center;
+}
+.top-tab-view-normal.data-v-00316766 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-right: 32rpx;
+  opacity: 0.7;
+}
+.top-tab-view-select.data-v-00316766 {
+  font-size: 60rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-right: 32rpx;
+}
+.index-top.data-v-00316766 {
+  display: flex;
+  background-color: transparent;
+  height: 100rpx;
+  align-items: center;
+  justify-content: space-between;
+  margin: 110rpx 0 0 20rpx;
+  position: relative;
+  z-index: 99;
+}
+.index_bg.data-v-00316766 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.add-icon.data-v-00316766 {
+  width: 91.33rpx;
+  height: 91.33rpx;
+  left: auto;
+  right: 20px;
+  bottom: 100px;
+  z-index: 19060;
+}
 .tn-fab__box.data-v-00316766 {
   display: flex;
   justify-content: center;

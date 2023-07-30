@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["circlePages/common/vendor"],{
 
-/***/ 511:
+/***/ 519:
 /*!*****************************************************!*\
   !*** E:/verac/Documents/多客陪玩1.3前端(1)/common/COS.js ***!
   \*****************************************************/
@@ -14,7 +14,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var COS = __webpack_require__(/*! ./cos-wx-sdk-v5.js */ 512);
+var COS = __webpack_require__(/*! ./cos-wx-sdk-v5.js */ 520);
 
 //上传图片到腾讯云
 function uploadFileToTencentClound(filename, filePath, config) {
@@ -55,7 +55,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 512:
+/***/ 520:
 /*!***************************************************************!*\
   !*** E:/verac/Documents/多客陪玩1.3前端(1)/common/cos-wx-sdk-v5.js ***!
   \***************************************************************/
@@ -7516,11 +7516,11 @@ var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ 13);
     /******/])
   );
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"], __webpack_require__(/*! (webpack)/buildin/module.js */ 513)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"], __webpack_require__(/*! (webpack)/buildin/module.js */ 521)(module)))
 
 /***/ }),
 
-/***/ 513:
+/***/ 521:
 /*!***********************************!*\
   !*** (webpack)/buildin/module.js ***!
   \***********************************/
@@ -7553,7 +7553,7 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ 514:
+/***/ 522:
 /*!********************************************************!*\
   !*** E:/verac/Documents/多客陪玩1.3前端(1)/common/bundle.js ***!
   \********************************************************/

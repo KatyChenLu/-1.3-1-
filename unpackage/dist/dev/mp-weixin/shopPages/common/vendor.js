@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["shopPages/common/vendor"],{
 
-/***/ 1037:
+/***/ 1045:
 /*!***************************************************************************!*\
   !*** E:/verac/Documents/多客陪玩1.3前端(1)/shopPages/pick-regions/regions.json ***!
   \***************************************************************************/

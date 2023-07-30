@@ -10,7 +10,8 @@
     "uni_modules/rt-uni-update/components/rt-uni-update/rt-uni-update",
     "pages/login/login",
     "pages/login/tags",
-    "pages/url"
+    "pages/url",
+    "pages/circle/circleNew"
   ],
   "subPackages": [
     {
@@ -139,7 +140,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/circle/circle",
+        "pagePath": "pages/circle/circleNew",
         "iconPath": "static/tabbar/circle_tn.png",
         "selectedIconPath": "static/tabbar/circle_tn_select.png",
         "text": "聊天室"
@@ -169,8 +170,8 @@
     "getFuzzyLocation"
   ],
   "permission": {
-    "scope.userLocation": {
-      "desc": "推荐附近的人"
+    "scope.userFuzzyLocation": {
+      "desc": "小程序将使用定位功能，推荐附近的人"
     }
   },
   "usingComponents": {

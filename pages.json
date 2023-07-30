@@ -92,7 +92,17 @@
 			"disableScroll": true
 		}
 	}
-  ],
+    
+        ,{
+            "path" : "pages/circle/circleNew",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
    
   "subPackages": [{
     "root": "homePages",
@@ -637,7 +647,7 @@
   			"text": "首页"
   		},
   		{
-  				"pagePath": "pages/circle/circle",
+  				"pagePath": "pages/circle/circleNew",
   				"iconPath": "static/tabbar/circle_tn.png",
   				"selectedIconPath": "static/tabbar/circle_tn_select.png",  		
   				"text": "聊天室"

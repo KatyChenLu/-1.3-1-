@@ -55,9 +55,9 @@
 												class="tn-icon-vip tn-color-black"
 												style="font-size: 14px;margin-left: -5px;"></text>VIP{{item.vip_lv}}</text>
 									</view>
-									<view class="tn-padding-right tn-padding-left-sm tn-padding-top-xs tn-color-gray tn-text-ellipsis" style="font-size: 12px;">
+									<view class="tn-padding-right tn-padding-left-sm tn-padding-top-xs tn-color-gray tn-text-ellipsis" style="font-size: 12px;margin-right: 18rpx;">
 
-										{{timeChange(item.date)}} <text v-if="item.city">发布于{{item.city}}</text>
+										<text>Ta爱玩LOL  · </text> {{timeChange(item.date)}} <text v-if="item.city" style="margin-left: 27rpx;">    IP属地:{{item.city}}</text>
 									</view>
 								</view>
 							</view>
@@ -235,8 +235,16 @@
 
 				<view class="tn-flex tn-flex-row-between tn-flex-col-center tn-margin-top-xs">
 					<view class="justify-content-item tn-color-gray tn-text-center">
-						<view class="">
-							<text class="blogger__count-icon tn-icon-footprint" style="font-size: 20px;"></text>
+						<view class="tn-flex tn-flex-col-center">
+							<image src="../../static/newUI/zan.png" mode="" class="activity-list-bottom-icon"></image>
+							<view class="tn-margin-left-xs">
+								{{ $t.number.formatNumberAddPriceUnit(item.likeCount) }}
+							</view>
+							<image src="../../static/newUI/liuyan.png" mode="" class="activity-list-bottom-icon" style="margin-left: 90rpx;"></image>
+							<view class="tn-margin-left-xs">
+								{{ $t.number.formatNumberAddPriceUnit(item.commentCount) }}
+							</view>
+						<!-- 	<text class="blogger__count-icon tn-icon-footprint" style="font-size: 20px;"></text>
 							<text class="tn-padding-right">
 								{{ $t.number.formatNumberAddPriceUnit(item.collectionCount) }}
 							</text>
@@ -251,15 +259,15 @@
 								@click="dianzantiezi(item,tieziliindex)" style="font-size: 20px;"></text>
 
 							<text class="">
-								{{ $t.number.formatNumberAddPriceUnit(item.likeCount) }}</text>
+								{{ $t.number.formatNumberAddPriceUnit(item.likeCount) }}</text> -->
 						</view>
 					</view>
-					<view class="justify-content-item tn-flex tn-flex-col-center">
+				<!-- 	<view class="justify-content-item tn-flex tn-flex-col-center">
 						<view style="margin-right: 10rpx;margin-left: 20rpx;">
 							<tn-avatar-group :lists="item.viewUser.latestUserAvatar" size="sm"></tn-avatar-group>
 						</view>
 						<text class="tn-color-gray">{{ item.likeCount }}人</text>
-					</view>
+					</view> -->
 				</view>
 			</view>
 			
@@ -572,6 +580,10 @@
 
 
 <style scoped lang="scss">
+	.activity-list-bottom-icon{
+		width: 32.05rpx;
+		height: 26.71rpx;
+	}
 	.xunzhang {
 		width: 20px;
 	}

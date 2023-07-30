@@ -22,25 +22,24 @@
 								<image src="../../static/newUI/voc_bg.png" mode="" v-if="item.voc" class="voc-img">
 									<!-- tn-button backgroundColor="#ffffff" padding="20rpx 0" width="190rpx" shadow
 										fontBold v-if="item.voc"> -->
-										<!-- <view class="voice-line-wrap"
+									<!-- <view class="voice-line-wrap"
 											style="--line-height:15px;--line-start-color:royalblue ;--line-end-color:indianred"> -->
-											<view class="voice-line-wrap"
-												style="">
-											<block v-if="item.isplay">
-												<view class="voice-line one"></view>
-												<view class="voice-line two"></view>
-												<view class="voice-line three"></view>
-												<view class="voice-line four"></view>
-												<view class="voice-line five"></view>
-												<view class="voice-line six"></view>
-												<view class="voice-line seven"></view>
-												<view class="voice-line six"></view>
-											</block>
-											<block v-else>
-												<!-- <view class="tn-icon-play-fill tn-color-green"></view> -->
-											</block>
-											<text class=" vocsen" >{{item.vocsen}}''</text>
-										</view>
+									<view class="voice-line-wrap" style="">
+										<block v-if="item.isplay">
+											<view class="voice-line one"></view>
+											<view class="voice-line two"></view>
+											<view class="voice-line three"></view>
+											<view class="voice-line four"></view>
+											<view class="voice-line five"></view>
+											<view class="voice-line six"></view>
+											<view class="voice-line seven"></view>
+											<view class="voice-line six"></view>
+										</block>
+										<block v-else>
+											<!-- <view class="tn-icon-play-fill tn-color-green"></view> -->
+										</block>
+										<text class=" vocsen">{{item.vocsen}}''</text>
+									</view>
 								</image>
 								<!-- </tn-button> -->
 							</view>
@@ -368,24 +367,25 @@
 
 
 <style scoped lang="scss">
-	.vocsen{
+	.vocsen {
 		margin-left: 60rpx;
 		margin-bottom: 16rpx;
 		width: 100%;
-		
+
 		font-size: 23rpx;
-		
+
 		font-weight: bold;
 		color: #FFFFFF;
 		line-height: 23rpx;
 		z-index: 99;
 	}
+
 	.voc-img {
-		width: 112rpx;
+		width: 137rpx;
 		height: 50rpx;
 		position: absolute;
-		    bottom: 0;
-		    left: 0;
+		bottom: 0;
+		left: 0;
 	}
 
 	.price-text {

@@ -1,5 +1,5 @@
 <template>
-  <view class="tn-tabs-class tn-tabs " :class="[backgroundColorClass]" :style="{backgroundColor: backgroundColorStyle, marginTop: $t.string.getLengthUnitValue(top, 'px')}">
+  <view class="tn-tabs-class tn-tabs " :class="[backgroundColorClass]" :style="{backgroundColor: bgColor, marginTop: $t.string.getLengthUnitValue(top, 'px')}">
     
     <!-- _tgetRect()对组件根节点无效，因为写了.in(this)，故这里获取内层接点尺寸 -->
     <view :id="id">
@@ -10,16 +10,12 @@
             v-for="(item, index) in list"
             :key="index"
             :id="'tn-tabs__scroll-view__item-' + index"
-            :class="['tn-tabs__scroll-view__item','tn-text-ellipsis',index!=0?'tn-tab-bg':'']"
+            class="tn-tabs__scroll-view__item tn-text-ellipsis "
             :style="[tabItemStyle(index)]"
             @tap="clickTab(index)"
           >
-            <tn-badge v-if="(item[count] || item['count'])&&index!=0" backgroundColor="red" fontColor="#FFFFFF" :absolute="true" :top="badgeOffset[0] || 0" :right="badgeOffset[1] || 0">{{ item[count] || item['count']}}</tn-badge>
-           
-		   <view class="" v-if="index!=0">
-		   	{{ item[name] || item['name'] }}
-		   </view> 
-			<image src="../../../static/newUI/tap_first.png" mode="" v-if="index==0" class="tap_first"></image>
+            <tn-badge v-if="item[count] || item['count']" backgroundColor="tn-bg-red" fontColor="#FFFFFF" :absolute="true" :top="badgeOffset[0] || 0" :right="badgeOffset[1] || 0">{{ item[count] || item['count']}}</tn-badge>
+            {{ item[name] || item['name'] }}
           </view>
           
           <!-- 底部滑块 -->
@@ -88,6 +84,10 @@
         type: String,
         default: '#01BEFF'
       },
+	  bgColor: {
+	    type: String,
+	    default: '#fff'
+	  },
       // 未被选中时的颜色
       inactiveColor: {
         type: String,
@@ -105,7 +105,7 @@
       // 是否显示底部滑块
       showBar: {
         type: Boolean,
-        default: false
+        default: true
       },
       // 底部滑块的宽度
       barWidth: {
@@ -170,9 +170,6 @@
             flex: this.isScroll ? 'auto' : '1',
             transitionDuration: `${this.duration}s`
           }
-		  if(index ===0){
-			  // style.backgroundColor= transparent;
-		  }
           if (index === this.currentIndex) {
             if (this.bold) {			
               style.fontWeight = 'bold'
@@ -291,25 +288,6 @@
 </script>
 
 <style lang="scss" scoped>
-	.tap_first{
-		width: 72rpx;
-		height: 34rpx;
-		margin-top: 4rpx;
-	}
-	.tn-tab-bg{
-		background-color: #ECDEFC;
-		border-radius:8rpx;
-		margin-left: 20rpx;
-		height: 40rpx;
-		width: 62rpx;
-		opacity: 0.5;
-		
-		font-size: 20rpx;
-		font-family: PingFang SC-Bold, PingFang SC;
-		font-weight: bold;
-		color: #202542;
-		line-height: 29rpx;
-	}
   
   /* #ifndef APP-NVUE */
   ::-webkit-scrollbar {

@@ -60,7 +60,7 @@ var app = new _vue.default(_objectSpread(_objectSpread({
 // 登录框
 var loginFn = function loginFn() {
   __webpack_require__.e(/*! require.ensure | components/loginFn/index */ "components/loginFn/index").then((function () {
-    return resolve(__webpack_require__(/*! @/components/loginFn */ 763));
+    return resolve(__webpack_require__(/*! @/components/loginFn */ 771));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 _vue.default.component('login-fn', loginFn);

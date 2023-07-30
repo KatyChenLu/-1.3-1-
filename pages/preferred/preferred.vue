@@ -1,53 +1,58 @@
 <template>
 	<view class="template-hot tn-safe-area-inset-bottom">
 		<!-- 顶部自定义导航 -->
-		<tn-nav-bar fixed customBack>
-			我的消息
+		<tn-nav-bar fixed customBack :bottomShadow="false" backgroundColor="transparent">
+			<!-- 我的消息 -->
 		</tn-nav-bar>
-
+		<image src="../../static/newUI/bg.png" mode="widthFix" class="index_bg"></image>
 		<view :style="{paddingTop: vuex_custom_bar_height + 'px'}">
+			<view class="index-top" style="margin-top: 44rpx;margin-left: 34rpx;">
+				<view class="index-top-left tn-flex">
+					<view class="top-tab-view-normal" @click="">消息
+					</view>
+				</view>
+				<view class="index-top-right tn-flex tn-flex-row-center tn-flex tn-flex-col-center">
+
+					<view class="refresh-box">
+						<image src="../../static/newUI/info_search.png" mode="" class="refresh"></image>
+					</view>
+				</view>
+			</view>
 			<mescroll-body ref="mescrollRef" @down="downCallback" @up="upCallback">
-				<view class="tn-flex tn-margin-xs tn-padding-top-sm">
+				<view class="tn-flex tn-margin-xs " style="	position: relative;
+		z-index: 99;">
 					<view class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius" @click="qiehuan(0,'评论我的')">
 						<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-							<view
-								class=" icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-main-gradient-purplered--light tn-color-purplered">
-								<view class="tn-icon-fire-fill tn-three"></view>
-							</view>
-							<view class="tn-color-black tn-text-center">
-								<text class="tn-text-ellipsis">评论我的</text>
+							<!-- <view
+								class=" icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-main-gradient-purplered--light tn-color-purplered"> -->
+							<!-- <view class="tn-icon-fire-fill tn-three"></view> -->
+							<image src="../../static/newUI/preferred_1.png" mode="" class="topicon "></image>
+							<!-- </view> -->
+							<view class=" tn-text-center" style="font-size: 17rpx;font-weight: bold;color: #FFFFFF;line-height: 40rpx;">
+								<text class="">评论我的</text>
 							</view>
 						</view>
 					</view>
 					<view class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius" @click="qiehuan(1,'收到的赞')">
 						<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-							<view
-								class="icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-main-gradient-indigo--light tn-color-indigo">
-								<view class="tn-icon-flower-fill tn-three"></view>
-							</view>
-							<view class="tn-color-black tn-text-center">
+							<image src="../../static/newUI/preferred_2.png" mode="" class="topicon "></image>
+							<view class=" tn-text-center" style="font-size: 17rpx;font-weight: bold;color: #FFFFFF;line-height: 40rpx;">
 								<text class="tn-text-ellipsis">收到的赞</text>
 							</view>
 						</view>
 					</view>
 					<view class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius" @click="qiehuan(2,'系统通知')">
 						<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-							<view
-								class=" icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-main-gradient-purple--light tn-color-purple">
-								<view class="tn-icon-identity-fill tn-three"></view>
-							</view>
-							<view class="tn-color-black tn-text-center">
+							<image src="../../static/newUI/preferred_3.png" mode="" class="topicon "></image>
+							<view class=" tn-text-center" style="font-size: 17rpx;font-weight: bold;color: #FFFFFF;line-height: 40rpx;">
 								<text class="tn-text-ellipsis">系统通知</text>
 							</view>
 						</view>
 					</view>
 					<view class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius" @click="qiehuan(3,'关注我的')">
 						<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-							<view
-								class=" icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-main-gradient-orange--light tn-color-orange">
-								<view class="tn-icon-star-fill tn-three"></view>
-							</view>
-							<view class="tn-color-black tn-text-center">
+							<image src="../../static/newUI/preferred_4.png" mode="" class="topicon "></image>
+							<view class=" tn-text-center" style="font-size: 17rpx;font-weight: bold;color: #FFFFFF;line-height: 40rpx;">
 								<text class="tn-text-ellipsis">关注我的</text>
 							</view>
 						</view>
@@ -55,129 +60,141 @@
 
 				</view>
 
-			
 
-				<view  >
-					<view class="empty__item" v-if="content.length==0&&tokenlogin" style="margin-top: 100px;" @click="guangchang()">
-						<tn-empty icon="/static/images/no.png" text="你还没有任何消息," >
-					<tn-button backgroundColor="#ffff00" fontColor="#000000" size="xxl">去找人聊聊呀
-					</tn-button>
+	
+				<view style="	position: relative;
+		z-index: 99; ">
+	
+					<view class="empty__item" v-if="content.length==0&&tokenlogin" style="margin-top: 100px;"
+						@click="guangchang()">
+						<tn-empty icon="/static/images/no.png" text="你还没有任何消息,">
+							<tn-button backgroundColor="#ffff00" fontColor="#000000" size="xxl">去找人聊聊呀
+							</tn-button>
 						</tn-empty>
 					</view>
-					
-					
-					
-					<view  class="empty__item" v-if="!tokenlogin" style="margin-top: 100px;height:100%" @click="denglu()">
+
+
+
+					<view class="empty__item" v-if="!tokenlogin" style="margin-top: 100px;height:100%"
+						@click="denglu()">
 						<tn-empty icon="/static/images/no.png" text="登录查看你的消息哦">
 							<tn-button backgroundColor="#ffff00" fontColor="#000000" size="xxl">戳这里登录
 							</tn-button>
 						</tn-empty>
 					</view>
-					
-			
-						  
+
+
+
 					<tn-swipe-action :autoClose="true">
-								<tn-swipe-action-item  ref="huadong"  v-for="(item,index) in content" :key="index"  :options="options1" :name="index" :name_id="item.id"
-									@click="onSwiperItemClick">
-							
+						<view class="cro">
 								
-											<view class="message tn-padding" >
-										
-												<view class="message__left" @click="jinru(item,index)">
-													<tn-avatar :badge="item.is_manage_normal" badgeText="管" :badgePosition="[8,20]"
-														badgeBgColor="#00aa00" size="lg" shape="circle" :src="item.head_url">
-													</tn-avatar>
-												</view>
-												<view class="message__middle" @click="jinru(item,index)">
-													<view class="message__name">{{item.username}}
-														<text class="tn-icon-sex  tn-color-gray" v-if="item.sex==0"></text>
-														<text class="tn-icon-sex-female tn-color-purplered" v-if="item.sex==2"></text>
-														<text class="tn-icon-sex-male  tn-color-blue" v-if="item.sex==1"></text>
-													<text class="dk-lv tn-main-gradient-indigo--light" v-if="item.vip==0&&configInfo.is_lv">LV {{item.lv}}</text>
-													<text class="dk-vip tn-main-gradient-orangeyellow" v-if="item.vip==1"><text class="tn-icon-vip tn-color-black"
-															style="font-size: 14px;margin-left: -5px;"></text>VIP{{item.vip_lv}}</text>
-														<!-- 	<block v-if="item.is_online==1">
+							</view>
+						<tn-swipe-action-item ref="huadong" v-for="(item,index) in content" :key="index"
+							:options="options1" :name="index" :name_id="item.id" @click="onSwiperItemClick">
+
+
+							<view class="message tn-padding">
+
+								<view class="message__left" @click="jinru(item,index)">
+									<tn-avatar :badge="item.is_manage_normal" badgeText="管" :badgePosition="[8,20]"
+										badgeBgColor="#00aa00" size="lg" shape="circle" :src="item.head_url">
+									</tn-avatar>
+								</view>
+								<view class="message__middle" @click="jinru(item,index)">
+									<view class="message__name">{{item.username}}
+										<text class="tn-icon-sex  tn-color-gray" v-if="item.sex==0"></text>
+										<text class="tn-icon-sex-female tn-color-purplered" v-if="item.sex==2"></text>
+										<text class="tn-icon-sex-male  tn-color-blue" v-if="item.sex==1"></text>
+										<text class="dk-lv tn-main-gradient-indigo--light"
+											v-if="item.vip==0&&configInfo.is_lv">LV {{item.lv}}</text>
+										<text class="dk-vip tn-main-gradient-orangeyellow" v-if="item.vip==1"><text
+												class="tn-icon-vip tn-color-black"
+												style="font-size: 14px;margin-left: -5px;"></text>VIP{{item.vip_lv}}</text>
+										<!-- 	<block v-if="item.is_online==1">
 												<text class="tn-color-green tn-text-xs tn-margin-left-sm" v-if="item.isOnline==1">在线</text>
 												<text class="tn-color-gray tn-text-xs tn-margin-left-sm" v-if="item.isOnline==0">离线</text>
 											</block>
 											 -->
-													</view>
-													<view class="message__content tn-text-ellipsis" v-if="item.type=='text'">
-														{{item.content}}
-													</view>
-													<view class="message__content tn-text-ellipsis" v-if="item.type=='music'">语音</view>
-													<view class="message__content tn-text-ellipsis" v-if="item.type=='image'">图片</view>
-													<view class="message__content tn-text-ellipsis" v-if="item.type=='liwuuser'">礼物</view>
-													
-												</view>
-												<view class="message__right" style="width: 14%;">
-													<view class="message__time">{{$common.timeToDate(item.time)}}</view>
-													<view class="message__tips" v-if="item.unread>0">
-														<tn-tag backgroundColor="tn-bg-red" fontColor="tn-color-white" shape="circle"
-															width="auto" size="sm">{{item.unread}}</tn-tag>
-													</view>
-												</view>
-													
-											</view>
-									
-							
-									</tn-swipe-action-item>
+									</view>
+									<view class="message__content tn-text-ellipsis" v-if="item.type=='text'">
+										{{item.content}}
+									</view>
+									<view class="message__content tn-text-ellipsis" v-if="item.type=='music'">语音</view>
+									<view class="message__content tn-text-ellipsis" v-if="item.type=='image'">图片</view>
+									<view class="message__content tn-text-ellipsis" v-if="item.type=='liwuuser'">礼物
+									</view>
+
+								</view>
+								<view class="message__right" style="width: 14%;color: #959595;">
+									<view class="message__time">{{$common.timeToDate(item.time)}}</view>
+									<view class="message__tips" v-if="item.unread>0">
+										<tn-tag backgroundColor="tn-bg-red" fontColor="tn-color-white" shape="circle"
+											width="auto" size="sm">{{item.unread}}</tn-tag>
+									</view>
+								</view>
+
+							</view>
+
+
+						</tn-swipe-action-item>
 					</tn-swipe-action>
-	 	</view>
-			
+				</view>
+
 
 
 				<!-- 登录框组件 -->
 				<login-fn :is-show-login="loginBoxFlag" @loginSuccessCallback="refreshFn" @close="closeGlobalLoginFn">
 				</login-fn>
 
-		
-	</mescroll-body>
+
+			</mescroll-body>
 		</view>
 		<view class='tn-tabbar-height' style="height: 50px;"></view>
 
 
 
 
-<tn-popup v-model="daojushow" width="80%" height="40%" mode="bottom" :borderRadius="30" :closeBtn="false"
-				:maskCloseable="true" >
-					<scroll-view class="" scroll-y scroll-with-animation style="height: 100%;">
-					
-					<view class="tn-flex tn-flex-row-center tn-margin-top-sm" v-if="daojulist.length==0"
-						@click="navigateToFn({ url: '/minePages/daoju', checkLogin: false })">
-						<view class="">
+		<tn-popup v-model="daojushow" width="80%" height="40%" mode="bottom" :borderRadius="30" :closeBtn="false"
+			:maskCloseable="true">
+			<scroll-view class="" scroll-y scroll-with-animation style="height: 100%;">
+
+				<view class="tn-flex tn-flex-row-center tn-margin-top-sm" v-if="daojulist.length==0"
+					@click="navigateToFn({ url: '/minePages/daoju', checkLogin: false })">
+					<view class="">
 						<tn-empty icon="/static/images/no.png" text="你没有任何道具">
 							<tn-button backgroundColor="#aa00ff" fontColor="#FFFFFF" size="xxl">去道具商城
 							</tn-button>
 						</tn-empty>
-						</view>
 					</view>
-					
-					<view class="tn-flex tn-flex-wrap tn-margin-left-sm tn-margin-bottom-sm tn-margin-right-sm tn-margin-top-xs">
-					
-						
-						<block v-for="(item, index) in daojulist" :key="index">
-							<view class="" style="width: 33%;position: relative;" >
-								<view class="tn-blogger-content__wrap" style="background-color: rgba(255,255,255,0.6);">
-									<view class="tn-flex tn-flex-row-center tn-padding-top tn-text-bold">
-										{{ item.gift_name }}
-									</view>									
-									<view class="tn-flex tn-flex-row-center">
-										<image :src="item.image" style="width:60%;" mode="widthFix"></image>
-									</view>					
-									<view class="tn-flex tn-flex-row-center tn-margin-top-sm tn-padding-bottom-sm" >
-										<tn-button shape="round" backgroundColor="#FFF00D" fontColor="#080808"  @click="daojuchoce(item,index)">
-											使用
-										</tn-button>					
-									</view>									
-								
-					
+				</view>
+
+				<view
+					class="tn-flex tn-flex-wrap tn-margin-left-sm tn-margin-bottom-sm tn-margin-right-sm tn-margin-top-xs">
+
+
+					<block v-for="(item, index) in daojulist" :key="index">
+						<view class="" style="width: 33%;position: relative;">
+							<view class="tn-blogger-content__wrap" style="background-color: rgba(255,255,255,0.6);">
+								<view class="tn-flex tn-flex-row-center tn-padding-top tn-text-bold">
+									{{ item.gift_name }}
 								</view>
+								<view class="tn-flex tn-flex-row-center">
+									<image :src="item.image" style="width:60%;" mode="widthFix"></image>
+								</view>
+								<view class="tn-flex tn-flex-row-center tn-margin-top-sm tn-padding-bottom-sm">
+									<tn-button shape="round" backgroundColor="#FFF00D" fontColor="#080808"
+										@click="daojuchoce(item,index)">
+										使用
+									</tn-button>
+								</view>
+
+
 							</view>
-						</block>
-					</view>
-	</scroll-view>
-				</tn-popup>
+						</view>
+					</block>
+				</view>
+			</scroll-view>
+		</tn-popup>
 
 
 
@@ -201,10 +218,10 @@
 		},
 		data() {
 			return {
-				daojushow:false,
-				daojutitle:'',
-				daojuid:0,
-				daojulist:[],
+				daojushow: false,
+				daojutitle: '',
+				daojuid: 0,
+				daojulist: [],
 				options1: [{
 					text: '拉黑',
 					style: {
@@ -220,42 +237,42 @@
 				show_fabu: false,
 				cardCur: 0,
 				content: [],
-				userlist:[],			
-				tokenlogin:''
+				userlist: [],
+				tokenlogin: ''
 			}
 		},
 
-	onPullDownRefresh() {
+		onPullDownRefresh() {
 			this.mescroll.resetUpScroll();
 			setTimeout(function() {
 				uni.stopPullDownRefresh();
 			}, 1000);
 		},
-	
-	onTabItemTap(e) {
-	          if (e.index==3){
+
+		onTabItemTap(e) {
+			if (e.index == 3) {
 				//this.mescroll.resetUpScroll();	  
-			  }
-			
-	       },
-		   
-		   
-		   
+			}
+
+		},
+
+
+
 		mounted() {
 			let that = this
-			this.tokenlogin=uni.getStorageSync('token')
-			
+			this.tokenlogin = uni.getStorageSync('token')
+
 			uni.$off('setLoginBoxFlag_preferred');
 			uni.$on('setLoginBoxFlag_preferred', loginBoxFlag => {
 				that.loginBoxFlag = loginBoxFlag;
 			});
-			
+
 			uni.$on('loginok', data => {
-				that.tokenlogin=uni.getStorageSync('token')			
+				that.tokenlogin = uni.getStorageSync('token')
 				that.mescroll.resetUpScroll()
 			});
 
-			this.mescroll.optDown.use=false
+			this.mescroll.optDown.use = false
 
 
 			uni.$on('indexpreferred', data => {
@@ -271,24 +288,25 @@
 			that.content = uni.getStorageSync('chatlist')
 
 			// 注册接受消息监听
-			uni.$on('listMessage', (message) => {				
-				if (message.type == 'text' ||message.type == 'liwuuser' || message.type == 'mp3' || message.type == 'image') {
+			uni.$on('listMessage', (message) => {
+				if (message.type == 'text' || message.type == 'liwuuser' || message.type == 'mp3' || message
+					.type == 'image') {
 					setTimeout(() => {
 						that.mescroll.resetUpScroll();
 					}, 2000);
 				}
-		
+
 			});
 
-	// 注册接受消息监听
-			uni.$on('fasonglist', (message) => {		
-			that.mescroll.resetUpScroll();
+			// 注册接受消息监听
+			uni.$on('fasonglist', (message) => {
+				that.mescroll.resetUpScroll();
 			});
 
 
 			this.setPermissions()
 
-	        this.huhuanlist()
+			this.huhuanlist()
 
 		},
 
@@ -299,13 +317,13 @@
 					loading: 1,
 					method: 'post',
 					url: '/api/four/huhuan_list',
-					data: {						
-						page:1
+					data: {
+						page: 1
 					}
 				});
 				if (result.statusCode == 200) {
 					if (result.data.code == 200) {
-						that.userlist = result.data.data.data;							
+						that.userlist = result.data.data.data;
 					} else {
 						uni.showToast({
 							icon: 'none',
@@ -318,86 +336,86 @@
 						title: that.$errorMsg
 					});
 				}
-			},		
-			   
-			   
-			   
-			async huhuan(){			
-			
-					let that = this;
-					let result = await that.$request({
-						loading:1,
-						method: 'post',
-						url: '/api/gift/my_daoju_huhuan',
-						data: {
-						tabsIndex:0
-						}
-					});
-					if (result.data.code == 200) {
-					   this.daojushow = true
-					   this.daojulist=result.data.data				
-					}				
-				},		
-			async daojuchoce(item){	
-					let that = this;
-					let result = await that.$request({
-						loading:1,
-						method: 'post',
-						url: '/api/gift/my_daoju_huhuan_pass',
-						data: {
-						id:item.id
-						}
-					});
-					if (result.data.code == 200) {
-					   this.daojushow = false
-					   this.msg('呼唤成功')		
-					}				
-				},		
-			
-			   //点击单行
-			            itemClick(data){
-			                console.log('点击',data)
-			            },
-			            //拉黑
-			            del(data){
-			             this.onSwiperItemClick(data,2)
-			            },
-			            //删除
-			            edit(data){
-			              this.onSwiperItemClick(data,1)
-			            },
-						
-					guangchang(){
-					uni.switchTab({
-						url:'/pages/circle/circle'
-					})	
-					},
-				async onSwiperItemClick(e) {				
-					if (e.index >-1) {
-						let that = this;
-						let result = await that.$request({
-							loading: 0,
-							method: 'post',
-							url: '/api/chat/delChatLog',
-							data: {
-								id: e.name_id,
-								status: e.index + 1
-							}
-						});				
-						if (result.statusCode == 200) {
-							if (result.data.code == 200) {
-							this.content.splice(e.name, 1);
-						//	that.mescroll.resetUpScroll();
-				
-							}
-						}
-				
+			},
+
+
+
+			async huhuan() {
+
+				let that = this;
+				let result = await that.$request({
+					loading: 1,
+					method: 'post',
+					url: '/api/gift/my_daoju_huhuan',
+					data: {
+						tabsIndex: 0
 					}
-				
-				},	
-					
-			async onSwiperItemClick111(e,type) {			
-				if (e.paixu >-1) {
+				});
+				if (result.data.code == 200) {
+					this.daojushow = true
+					this.daojulist = result.data.data
+				}
+			},
+			async daojuchoce(item) {
+				let that = this;
+				let result = await that.$request({
+					loading: 1,
+					method: 'post',
+					url: '/api/gift/my_daoju_huhuan_pass',
+					data: {
+						id: item.id
+					}
+				});
+				if (result.data.code == 200) {
+					this.daojushow = false
+					this.msg('呼唤成功')
+				}
+			},
+
+			//点击单行
+			itemClick(data) {
+				console.log('点击', data)
+			},
+			//拉黑
+			del(data) {
+				this.onSwiperItemClick(data, 2)
+			},
+			//删除
+			edit(data) {
+				this.onSwiperItemClick(data, 1)
+			},
+
+			guangchang() {
+				uni.switchTab({
+					url: '/pages/circle/circle'
+				})
+			},
+			async onSwiperItemClick(e) {
+				if (e.index > -1) {
+					let that = this;
+					let result = await that.$request({
+						loading: 0,
+						method: 'post',
+						url: '/api/chat/delChatLog',
+						data: {
+							id: e.name_id,
+							status: e.index + 1
+						}
+					});
+					if (result.statusCode == 200) {
+						if (result.data.code == 200) {
+							this.content.splice(e.name, 1);
+							//	that.mescroll.resetUpScroll();
+
+						}
+					}
+
+				}
+
+			},
+
+			async onSwiperItemClick111(e, type) {
+				if (e.paixu > -1) {
 					let that = this;
 					let result = await that.$request({
 						loading: 0,
@@ -405,13 +423,13 @@
 						url: '/api/chat/delChatLog',
 						data: {
 							id: e.id,
-							status:type
+							status: type
 						}
 					});
 
 					if (result.statusCode == 200) {
 						if (result.data.code == 200) {
-						this.content.splice(e.name, 1);
+							this.content.splice(e.name, 1);
 						}
 					}
 
@@ -435,7 +453,7 @@
 				})
 			},
 
-			
+
 			jinru(item, index) {
 				console.log(item)
 				uni.$emit('jianshacount', item.unread)
@@ -484,11 +502,11 @@
 						mescroll.endSuccess(result.data.data.data.length, result.data.data.data.length >= mescroll
 							.size);
 						uni.setStorageSync('chatlist', that.content)
-						
 
-						
-						
-						
+
+
+
+
 					} else {
 						uni.showToast({
 							icon: 'none',
@@ -609,9 +627,57 @@
 </script>
 
 <style lang="scss" scoped>
-	.template-hot {
-	
+	.cro{
+		width: 100%;
+		height: 38rpx;
+		border-radius: 38rpx 38rpx 0 0;
+		background-color: #fff;
 	}
+	.topicon {
+		width: 73.03rpx;
+		height: 73.13rpx;
+		margin-bottom: 18rpx;
+	}
+
+	.top-tab-view-normal {
+		line-height: 40rpx;
+
+		font-size: 36rpx;
+		font-weight: bold;
+		color: #FFFFFF;
+	}
+
+	.index_bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1;
+	}
+
+	.refresh {
+		width: 30rpx;
+		height: 30rpx;
+		margin-right: 22rpx;
+	}
+
+	.index-top-left {
+		align-items: center;
+	}
+
+	.index-top {
+		display: flex;
+		background-color: transparent;
+		height: 100rpx;
+		align-items: center;
+		margin-left: 22rpx;
+		justify-content: space-between;
+		margin-bottom: 20rpx;
+		position: relative;
+		z-index: 99;
+	}
+
+	.template-hot {}
 
 	.icon12 {
 		&__item {
@@ -709,7 +775,7 @@
 			padding-right: 40rpx;
 		}
 
-		&__right {	
+		&__right {
 			width: 12%;
 			display: flex;
 			flex-direction: column;

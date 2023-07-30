@@ -101,13 +101,13 @@ var components
 try {
   components = {
     tnNavBar: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-nav-bar/tn-nav-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-nav-bar/tn-nav-bar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-nav-bar/tn-nav-bar.vue */ 770))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-nav-bar/tn-nav-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-nav-bar/tn-nav-bar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-nav-bar/tn-nav-bar.vue */ 778))
     },
     kspCropper: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper */ "uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper").then(__webpack_require__.bind(null, /*! @/uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper.vue */ 955))
+      return __webpack_require__.e(/*! import() | uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper */ "uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper").then(__webpack_require__.bind(null, /*! @/uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper.vue */ 963))
     },
     tnButton: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-button/tn-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-button/tn-button")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-button/tn-button.vue */ 841))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-button/tn-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-button/tn-button")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-button/tn-button.vue */ 877))
     },
   }
 } catch (e) {
@@ -302,7 +302,7 @@ var _tools = __webpack_require__(/*! @/tools/tools.js */ 32);
 //
 var getTel = function getTel() {
   Promise.all(/*! require.ensure | components/loginFn/get-tel */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/loginFn/get-tel")]).then((function () {
-    return resolve(__webpack_require__(/*! @/components/loginFn/get-tel */ 964));
+    return resolve(__webpack_require__(/*! @/components/loginFn/get-tel */ 972));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var audioContext = uni.createInnerAudioContext();

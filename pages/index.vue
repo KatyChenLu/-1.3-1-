@@ -11,7 +11,7 @@
 		</tn-nav-bar>
 
 
-
+		<image src="../static/newUI/bg.png" mode="widthFix" class="index_bg"></image>
 		<!-- 推荐 -->
 		<mescroll-body ref="mescrollRef" @down="downCallback" @up="upCallback">
 			<view v-if="current==1" class="indexbg" :style="{paddingTop: vuex_custom_bar_height + 'px'}">
@@ -26,11 +26,14 @@
 
 				<view class="index-top">
 					<view class="index-top-left flex-base">
-						<view :class="{'top-tab-view-select':topTabSelect==0,'top-tab-view-normal':topTabSelect!=0}">交友
+						<view :class="{'top-tab-view-select':topTabSelect==0,'top-tab-view-normal':topTabSelect!=0}"
+							@click="indexTabTap(0)">交友
 						</view>
-						<view :class="{'top-tab-view-select':topTabSelect==1,'top-tab-view-normal':topTabSelect!=1}">电竞
+						<view :class="{'top-tab-view-select':topTabSelect==1,'top-tab-view-normal':topTabSelect!=1}"
+							@click="indexTabTap(1)">电竞
 						</view>
-						<view :class="{'top-tab-view-select':topTabSelect==2,'top-tab-view-normal':topTabSelect!=2}">搭子
+						<view :class="{'top-tab-view-select':topTabSelect==2,'top-tab-view-normal':topTabSelect!=2}"
+							@click="indexTabTap(2)">搭子
 						</view>
 					</view>
 					<view class="index-top-right flex-base">
@@ -81,7 +84,7 @@
 
 				<block v-if="configInfo.xcx_sh==1">
 					<view class="tn-flex tn-flex-wrap  "
-						style=" box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.07);padding: 22rpx 22rpx 0;">
+						style=" box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.07);padding: 22rpx 22rpx 0;position: relative;z-index: 99;">
 						<view class=" tn-radius" v-for="(item, indexsdf) in iconnew" :key="indexsdf"
 							:class="{'sige': 1}" v-if="!item.appId">
 							<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
@@ -222,8 +225,9 @@
 						<view class="list-tab-box">
 							<image src="../static/newUI/tap_first.png" mode="" class="tab_first"></image>
 							<view class="list-tab-right">
-								<view class="list-tab" v-for="(item, tabItem) in list" :key="tabItem"
-									@click="tabsChange(tabItem)">
+								<view class="list-tab"
+									:class="{'list-tab-select':tabItem==currentTabItem,'list-tab-normal':tabItem!=currentTabItem}"
+									v-for="(item, tabItem) in list" :key="tabItem" @click="tabsChange(tabItem)">
 									{{item.name}}
 								</view>
 							</view>
@@ -272,6 +276,7 @@
 		},
 		data() {
 			return {
+				currentTabItem: 0,
 				topTabSelect: 1,
 				numindex: 0,
 				shoplist: [],
@@ -426,6 +431,25 @@
 		},
 
 		methods: {
+			indexTabTap(e) {
+				this.topTabSelect = e
+				let url = '/api/index/index'
+				if (e == 0) {
+					this.navigateToFn({
+						url: '/pages/liaotian',
+						checkLogin: false
+					})
+				} else if (e == 1) {
+					url = '/api/index/index'
+					this.refreInfo(url)
+					this.tabsChange(0)
+				} else if (e == 2) {
+					url = '/api/index/index_xianxia'
+					this.refreInfo(url)
+					this.tabsChange(0)
+				}
+
+			},
 			onTabItemTap(e) {
 				console.log('在首页点击按钮')
 				console.log(e)
@@ -473,17 +497,7 @@
 						that.tanchuanglist = result.data.data.tanchuanglist[0];
 
 						that.list = result.data.data.tagslist;
-						let moreIcon = {
-							'create_time': 1685611505,
-							'id': 48,
-							'image': "../static/newUI/more_game.png",
-							'sort': 7,
-							'status': 1,
-							'title': "更多",
-							'url': "../static/newUI/more_game.png"
-						}
 						that.iconnew = result.data.data.iconnew.slice(0, 7);
-						// that.iconnew =that.iconnew.push(moreIcon)
 						if (result.data.data.tanchuanglist.length > 0) {
 							that.tanchuangshow = true
 							that.tanchuanglistimage = that.tanchuanglist.image
@@ -536,6 +550,39 @@
 						icon: 'none',
 						title: that.$errorMsg
 					});
+				}
+			},
+			async refreInfo(url) {
+				let that = this;
+				let result = await that.$request({
+					loading: 1,
+					method: 'post',
+					url: url,
+					data: {
+						type: 1
+					}
+				});
+				if (result.statusCode == 200) {
+					if (result.data.code == 200) {
+
+						that.list = result.data.data.tagslist;
+						that.iconnew = result.data.data.iconnew.slice(0, 7);
+
+						that.loading = false
+
+					} else {
+						uni.showToast({
+							icon: 'none',
+							title: result.data.msg
+						});
+
+					}
+				} else {
+					uni.showToast({
+						icon: 'none',
+						title: result.data.msg
+					});
+
 				}
 			},
 			async msgcoutget() {
@@ -594,10 +641,12 @@
 			},
 			async upCallback(mescroll) {
 				let that = this;
+				let url = this.topTabSelect == 1 ? '/api/games/user_list' : this.topTabSelect == 2 ?
+					'/api/games/user_list_down' : ''
 				let result = await that.$request({
 					loading: 1,
 					method: 'post',
-					url: '/api/games/user_list',
+					url: url,
 					data: {
 						searchKey: '',
 						xiaolei: '',
@@ -855,9 +904,10 @@
 
 
 			tabsChange(index) {
-				this.currenttiezi = index
+				this.currentTabItem = index
 				this.tagsid = this.list[index].id
 				this.mescroll.resetUpScroll()
+
 			},
 
 			msggai(shuzi) {
@@ -936,7 +986,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.warm-text1{
+	.warm-text1 {
 		margin-left: 22.67rpx;
 		height: 32rpx;
 		font-size: 23rpx;
@@ -945,7 +995,8 @@
 		color: #493C45;
 		line-height: 29rpx;
 	}
-	.warm-text2{
+
+	.warm-text2 {
 		width: 23rpx;
 		height: 54rpx;
 		font-size: 39rpx;
@@ -953,9 +1004,10 @@
 		font-weight: bold;
 		color: #FC357C;
 		line-height: 49rpx;
-			margin-left: 4rpx;
+		margin-left: 4rpx;
 	}
-	.warm-text3{
+
+	.warm-text3 {
 		width: 22rpx;
 		height: 31rpx;
 		font-size: 22rpx;
@@ -963,19 +1015,21 @@
 		font-weight: bold;
 		color: #FC357C;
 		line-height: 37rpx;
-			margin-left: 2rpx;
+		margin-left: 2rpx;
 	}
-	
-	.warm-box{
+
+	.warm-box {
 		display: flex;
 		padding: 0 20rpx;
 		margin-bottom: -20rpx;
 		align-items: center;
 	}
-	.warm-img{
+
+	.warm-img {
 		width: 105.33rpx;
 		height: 42rpx;
 	}
+
 	.tab_first {
 		width: 72.81rpx;
 		height: 34.92rpx;
@@ -985,6 +1039,14 @@
 	.list-tab-box {
 		display: flex;
 		margin-bottom: 26rpx;
+	}
+
+	.list-tab-select {
+		color: #FC357C;
+	}
+
+	.list-tab-normal {
+		color: #202542;
 	}
 
 	.list-tab-right {
@@ -1001,7 +1063,7 @@
 		font-size: 20rpx;
 		// font-family: PingFang SC-Bold, PingFang SC;
 		font-weight: bold;
-		color: #202542;
+
 		background-color: #ECDEFC;
 		border-radius: 7.33rpx;
 		// height: 28rpx;
@@ -1020,9 +1082,20 @@
 	}
 
 	.indexbg {
-		background-image: url('../static/newUI/bg.png');
-		background-size: contain;
-		background-repeat: no-repeat; 
+		// background-image: url('../static/newUI/bg.png');
+		// background-size: contain;
+		// background-repeat: no-repeat;
+		position: relative;
+		z-index: 99;
+
+	}
+
+	.index_bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1;
 	}
 
 	.top-tab-view-normal {
@@ -1050,6 +1123,8 @@
 		margin-left: 22rpx;
 		justify-content: space-between;
 		margin-bottom: 20rpx;
+		position: relative;
+		z-index: 99;
 	}
 
 	.flex-base {
@@ -1113,7 +1188,8 @@
 
 		padding: 0 20rpx;
 		width: 710rpx;
-
+		position: relative;
+		z-index: 99;
 	}
 
 	.bull_box {

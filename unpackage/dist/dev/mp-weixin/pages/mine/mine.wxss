@@ -161,6 +161,52 @@ page {
  * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
  * Tuniao UI自定义的css类名和scss变量，均以"tn-"开头，不会造成冲突，请放心使用 
  */
+.mine_list_icon.data-v-dcbcfe34 {
+  width: 51.96rpx;
+  height: 60rpx;
+  margin-bottom: 14rpx;
+}
+.mine_list_icon2.data-v-dcbcfe34 {
+  width: 35.8rpx;
+  height: 41.33rpx;
+  margin-right: 40rpx;
+}
+.mine_center_left.data-v-dcbcfe34 {
+  position: relative;
+  width: 342.81rpx;
+  height: 155.55rpx;
+}
+.mine_jindou.data-v-dcbcfe34 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 342.81rpx;
+  height: 155.55rpx;
+}
+.mine_info-bg.data-v-dcbcfe34 {
+  width: 686rpx;
+  height: 134rpx;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.edit-box.data-v-dcbcfe34 {
+  font-size: 17rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 29rpx;
+  padding: 8rpx 30rpx;
+  background-color: rgba(255, 255, 255, 0.16);
+  border-radius: 30rpx;
+  border: 1rpx #fff solid;
+}
+.index_bg.data-v-dcbcfe34 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
 .icon11__item.data-v-dcbcfe34 {
   width: 30%;
   background-color: #FFFFFF;

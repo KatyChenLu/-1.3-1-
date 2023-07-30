@@ -101,19 +101,19 @@ var components
 try {
   components = {
     tnNavBar: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-nav-bar/tn-nav-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-nav-bar/tn-nav-bar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-nav-bar/tn-nav-bar.vue */ 770))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-nav-bar/tn-nav-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-nav-bar/tn-nav-bar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-nav-bar/tn-nav-bar.vue */ 778))
     },
     addTip: function () {
-      return __webpack_require__.e(/*! import() | components/add-tip/add-tip */ "components/add-tip/add-tip").then(__webpack_require__.bind(null, /*! @/components/add-tip/add-tip.vue */ 778))
+      return __webpack_require__.e(/*! import() | components/add-tip/add-tip */ "components/add-tip/add-tip").then(__webpack_require__.bind(null, /*! @/components/add-tip/add-tip.vue */ 786))
     },
     tnAvatarGroup: function () {
-      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-avatar-group/tn-avatar-group */ "tuniao-ui/components/tn-avatar-group/tn-avatar-group").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-avatar-group/tn-avatar-group.vue */ 785))
+      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-avatar-group/tn-avatar-group */ "tuniao-ui/components/tn-avatar-group/tn-avatar-group").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-avatar-group/tn-avatar-group.vue */ 793))
     },
     quanNews: function () {
-      return __webpack_require__.e(/*! import() | components/quan-news/quan-news */ "components/quan-news/quan-news").then(__webpack_require__.bind(null, /*! @/components/quan-news/quan-news.vue */ 792))
+      return __webpack_require__.e(/*! import() | components/quan-news/quan-news */ "components/quan-news/quan-news").then(__webpack_require__.bind(null, /*! @/components/quan-news/quan-news.vue */ 800))
     },
     tnLandscape: function () {
-      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-landscape/tn-landscape */ "tuniao-ui/components/tn-landscape/tn-landscape").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-landscape/tn-landscape.vue */ 799))
+      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-landscape/tn-landscape */ "tuniao-ui/components/tn-landscape/tn-landscape").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-landscape/tn-landscape.vue */ 807))
     },
   }
 } catch (e) {
@@ -454,10 +454,14 @@ var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/component
 //
 //
 //
+//
+//
+//
+//
 //引入静默更新
 var MescrollBody = function MescrollBody() {
   __webpack_require__.e(/*! require.ensure | components/mescroll-uni/mescroll-body */ "components/mescroll-uni/mescroll-body").then((function () {
-    return resolve(__webpack_require__(/*! @/components/mescroll-uni/mescroll-body.vue */ 806));
+    return resolve(__webpack_require__(/*! @/components/mescroll-uni/mescroll-body.vue */ 814));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -468,6 +472,7 @@ var _default = {
   },
   data: function data() {
     return {
+      currentTabItem: 0,
       topTabSelect: 1,
       numindex: 0,
       shoplist: [],
@@ -583,6 +588,24 @@ var _default = {
     });
   },
   methods: {
+    indexTabTap: function indexTabTap(e) {
+      this.topTabSelect = e;
+      var url = '/api/index/index';
+      if (e == 0) {
+        this.navigateToFn({
+          url: '/pages/liaotian',
+          checkLogin: false
+        });
+      } else if (e == 1) {
+        url = '/api/index/index';
+        this.refreInfo(url);
+        this.tabsChange(0);
+      } else if (e == 2) {
+        url = '/api/index/index_xianxia';
+        this.refreInfo(url);
+        this.tabsChange(0);
+      }
+    },
     onTabItemTap: function onTabItemTap(e) {
       console.log('在首页点击按钮');
       console.log(e);
@@ -611,7 +634,7 @@ var _default = {
     info: function info() {
       var _this3 = this;
       return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
-        var that, result, moreIcon;
+        var that, result;
         return _regenerator.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -634,17 +657,7 @@ var _default = {
                     that.roomlist = result.data.data.roomlist;
                     that.tanchuanglist = result.data.data.tanchuanglist[0];
                     that.list = result.data.data.tagslist;
-                    moreIcon = {
-                      'create_time': 1685611505,
-                      'id': 48,
-                      'image': "../static/newUI/more_game.png",
-                      'sort': 7,
-                      'status': 1,
-                      'title': "更多",
-                      'url': "../static/newUI/more_game.png"
-                    };
                     that.iconnew = result.data.data.iconnew.slice(0, 7);
-                    // that.iconnew =that.iconnew.push(moreIcon)
                     if (result.data.data.tanchuanglist.length > 0) {
                       that.tanchuangshow = true;
                       that.tanchuanglistimage = that.tanchuanglist.image;
@@ -685,7 +698,7 @@ var _default = {
         }, _callee);
       }))();
     },
-    msgcoutget: function msgcoutget() {
+    refreInfo: function refreInfo(url) {
       var _this4 = this;
       return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
         var that, result;
@@ -696,18 +709,31 @@ var _default = {
                 that = _this4;
                 _context2.next = 3;
                 return that.$request({
-                  loading: 0,
+                  loading: 1,
                   method: 'post',
-                  url: '/api/index/getmsgcount',
-                  data: {}
+                  url: url,
+                  data: {
+                    type: 1
+                  }
                 });
               case 3:
                 result = _context2.sent;
                 if (result.statusCode == 200) {
                   if (result.data.code == 200) {
-                    _this4.msgcount = result.data.msg;
-                    _this4.msggai(_this4.msgcount);
+                    that.list = result.data.data.tagslist;
+                    that.iconnew = result.data.data.iconnew.slice(0, 7);
+                    that.loading = false;
+                  } else {
+                    uni.showToast({
+                      icon: 'none',
+                      title: result.data.msg
+                    });
                   }
+                } else {
+                  uni.showToast({
+                    icon: 'none',
+                    title: result.data.msg
+                  });
                 }
               case 5:
               case "end":
@@ -717,7 +743,7 @@ var _default = {
         }, _callee2);
       }))();
     },
-    myinfo: function myinfo() {
+    msgcoutget: function msgcoutget() {
       var _this5 = this;
       return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3() {
         var that, result;
@@ -728,6 +754,38 @@ var _default = {
                 that = _this5;
                 _context3.next = 3;
                 return that.$request({
+                  loading: 0,
+                  method: 'post',
+                  url: '/api/index/getmsgcount',
+                  data: {}
+                });
+              case 3:
+                result = _context3.sent;
+                if (result.statusCode == 200) {
+                  if (result.data.code == 200) {
+                    _this5.msgcount = result.data.msg;
+                    _this5.msggai(_this5.msgcount);
+                  }
+                }
+              case 5:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    },
+    myinfo: function myinfo() {
+      var _this6 = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee4() {
+        var that, result;
+        return _regenerator.default.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                that = _this6;
+                _context4.next = 3;
+                return that.$request({
                   loading: 1,
                   method: 'post',
                   url: '/api/user/flowGroup',
@@ -736,7 +794,7 @@ var _default = {
                   }
                 });
               case 3:
-                result = _context3.sent;
+                result = _context4.sent;
                 if (result.statusCode == 200) {
                   if (result.data.code == 200) {
                     that.mygrouplist = result.data.data.data;
@@ -755,10 +813,10 @@ var _default = {
                 }
               case 5:
               case "end":
-                return _context3.stop();
+                return _context4.stop();
             }
           }
-        }, _callee3);
+        }, _callee4);
       }))();
     },
     /// 列表调用
@@ -770,19 +828,20 @@ var _default = {
       mescroll.resetUpScroll();
     },
     upCallback: function upCallback(mescroll) {
-      var _this6 = this;
-      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee4() {
-        var that, result;
-        return _regenerator.default.wrap(function _callee4$(_context4) {
+      var _this7 = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee5() {
+        var that, url, result;
+        return _regenerator.default.wrap(function _callee5$(_context5) {
           while (1) {
-            switch (_context4.prev = _context4.next) {
+            switch (_context5.prev = _context5.next) {
               case 0:
-                that = _this6;
-                _context4.next = 3;
+                that = _this7;
+                url = _this7.topTabSelect == 1 ? '/api/games/user_list' : _this7.topTabSelect == 2 ? '/api/games/user_list_down' : '';
+                _context5.next = 4;
                 return that.$request({
                   loading: 1,
                   method: 'post',
-                  url: '/api/games/user_list',
+                  url: url,
                   data: {
                     searchKey: '',
                     xiaolei: '',
@@ -795,8 +854,8 @@ var _default = {
                     page: mescroll.num
                   }
                 });
-              case 3:
-                result = _context4.sent;
+              case 4:
+                result = _context5.sent;
                 if (result.statusCode == 200) {
                   if (result.data.code == 200) {
                     if (mescroll.num == 1) {
@@ -817,12 +876,12 @@ var _default = {
                     title: that.$errorMsg
                   });
                 }
-              case 5:
+              case 6:
               case "end":
-                return _context4.stop();
+                return _context5.stop();
             }
           }
-        }, _callee4);
+        }, _callee5);
       }))();
     },
     // cardSwiper
@@ -876,7 +935,7 @@ var _default = {
     },
     // 处理内容，给内容添加对应的标识信息
     initContentData: function initContentData() {
-      var _this7 = this;
+      var _this8 = this;
       this.content.forEach(function (item, index) {
         // 是否需要隐藏内容
         item.hideContent = false;
@@ -886,12 +945,12 @@ var _default = {
         item.contentContainerHeight = 0;
         // 内容容器是否初始化完成
         item.contentContainerInit = false;
-        _this7.$set(_this7.content, index, item);
+        _this8.$set(_this8.content, index, item);
       });
     },
     // 获取内容容器的信息
     getContentRectInfo: function getContentRectInfo() {
-      var _this8 = this;
+      var _this9 = this;
       var contentRect = {};
       var query = uni.createSelectorQuery().in(this);
       // 筛选出存在内容的数据
@@ -905,7 +964,7 @@ var _default = {
       query.exec(function (res) {
         if (!res) {
           setTimeout(function () {
-            _this8.getContentRectInfo();
+            _this9.getContentRectInfo();
           }, 10);
           return;
         }
@@ -915,12 +974,12 @@ var _default = {
           // 获取对应的标号
           var id = item.id;
           var idIndex = /blogger__content--(\d)/.exec(id)[1];
-          var contentItem = _this8.content[idIndex];
-          contentItem.hideContent = item.height > _this8.contentHideShowHeight;
+          var contentItem = _this9.content[idIndex];
+          contentItem.hideContent = item.height > _this9.contentHideShowHeight;
           contentItem.showAllContent = false;
           contentItem.contentContainerHeight = item.height;
           contentItem.contentContainerInit = true;
-          _this8.$set(_this8.content, idIndex, contentItem);
+          _this9.$set(_this9.content, idIndex, contentItem);
 
           // console.log(/blogger__content--(\d)/.exec(id)[1]);
         });
@@ -1001,7 +1060,7 @@ var _default = {
       }
     },
     tabsChange: function tabsChange(index) {
-      this.currenttiezi = index;
+      this.currentTabItem = index;
       this.tagsid = this.list[index].id;
       this.mescroll.resetUpScroll();
     },
@@ -1230,12 +1289,12 @@ var _mescrollUniOption = _interopRequireDefault(__webpack_require__(/*! ./mescro
 // 引入全局配置
 var MescrollEmpty = function MescrollEmpty() {
   __webpack_require__.e(/*! require.ensure | components/mescroll-uni/components/mescroll-empty */ "components/mescroll-uni/components/mescroll-empty").then((function () {
-    return resolve(__webpack_require__(/*! ./components/mescroll-empty.vue */ 813));
+    return resolve(__webpack_require__(/*! ./components/mescroll-empty.vue */ 821));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var MescrollTop = function MescrollTop() {
   __webpack_require__.e(/*! require.ensure | components/mescroll-uni/components/mescroll-top */ "components/mescroll-uni/components/mescroll-top").then((function () {
-    return resolve(__webpack_require__(/*! ./components/mescroll-top.vue */ 820));
+    return resolve(__webpack_require__(/*! ./components/mescroll-top.vue */ 828));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default2 = {
