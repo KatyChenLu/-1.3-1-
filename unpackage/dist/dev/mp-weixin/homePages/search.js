@@ -107,10 +107,10 @@ try {
       return Promise.all(/*! import() | tuniao-ui/components/tn-button/tn-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-button/tn-button")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-button/tn-button.vue */ 877))
     },
     tnTabsSwiper: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-tabs-swiper/tn-tabs-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tabs-swiper/tn-tabs-swiper")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tabs-swiper/tn-tabs-swiper.vue */ 884))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-tabs-swiper/tn-tabs-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tabs-swiper/tn-tabs-swiper")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tabs-swiper/tn-tabs-swiper.vue */ 1026))
     },
     quanList: function () {
-      return __webpack_require__.e(/*! import() | components/quan-list/quan-list */ "components/quan-list/quan-list").then(__webpack_require__.bind(null, /*! @/components/quan-list/quan-list.vue */ 891))
+      return __webpack_require__.e(/*! import() | components/quan-list/quan-list */ "components/quan-list/quan-list").then(__webpack_require__.bind(null, /*! @/components/quan-list/quan-list.vue */ 884))
     },
   }
 } catch (e) {

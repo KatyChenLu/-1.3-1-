@@ -4,7 +4,7 @@
 		<tn-nav-bar fixed customBack :bottomShadow="false" backgroundColor="transparent">
 			<!-- 我的消息 -->
 		</tn-nav-bar>
-		<image src="../../static/newUI/bg.png" mode="widthFix" class="index_bg"></image>
+		<image src="http://pw.manxingkj.com/images/newUI/bg.png" mode="widthFix" class="index_bg"></image>
 		<view :style="{paddingTop: vuex_custom_bar_height + 'px'}">
 			<view class="index-top" style="margin-top: 44rpx;margin-left: 34rpx;">
 				<view class="index-top-left tn-flex">
@@ -14,7 +14,7 @@
 				<view class="index-top-right tn-flex tn-flex-row-center tn-flex tn-flex-col-center">
 
 					<view class="refresh-box">
-						<image src="../../static/newUI/info_search.png" mode="" class="refresh"></image>
+						<image src="http://pw.manxingkj.com/images/newUI/info_search.png" mode="" class="refresh"></image>
 					</view>
 				</view>
 			</view>
@@ -26,7 +26,7 @@
 							<!-- <view
 								class=" icon12__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-shadow-blur tn-main-gradient-purplered--light tn-color-purplered"> -->
 							<!-- <view class="tn-icon-fire-fill tn-three"></view> -->
-							<image src="../../static/newUI/preferred_1.png" mode="" class="topicon "></image>
+							<image src="http://pw.manxingkj.com/images/newUI/preferred_1.png" mode="" class="topicon "></image>
 							<!-- </view> -->
 							<view class=" tn-text-center" style="font-size: 17rpx;font-weight: bold;color: #FFFFFF;line-height: 40rpx;">
 								<text class="">评论我的</text>
@@ -35,7 +35,7 @@
 					</view>
 					<view class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius" @click="qiehuan(1,'收到的赞')">
 						<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-							<image src="../../static/newUI/preferred_2.png" mode="" class="topicon "></image>
+							<image src="http://pw.manxingkj.com/images/newUI/preferred_2.png" mode="" class="topicon "></image>
 							<view class=" tn-text-center" style="font-size: 17rpx;font-weight: bold;color: #FFFFFF;line-height: 40rpx;">
 								<text class="tn-text-ellipsis">收到的赞</text>
 							</view>
@@ -43,7 +43,7 @@
 					</view>
 					<view class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius" @click="qiehuan(2,'系统通知')">
 						<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-							<image src="../../static/newUI/preferred_3.png" mode="" class="topicon "></image>
+							<image src="http://pw.manxingkj.com/images/newUI/preferred_3.png" mode="" class="topicon "></image>
 							<view class=" tn-text-center" style="font-size: 17rpx;font-weight: bold;color: #FFFFFF;line-height: 40rpx;">
 								<text class="tn-text-ellipsis">系统通知</text>
 							</view>
@@ -51,7 +51,7 @@
 					</view>
 					<view class="tn-flex-1 tn-padding-sm tn-margin-xs tn-radius" @click="qiehuan(3,'关注我的')">
 						<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-							<image src="../../static/newUI/preferred_4.png" mode="" class="topicon "></image>
+							<image src="http://pw.manxingkj.com/images/newUI/preferred_4.png" mode="" class="topicon "></image>
 							<view class=" tn-text-center" style="font-size: 17rpx;font-weight: bold;color: #FFFFFF;line-height: 40rpx;">
 								<text class="tn-text-ellipsis">关注我的</text>
 							</view>

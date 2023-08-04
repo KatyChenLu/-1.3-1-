@@ -104,7 +104,7 @@ try {
       return Promise.all(/*! import() | tuniao-ui/components/tn-nav-bar/tn-nav-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-nav-bar/tn-nav-bar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-nav-bar/tn-nav-bar.vue */ 778))
     },
     tnListCell: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-list-cell/tn-list-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-list-cell/tn-list-cell")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-list-cell/tn-list-cell.vue */ 863))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-list-cell/tn-list-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-list-cell/tn-list-cell")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-list-cell/tn-list-cell.vue */ 856))
     },
     dkShezhi: function () {
       return Promise.all(/*! import() | components/dk-shezhi/dk-shezhi */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/dk-shezhi/dk-shezhi")]).then(__webpack_require__.bind(null, /*! @/components/dk-shezhi/dk-shezhi.vue */ 1174))
@@ -122,7 +122,7 @@ try {
       return Promise.all(/*! import() | tuniao-ui/components/tn-button/tn-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-button/tn-button")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-button/tn-button.vue */ 877))
     },
     tnSwitch: function () {
-      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-switch/tn-switch */ "tuniao-ui/components/tn-switch/tn-switch").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-switch/tn-switch.vue */ 956))
+      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-switch/tn-switch */ "tuniao-ui/components/tn-switch/tn-switch").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-switch/tn-switch.vue */ 942))
     },
   }
 } catch (e) {
@@ -396,7 +396,7 @@ var _silenceUpdate = _interopRequireDefault(__webpack_require__(/*! @/uni_module
 //
 var getTel = function getTel() {
   Promise.all(/*! require.ensure | components/loginFn/get-tel */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/loginFn/get-tel")]).then((function () {
-    return resolve(__webpack_require__(/*! @/components/loginFn/get-tel */ 972));
+    return resolve(__webpack_require__(/*! @/components/loginFn/get-tel */ 958));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 //引入静默更新

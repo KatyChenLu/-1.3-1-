@@ -11,7 +11,7 @@
 		</tn-nav-bar>
 
 
-		<image src="../static/newUI/bg.png" mode="widthFix" class="index_bg"></image>
+		<image src="http://pw.manxingkj.com/images/newUI/bg.png" mode="widthFix" class="index_bg"></image>
 		<!-- 推荐 -->
 		<mescroll-body ref="mescrollRef" @down="downCallback" @up="upCallback">
 			<view v-if="current==1" class="indexbg" :style="{paddingTop: vuex_custom_bar_height + 'px'}">
@@ -39,20 +39,20 @@
 					<view class="index-top-right flex-base">
 						<view class="search-box" @click="navigateToFn({ url: '/homePages/search', checkLogin: false })">
 
-							<image src="../static/newUI/search_box.png" mode="" class="search-bg"></image>
-							<image src="../static/newUI/search_icon.png" mode="" class="search-icon"></image>
+							<image src="http://pw.manxingkj.com/images/newUI/search_box.png" mode="" class="search-bg"></image>
+							<image src="http://pw.manxingkj.com/images/newUI/search_icon.png" mode="" class="search-icon"></image>
 							<view class="search-tip">
 								搜一搜
 							</view>
 						</view>
 						<view class="gift-box">
-							<image src="../static/newUI/gift.png" mode="" class="gift"></image>
+							<image src="http://pw.manxingkj.com/images/newUI/gift.png" mode="" class="gift"></image>
 						</view>
 					</view>
 				</view>
 				<view class="bulletin_box">
 					<view class="bull_box">
-						<image src="../static/newUI/bulletin_bg.png" mode="" class="bulletin-bg"></image>
+						<image src="http://pw.manxingkj.com/images/newUI/bulletin_bg.png" mode="" class="bulletin-bg"></image>
 						<view class="bulletin-tip">
 							公告 : <text class="bulletin-tip-text">测试内容.测试内容.测试内容.测试内容.测试内容.测试内容</text>
 						</view>
@@ -91,9 +91,9 @@
 								style="margin-bottom: 26rpx;"
 								@click="navigateToFn({ url: '/gamePages/index?type=0&id='+item.id+'&title='+item.title, checkLogin: false })">
 								<view class=" tn-flex tn-flex-row-center tn-flex-col-center"
-									style="height:66rpx;width: 66rpx;">
+									style="height:90rpx;width: 90rpx;">
 									<image class="" :src='item.image' mode='aspectFit'
-										style="height:66rpx;width: 66rpx;"></image>
+										style="height:90rpx;width: 90rpx;"></image>
 								</view>
 								<view class=" tn-text-center" style="margin-top: 14rpx;">
 									<text class="jingang-text">{{item.title}}</text>
@@ -103,11 +103,11 @@
 						<view class=" tn-radius" :class="{'sige': 1}" v-if="1">
 							<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center"
 								style="margin-bottom: 26rpx;"
-								@click="navigateToFn({ url: ''+item.title, checkLogin: false })">
+								@click="navigateToFn({ url: '/pages/more', checkLogin: false })">
 								<view class=" tn-flex tn-flex-row-center tn-flex-col-center"
-									style="height:66rpx;width: 66rpx;">
-									<image class="" src="../static/newUI/more_game.png" mode='aspectFit'
-										style="height:66rpx;width: 66rpx;"></image>
+									style="height:90rpx;width: 90rpx;">
+									<image class="" src="http://pw.manxingkj.com/images/newUI/more_game.png" mode='aspectFit'
+										style="height:90rpx;width: 90rpx;"></image>
 								</view>
 								<view class=" tn-text-center" style="margin-top: 14rpx;">
 									<text class="jingang-text">更多</text>
@@ -223,7 +223,7 @@
 						<!-- 	<tn-tabs :list="list" activeColor="#5500ff" inactiveColor="#000000" :isScroll="true"
 							:current="currenttiezi" name="tab-name" @change="tabsChange"></tn-tabs> -->
 						<view class="list-tab-box">
-							<image src="../static/newUI/tap_first.png" mode="" class="tab_first"></image>
+							<image src="http://pw.manxingkj.com/images/newUI/tap_first.png" mode="" class="tab_first"></image>
 							<view class="list-tab-right">
 								<view class="list-tab"
 									:class="{'list-tab-select':tabItem==currentTabItem,'list-tab-normal':tabItem!=currentTabItem}"
@@ -234,7 +234,7 @@
 						</view>
 					</view>
 					<view class="warm-box">
-						<image src="../static/newUI/warm_tips_bg.png" class="warm-img" mode=""></image>
+						<image src="http://pw.manxingkj.com/images/newUI/warm_tips_bg.png" class="warm-img" mode=""></image>
 						<text class="warm-text1">每日可领券，天天享</text>
 						<text class="warm-text2">9</text>
 						<text class="warm-text3">折</text>
@@ -1082,7 +1082,7 @@
 	}
 
 	.indexbg {
-		// background-image: url('../static/newUI/bg.png');
+		// background-image: url('http://pw.manxingkj.com/images/newUI/bg.png');
 		// background-size: contain;
 		// background-repeat: no-repeat;
 		position: relative;
@@ -1933,20 +1933,20 @@
 		margin-bottom: 26rpx;
 
 		.image-bg {
-			background-image: url('../static/newUI/nac_list_1.png');
+			background-image: url('http://pw.manxingkj.com/images/newUI/nac_list_1.png');
 			width: 240.87rpx;
 			height: 109.29rpx;
 		}
 
 		.image-bg1 {
-			background-image: url('../static/newUI/nac_list_2.png');
+			background-image: url('http://pw.manxingkj.com/images/newUI/nac_list_2.png');
 			width: 238.3rpx;
 			height: 109.81rpx;
 			margin-left: -10rpx;
 		}
 
 		.image-bg2 {
-			background-image: url('../static/newUI/nac_list_3.png');
+			background-image: url('http://pw.manxingkj.com/images/newUI/nac_list_3.png');
 			width: 240.87rpx;
 			height: 109.29rpx;
 			margin-left: -10rpx;

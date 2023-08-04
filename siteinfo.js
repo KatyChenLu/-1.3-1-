@@ -1,5 +1,5 @@
 ///修改为你的域名，一定要安装ssl证书。
-const host = `https://game.demo.51duoke.cn`;
+const host = `https://pw.manxingkj.com`;
 //下面参数 是连接聊天服务的，请修改为你的域名注意端口8282不能修改。
 const webSocket = 'wss://quanpro.51duoke.cn:8282';
 //下面是你的腾讯语音sdk的应用id，

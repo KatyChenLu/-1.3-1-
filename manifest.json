@@ -215,9 +215,9 @@
             // "scope.userLocation" : {
             //     "desc" : "小程序将使用定位功能，推荐附近的人"
             // },
-			"scope.userFuzzyLocation" : {
-			    "desc" : "小程序将使用定位功能，推荐附近的人"
-			}
+            "scope.userFuzzyLocation" : {
+                "desc" : "小程序将使用定位功能，推荐附近的人"
+            }
         }
     },
     "mp-alipay" : {

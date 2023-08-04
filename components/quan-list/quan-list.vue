@@ -236,11 +236,11 @@
 				<view class="tn-flex tn-flex-row-between tn-flex-col-center tn-margin-top-xs">
 					<view class="justify-content-item tn-color-gray tn-text-center">
 						<view class="tn-flex tn-flex-col-center">
-							<image src="../../static/newUI/zan.png" mode="" class="activity-list-bottom-icon"></image>
+							<image src="http://pw.manxingkj.com/images/newUI/zan.png" mode="" class="activity-list-bottom-icon"></image>
 							<view class="tn-margin-left-xs">
 								{{ $t.number.formatNumberAddPriceUnit(item.likeCount) }}
 							</view>
-							<image src="../../static/newUI/liuyan.png" mode="" class="activity-list-bottom-icon" style="margin-left: 90rpx;"></image>
+							<image src="http://pw.manxingkj.com/images/newUI/liuyan.png" mode="" class="activity-list-bottom-icon" style="margin-left: 90rpx;"></image>
 							<view class="tn-margin-left-xs">
 								{{ $t.number.formatNumberAddPriceUnit(item.commentCount) }}
 							</view>

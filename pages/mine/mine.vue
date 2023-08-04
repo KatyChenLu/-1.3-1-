@@ -10,7 +10,7 @@
 			</view>
 		</tn-nav-bar>
 
-		<image src="../../static/newUI/bg.png" mode="widthFix" class="index_bg"></image>
+		<image src="http://pw.manxingkj.com/images/newUI/bg.png" mode="widthFix" class="index_bg"></image>
 
 
 		<view class="tn-padding" :style="{paddingTop: vuex_custom_bar_height + 'px'}">
@@ -80,7 +80,7 @@
 
 					<view class="blogger-tips-data__info tn-flex"
 						style="width: 686rpx;height: 134rpx;position: relative;">
-						<image src="../../static/newUI/mine_info.png" mode="" class="mine_info-bg"></image>
+						<image src="http://pw.manxingkj.com/images/newUI/mine_info.png" mode="" class="mine_info-bg"></image>
 
 						<view class="tn-flex-1 tn-padding-sm " @click="tofans('follow')" style="position: relative;
 		z-index: 99;">
@@ -126,11 +126,11 @@
 
 				<!-- 更多信息-->
 				<view
-					class="tn-info__container tn-flex  tn-flex-col-center tn-flex-row-between tn-margin-left-sm tn-margin-right-sm "
+					class="tn-info__container tn-flex  tn-flex-col-center tn-flex-row-between  "
 					style="position: relative;
 		z-index: 99; background-color: transparent;">
 					<view class="mine_center_left">
-						<image src="../../static/newUI/mine_jindou.png" mode="" class="mine_jindou"
+						<image src="http://pw.manxingkj.com/images/newUI/mine_jindou.png" mode="" class="mine_jindou"
 							@click="navigateToFn({ url: '/minePages/gift/chongzhi', checkLogin: true })"></image>
 						<view class=" tn-padding-top-xs"
 							style="z-index: 99;position: relative; margin-top: 76rpx ;margin-left: 38rpx;">
@@ -138,7 +138,7 @@
 						</view>
 					</view>
 					<view class="mine_center_left">
-						<image src="../../static/newUI/mine_dingdan.png" mode="" class="mine_jindou"
+						<image src="http://pw.manxingkj.com/images/newUI/mine_dingdan.png" mode="" class="mine_jindou"
 							@click="navigateToFn({ url: '/minePages/gift/chongzhi', checkLogin: true })"></image>
 						<view class=" tn-padding-top-xs"
 							style="z-index: 99;position: relative; margin-top: 76rpx ;margin-left: 38rpx;">
@@ -215,7 +215,7 @@
 					<view class="tn-flex tn-flex-row-center tn-radius tn-flex-wrap">
 						<view class="tn-padding-sm tn-margin-xs tn-radius" @click="shenqing()">
 							<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-								<image src="../../static/newUI/mine_list1.png" mode="" class="mine_list_icon"></image>
+								<image src="http://pw.manxingkj.com/images/newUI/mine_list1.png" mode="" class="mine_list_icon"></image>
 								<view class="tn-text-center">
 									<text class="tn-text-ellipsis">申请接单</text>
 								</view>
@@ -223,7 +223,7 @@
 						</view>
 						<view class="tn-padding-sm tn-margin-xs tn-radius" @click="myhome()">
 							<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-								<image src="../../static/newUI/mine_list3.png" mode="" class="mine_list_icon"></image>
+								<image src="http://pw.manxingkj.com/images/newUI/mine_list3.png" mode="" class="mine_list_icon"></image>
 								<view class="tn-text-center">
 									<text class="tn-text-home">我的动态</text>
 								</view>
@@ -232,7 +232,7 @@
 						<view class="tn-padding-sm tn-margin-xs tn-radius"
 							@click="navigateToFn({ url: '/circlePages/fans?type=fans&user_id=0', checkLogin: true })">
 							<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-								<image src="../../static/newUI/mine_list2.png" mode="" class="mine_list_icon"></image>
+								<image src="http://pw.manxingkj.com/images/newUI/mine_list2.png" mode="" class="mine_list_icon"></image>
 								<view class="tn-text-center">
 									<text class="tn-text-ellipsis">任务中心</text>
 								</view>
@@ -242,7 +242,7 @@
 						<view class="tn-padding-sm tn-margin-xs tn-radius"
 							@click="navigateToFn({ url: '/minePages/my_star', checkLogin: true })">
 							<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-								<image src="../../static/newUI/mine_list4.png" mode="" class="mine_list_icon"></image>
+								<image src="http://pw.manxingkj.com/images/newUI/mine_list4.png" mode="" class="mine_list_icon"></image>
 								<view class="tn-text-center">
 									<text class="tn-text-ellipsis">会员特权</text>
 								</view>
@@ -252,7 +252,7 @@
 						<view class="tn-padding-sm tn-margin-xs tn-radius"
 							@click="navigateToFn({ url: '/homePages/about?id=31', checkLogin: false })">
 							<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-								<image src="../../static/newUI/mine_list5.png" mode="" class="mine_list_icon"></image>
+								<image src="http://pw.manxingkj.com/images/newUI/mine_list5.png" mode="" class="mine_list_icon"></image>
 								<view class="tn-text-center">
 									<text class="tn-text-ellipsis">隐私政策</text>
 								</view>
@@ -261,7 +261,7 @@
 						<view class="tn-padding-sm tn-margin-xs tn-radius"
 							@click="navigateToFn({ url: '/homePages/about?id=32', checkLogin: false })">
 							<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-								<image src="../../static/newUI/mine_list6.png" mode="" class="mine_list_icon"></image>
+								<image src="http://pw.manxingkj.com/images/newUI/mine_list6.png" mode="" class="mine_list_icon"></image>
 								<view class="tn-text-center">
 									<text class="tn-text-ellipsis">帮助中心</text>
 								</view>
@@ -270,7 +270,7 @@
 						<view class="tn-padding-sm tn-margin-xs tn-radius"
 							@click="navigateToFn({ url: '/homePages/about?id=26', checkLogin: false })">
 							<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-								<image src="../../static/newUI/mine_list7.png" mode="" class="mine_list_icon"></image>
+								<image src="http://pw.manxingkj.com/images/newUI/mine_list7.png" mode="" class="mine_list_icon"></image>
 								<view class="tn-text-center">
 									<text class="tn-text-ellipsis">联系我们</text>
 								</view>
@@ -280,7 +280,7 @@
 							<view class="tn-padding-sm tn-margin-xs tn-radius"
 								@click="navigateToFn({ url: '/homePages/about?id=25', checkLogin: false })">
 								<view class="tn-flex tn-flex-direction-column tn-flex-row-center tn-flex-col-center">
-									<image src="../../static/newUI/mine_list8.png" mode="" class="mine_list_icon">
+									<image src="http://pw.manxingkj.com/images/newUI/mine_list8.png" mode="" class="mine_list_icon">
 									</image>
 									<view class="tn-text-center">
 										<text class="tn-text-ellipsis">关于我们</text>
@@ -307,7 +307,7 @@
 									class="icon1__item--icon tn-flex tn-flex-row-center tn-flex-col-center tn-cool-bg-color-1 tn-color-white">
 									<view class="tn-icon-service-fill"></view>
 								</view> -->
-								<image src="../../static/newUI/mine_list9.png" mode="" class="mine_list_icon2">
+								<image src="http://pw.manxingkj.com/images/newUI/mine_list9.png" mode="" class="mine_list_icon2">
 								</image>
 								<view class="tn-margin-left-sm tn-flex-1">在线客服</view>
 								<view class="tn-margin-left-sm tn-color-gray tn-icon-right"></view>
@@ -316,7 +316,7 @@
 						<tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="30"
 							@click="navigateToFn({ url: '/minePages/share', checkLogin: true })">
 							<view class="tn-flex tn-flex-col-center">
-								<image src="../../static/newUI/mine_list10.png" mode="" class="mine_list_icon2">
+								<image src="http://pw.manxingkj.com/images/newUI/mine_list10.png" mode="" class="mine_list_icon2">
 								</image>
 								<view class="tn-margin-left-sm tn-flex-1">邀请奖励</view>
 								<view class="tn-margin-left-sm tn-color-gray tn-icon-right"></view>
@@ -325,7 +325,7 @@
 						<tn-list-cell :hover="true" :unlined="true" :radius="true" :fontSize="30"
 							@click="navigateToFn({ url: '/gamePages/team_index', checkLogin: true })">
 							<view class="tn-flex tn-flex-col-center">
-								<image src="../../static/newUI/mine_list11.png" mode="" class="mine_list_icon2">
+								<image src="http://pw.manxingkj.com/images/newUI/mine_list11.png" mode="" class="mine_list_icon2">
 								</image>
 								<view class="tn-margin-left-sm tn-flex-1">工会中心</view>
 								<view class="tn-margin-left-sm tn-color-gray tn-icon-right"></view>

@@ -107,7 +107,7 @@ try {
       return Promise.all(/*! import() | tuniao-ui/components/tn-avatar/tn-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-avatar/tn-avatar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-avatar/tn-avatar.vue */ 842))
     },
     tnTag: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-tag/tn-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tag/tn-tag")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tag/tn-tag.vue */ 849))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-tag/tn-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tag/tn-tag")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tag/tn-tag.vue */ 863))
     },
     tnTabs: function () {
       return Promise.all(/*! import() | tuniao-ui/components/tn-tabs/tn-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tabs/tn-tabs")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tabs/tn-tabs.vue */ 835))
@@ -119,13 +119,13 @@ try {
       return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-scroll-list/tn-scroll-list */ "tuniao-ui/components/tn-scroll-list/tn-scroll-list").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-scroll-list/tn-scroll-list.vue */ 1129))
     },
     tnEmpty: function () {
-      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-empty/tn-empty */ "tuniao-ui/components/tn-empty/tn-empty").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-empty/tn-empty.vue */ 905))
+      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-empty/tn-empty */ "tuniao-ui/components/tn-empty/tn-empty").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-empty/tn-empty.vue */ 891))
     },
     quanList: function () {
-      return __webpack_require__.e(/*! import() | components/quan-list/quan-list */ "components/quan-list/quan-list").then(__webpack_require__.bind(null, /*! @/components/quan-list/quan-list.vue */ 891))
+      return __webpack_require__.e(/*! import() | components/quan-list/quan-list */ "components/quan-list/quan-list").then(__webpack_require__.bind(null, /*! @/components/quan-list/quan-list.vue */ 884))
     },
     tnPopup: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-popup/tn-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-popup/tn-popup")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-popup/tn-popup.vue */ 926))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-popup/tn-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-popup/tn-popup")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-popup/tn-popup.vue */ 912))
     },
     giftList: function () {
       return __webpack_require__.e(/*! import() | components/gift-list/gift-list */ "components/gift-list/gift-list").then(__webpack_require__.bind(null, /*! @/components/gift-list/gift-list.vue */ 1136))
@@ -140,10 +140,10 @@ try {
       return Promise.all(/*! import() | uni_modules/lime-svga/components/l-svga/l-svga */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/lime-svga/components/l-svga/l-svga")]).then(__webpack_require__.bind(null, /*! @/uni_modules/lime-svga/components/l-svga/l-svga.vue */ 1150))
     },
     uniPopup: function () {
-      return __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 979))
+      return __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 965))
     },
     shareBtn: function () {
-      return __webpack_require__.e(/*! import() | components/share-btn/share-btn */ "components/share-btn/share-btn").then(__webpack_require__.bind(null, /*! @/components/share-btn/share-btn.vue */ 986))
+      return __webpack_require__.e(/*! import() | components/share-btn/share-btn */ "components/share-btn/share-btn").then(__webpack_require__.bind(null, /*! @/components/share-btn/share-btn.vue */ 972))
     },
     tnNumberBox: function () {
       return Promise.all(/*! import() | tuniao-ui/components/tn-number-box/tn-number-box */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-number-box/tn-number-box")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-number-box/tn-number-box.vue */ 1060))

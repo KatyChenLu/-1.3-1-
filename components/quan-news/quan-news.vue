@@ -19,7 +19,7 @@
 			  bottom: 0px;
 			  font-size: 20px;
 			  z-index: 1;">
-								<image src="../../static/newUI/voc_bg.png" mode="" v-if="item.voc" class="voc-img">
+								<image src="http://pw.manxingkj.com/images/newUI/voc_bg.png" mode="" v-if="item.voc" class="voc-img">
 									<!-- tn-button backgroundColor="#ffffff" padding="20rpx 0" width="190rpx" shadow
 										fontBold v-if="item.voc"> -->
 									<!-- <view class="voice-line-wrap"
@@ -52,7 +52,7 @@
 								<view class="justify-content-item" style="align-items: center;
     display: flex;">
 									<text class="tn-color-cat tn-text-lg  tn-text-bold">{{item.nickname}}</text>
-									<image class="sex-icon" src="../../static/newUI/nv.png" mode='aspectFit'></image>
+									<image class="sex-icon" src="http://pw.manxingkj.com/images/newUI/nv.png" mode='aspectFit'></image>
 								</view>
 
 								<view class="justify-content-item zaixian-text">
@@ -465,7 +465,7 @@
 
 	.capsule1 {
 		margin-top: 10rpx;
-		background-image: url('../../static/newUI/game_info_bg.png');
+		background-image: url('http://pw.manxingkj.com/images/newUI/game_info_bg.png');
 		width: 249.33rpx;
 		height: 31.33rpx;
 		background-size: cover;

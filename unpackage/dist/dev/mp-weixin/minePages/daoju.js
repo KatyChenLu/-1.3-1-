@@ -110,7 +110,7 @@ try {
       return Promise.all(/*! import() | tuniao-ui/components/tn-button/tn-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-button/tn-button")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-button/tn-button.vue */ 877))
     },
     tnBadge: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-badge/tn-badge */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-badge/tn-badge")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-badge/tn-badge.vue */ 1001))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-badge/tn-badge */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-badge/tn-badge")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-badge/tn-badge.vue */ 994))
     },
     tnModal: function () {
       return Promise.all(/*! import() | tuniao-ui/components/tn-modal/tn-modal */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-modal/tn-modal")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-modal/tn-modal.vue */ 870))

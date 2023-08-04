@@ -988,18 +988,18 @@ to {
   /* 列表元素 end */
 }
 .nav-list .image-bg.data-v-2a183b29 {
-  background-image: url(/static/newUI/nac_list_1.png);
+  background-image: url("http://pw.manxingkj.com/images/newUI/nac_list_1.png");
   width: 240.87rpx;
   height: 109.29rpx;
 }
 .nav-list .image-bg1.data-v-2a183b29 {
-  background-image: url(/static/newUI/nac_list_2.png);
+  background-image: url("http://pw.manxingkj.com/images/newUI/nac_list_2.png");
   width: 238.3rpx;
   height: 109.81rpx;
   margin-left: -10rpx;
 }
 .nav-list .image-bg2.data-v-2a183b29 {
-  background-image: url(/static/newUI/nac_list_3.png);
+  background-image: url("http://pw.manxingkj.com/images/newUI/nac_list_3.png");
   width: 240.87rpx;
   height: 109.29rpx;
   margin-left: -10rpx;

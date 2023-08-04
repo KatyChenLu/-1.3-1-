@@ -27,6 +27,14 @@
 	 }
 	},
 	{
+	  "path": "pages/more",
+	 "style": {
+		"enablePullDownRefresh": false,
+	 	"navigationStyle": "custom",
+		"navigationBarTitleText": "同城"
+	 }
+	},
+	{
 	  "path": "pages/mine/mine",
 	 "style": {
 	 	"enablePullDownRefresh": false,
@@ -41,14 +49,6 @@
 		"navigationBarTitleText": "广场"
 	 }
 	},
-	{
-	  "path": "pages/circle/circle",
-	 "style": {
-	 	"enablePullDownRefresh": false,
-	 	"navigationStyle": "custom",
-		"navigationBarTitleText": "内容"
-	 }
-	}	,
 	{
 	  "path": "pages/preferred/preferred",
 	 "style": {

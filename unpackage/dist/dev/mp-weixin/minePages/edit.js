@@ -104,7 +104,7 @@ try {
       return Promise.all(/*! import() | tuniao-ui/components/tn-nav-bar/tn-nav-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-nav-bar/tn-nav-bar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-nav-bar/tn-nav-bar.vue */ 778))
     },
     kspCropper: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper */ "uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper").then(__webpack_require__.bind(null, /*! @/uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper.vue */ 963))
+      return __webpack_require__.e(/*! import() | uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper */ "uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper").then(__webpack_require__.bind(null, /*! @/uni_modules/ksp-cropper/components/ksp-cropper/ksp-cropper.vue */ 949))
     },
     tnButton: function () {
       return Promise.all(/*! import() | tuniao-ui/components/tn-button/tn-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-button/tn-button")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-button/tn-button.vue */ 877))
@@ -113,16 +113,16 @@ try {
       return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-slider/tn-slider */ "tuniao-ui/components/tn-slider/tn-slider").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-slider/tn-slider.vue */ 1232))
     },
     tnBadge: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-badge/tn-badge */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-badge/tn-badge")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-badge/tn-badge.vue */ 1001))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-badge/tn-badge */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-badge/tn-badge")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-badge/tn-badge.vue */ 994))
     },
     tnPopup: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-popup/tn-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-popup/tn-popup")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-popup/tn-popup.vue */ 926))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-popup/tn-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-popup/tn-popup")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-popup/tn-popup.vue */ 912))
     },
     nbVoiceRecord: function () {
       return __webpack_require__.e(/*! import() | uni_modules/nb-voice-record/components/nb-voice-record/nb-voice-record */ "uni_modules/nb-voice-record/components/nb-voice-record/nb-voice-record").then(__webpack_require__.bind(null, /*! @/uni_modules/nb-voice-record/components/nb-voice-record/nb-voice-record.vue */ 1081))
     },
     tnTag: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-tag/tn-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tag/tn-tag")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tag/tn-tag.vue */ 849))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-tag/tn-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tag/tn-tag")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tag/tn-tag.vue */ 863))
     },
     tnCropper: function () {
       return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-cropper/tn-cropper */ "tuniao-ui/components/tn-cropper/tn-cropper").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-cropper/tn-cropper.vue */ 1088))

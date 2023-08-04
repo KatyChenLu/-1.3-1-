@@ -89,10 +89,10 @@ try {
       return Promise.all(/*! import() | components/dk-tanchuang/dk-tanchuang */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/dk-tanchuang/dk-tanchuang")]).then(__webpack_require__.bind(null, /*! @/components/dk-tanchuang/dk-tanchuang.vue */ 1143))
     },
     tnPopup: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-popup/tn-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-popup/tn-popup")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-popup/tn-popup.vue */ 926))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-popup/tn-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-popup/tn-popup")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-popup/tn-popup.vue */ 912))
     },
     tnListCell: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-list-cell/tn-list-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-list-cell/tn-list-cell")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-list-cell/tn-list-cell.vue */ 863))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-list-cell/tn-list-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-list-cell/tn-list-cell")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-list-cell/tn-list-cell.vue */ 856))
     },
     tnAvatar: function () {
       return Promise.all(/*! import() | tuniao-ui/components/tn-avatar/tn-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-avatar/tn-avatar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-avatar/tn-avatar.vue */ 842))

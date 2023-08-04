@@ -107,16 +107,16 @@ try {
       return Promise.all(/*! import() | tuniao-ui/components/tn-button/tn-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-button/tn-button")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-button/tn-button.vue */ 877))
     },
     tnTag: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-tag/tn-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tag/tn-tag")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tag/tn-tag.vue */ 849))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-tag/tn-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tag/tn-tag")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tag/tn-tag.vue */ 863))
     },
     tnEmpty: function () {
-      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-empty/tn-empty */ "tuniao-ui/components/tn-empty/tn-empty").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-empty/tn-empty.vue */ 905))
+      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-empty/tn-empty */ "tuniao-ui/components/tn-empty/tn-empty").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-empty/tn-empty.vue */ 891))
     },
     quanList: function () {
-      return __webpack_require__.e(/*! import() | components/quan-list/quan-list */ "components/quan-list/quan-list").then(__webpack_require__.bind(null, /*! @/components/quan-list/quan-list.vue */ 891))
+      return __webpack_require__.e(/*! import() | components/quan-list/quan-list */ "components/quan-list/quan-list").then(__webpack_require__.bind(null, /*! @/components/quan-list/quan-list.vue */ 884))
     },
     tnPopup: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-popup/tn-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-popup/tn-popup")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-popup/tn-popup.vue */ 926))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-popup/tn-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-popup/tn-popup")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-popup/tn-popup.vue */ 912))
     },
     giftList: function () {
       return __webpack_require__.e(/*! import() | components/gift-list/gift-list */ "components/gift-list/gift-list").then(__webpack_require__.bind(null, /*! @/components/gift-list/gift-list.vue */ 1136))
@@ -128,10 +128,10 @@ try {
       return Promise.all(/*! import() | uni_modules/lime-svga/components/l-svga/l-svga */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/lime-svga/components/l-svga/l-svga")]).then(__webpack_require__.bind(null, /*! @/uni_modules/lime-svga/components/l-svga/l-svga.vue */ 1150))
     },
     uniPopup: function () {
-      return __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 979))
+      return __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 965))
     },
     shareBtn: function () {
-      return __webpack_require__.e(/*! import() | components/share-btn/share-btn */ "components/share-btn/share-btn").then(__webpack_require__.bind(null, /*! @/components/share-btn/share-btn.vue */ 986))
+      return __webpack_require__.e(/*! import() | components/share-btn/share-btn */ "components/share-btn/share-btn").then(__webpack_require__.bind(null, /*! @/components/share-btn/share-btn.vue */ 972))
     },
     tnModal: function () {
       return Promise.all(/*! import() | tuniao-ui/components/tn-modal/tn-modal */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-modal/tn-modal")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-modal/tn-modal.vue */ 870))

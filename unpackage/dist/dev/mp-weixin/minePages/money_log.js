@@ -104,7 +104,7 @@ try {
       return Promise.all(/*! import() | tuniao-ui/components/tn-nav-bar/tn-nav-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-nav-bar/tn-nav-bar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-nav-bar/tn-nav-bar.vue */ 778))
     },
     tnListCell: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-list-cell/tn-list-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-list-cell/tn-list-cell")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-list-cell/tn-list-cell.vue */ 863))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-list-cell/tn-list-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-list-cell/tn-list-cell")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-list-cell/tn-list-cell.vue */ 856))
     },
   }
 } catch (e) {

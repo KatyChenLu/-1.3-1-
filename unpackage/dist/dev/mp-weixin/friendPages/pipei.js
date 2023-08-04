@@ -116,7 +116,7 @@ try {
       return Promise.all(/*! import() | tuniao-ui/components/tn-button/tn-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-button/tn-button")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-button/tn-button.vue */ 877))
     },
     tnPopup: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-popup/tn-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-popup/tn-popup")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-popup/tn-popup.vue */ 926))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-popup/tn-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-popup/tn-popup")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-popup/tn-popup.vue */ 912))
     },
   }
 } catch (e) {
@@ -336,7 +336,7 @@ var audioContext = uni.createInnerAudioContext();
 var recorderManager = uni.getRecorderManager();
 var NavIndexButton = function NavIndexButton() {
   __webpack_require__.e(/*! require.ensure | libs/components/nav-index-button */ "libs/components/nav-index-button").then((function () {
-    return resolve(__webpack_require__(/*! @/libs/components/nav-index-button.vue */ 898));
+    return resolve(__webpack_require__(/*! @/libs/components/nav-index-button.vue */ 979));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

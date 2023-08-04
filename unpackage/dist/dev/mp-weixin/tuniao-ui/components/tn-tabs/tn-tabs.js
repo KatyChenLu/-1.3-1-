@@ -80,7 +80,7 @@ var components
 try {
   components = {
     tnBadge: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-badge/tn-badge */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-badge/tn-badge")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-badge/tn-badge.vue */ 1001))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-badge/tn-badge */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-badge/tn-badge")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-badge/tn-badge.vue */ 994))
     },
   }
 } catch (e) {

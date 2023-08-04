@@ -4,18 +4,18 @@
 		<tn-nav-bar fixed :isBack="true" :bottomShadow="false" backgroundColor="transparent">
 			同城交友
 		</tn-nav-bar>
-		<image src="../static/newUI/bg.png" mode="widthFix" class="index_bg"></image>
+		<image src="http://pw.manxingkj.com/images/newUI/bg.png" mode="widthFix" class="index_bg"></image>
 		<view class="tn-padding-top-xs" :style="{paddingTop: vuex_custom_bar_height + 'px'}" style="	position: relative;
 		z-index: 99;">
 
 
 			<view class="nav-list  tea-user__wrap">
 				<view class="nav-list-item " @click="navigateToFn({ url: '/pages/liaotian', checkLogin: false })">
-					<image src="../static/newUI/jiaoyou_top_0.png" mode="" class="nav-list-item-image"></image>
+					<image src="http://pw.manxingkj.com/images/newUI/jiaoyou_top_0.png" mode="" class="nav-list-item-image"></image>
 				</view>
 				<view class="nav-list-item image-bg1"
 					@click="navigateToFn({ url: '/pages/liaotian', checkLogin: false })">
-					<image src="../static/newUI/jiaoyou_top_1.png" mode="" class="nav-list-item-image"></image>
+					<image src="http://pw.manxingkj.com/images/newUI/jiaoyou_top_1.png" mode="" class="nav-list-item-image"></image>
 				</view>
 			</view>
 			<!-- 底部tabbar start-->
@@ -77,7 +77,7 @@
 					</view>
 					<view class="justify-content-item tn-flex-row-center liaotian"
 						@click="navigateToFn({ url: '/minePages/chat/talk?toid='+item.id, checkLogin: true })">
-					<image src="../static/newUI/sixin.png" mode="" class="liaotian-image"></image>
+					<image src="http://pw.manxingkj.com/images/newUI/sixin.png" mode="" class="liaotian-image"></image>
 					<!-- 	<tn-button backgroundColor="tn-main-gradient-purple" size="sm" margin="10rpx 10rpx">
 							聊天
 						</tn-button> -->

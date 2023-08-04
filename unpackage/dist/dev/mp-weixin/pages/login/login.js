@@ -107,22 +107,22 @@ try {
       return Promise.all(/*! import() | tuniao-ui/components/tn-button/tn-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-button/tn-button")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-button/tn-button.vue */ 877))
     },
     tnCheckboxGroup: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-checkbox-group/tn-checkbox-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-checkbox-group/tn-checkbox-group")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-checkbox-group/tn-checkbox-group.vue */ 933))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-checkbox-group/tn-checkbox-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-checkbox-group/tn-checkbox-group")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-checkbox-group/tn-checkbox-group.vue */ 919))
     },
     tnCheckbox: function () {
-      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-checkbox/tn-checkbox */ "tuniao-ui/components/tn-checkbox/tn-checkbox").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-checkbox/tn-checkbox.vue */ 941))
+      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-checkbox/tn-checkbox */ "tuniao-ui/components/tn-checkbox/tn-checkbox").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-checkbox/tn-checkbox.vue */ 927))
     },
     fhAppleLogin: function () {
-      return Promise.all(/*! import() | components/fh-apple-login/fh-apple-login */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/fh-apple-login/fh-apple-login")]).then(__webpack_require__.bind(null, /*! @/components/fh-apple-login/fh-apple-login.vue */ 948))
+      return Promise.all(/*! import() | components/fh-apple-login/fh-apple-login */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/fh-apple-login/fh-apple-login")]).then(__webpack_require__.bind(null, /*! @/components/fh-apple-login/fh-apple-login.vue */ 934))
     },
     tnModal: function () {
       return Promise.all(/*! import() | tuniao-ui/components/tn-modal/tn-modal */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-modal/tn-modal")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-modal/tn-modal.vue */ 870))
     },
     tnListCell: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-list-cell/tn-list-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-list-cell/tn-list-cell")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-list-cell/tn-list-cell.vue */ 863))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-list-cell/tn-list-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-list-cell/tn-list-cell")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-list-cell/tn-list-cell.vue */ 856))
     },
     tnSwitch: function () {
-      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-switch/tn-switch */ "tuniao-ui/components/tn-switch/tn-switch").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-switch/tn-switch.vue */ 956))
+      return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-switch/tn-switch */ "tuniao-ui/components/tn-switch/tn-switch").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-switch/tn-switch.vue */ 942))
     },
   }
 } catch (e) {

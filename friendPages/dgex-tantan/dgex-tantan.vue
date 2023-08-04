@@ -26,11 +26,11 @@
 						opacity: love,
 						zIndex: 1
 					}">
-						<image style="width: 50rpx;height: 50rpx;" src="../../static/dgex-tantan/like_white.png">
+						<image style="width: 50rpx;height: 50rpx;" src="../../static/img/index/xin-2.png">
 						</image>
 					</view>
 					<view class="tantan-slide-footer-icon">
-						<image style="width: 50rpx;height: 50rpx;" src="../../static/dgex-tantan/like.png"></image>
+						<image style="width: 50rpx;height: 50rpx;" src="../../static/img/index/xin.png"></image>
 					</view>
 				</view>
 			</view>
@@ -70,7 +70,7 @@
 									opacity: love * 1.5,
 									transform: 'scale('+ (love + 1 > 2 ? 2 : love + 1 )  +')',
 								}">
-								<image style="width: 30rpx;height: 30rpx;" src="../../static/dgex-tantan/like.png"></image>
+								<image style="width: 30rpx;height: 30rpx;" src="../../static/img/index/xin.png"></image>
 							</view>
 						</view>
 					</template>

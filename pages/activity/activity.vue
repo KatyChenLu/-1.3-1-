@@ -3,7 +3,7 @@
 		<tn-nav-bar :isBack="false" :bottomShadow="false" backgroundColor="transparent">
 			动态
 		</tn-nav-bar>
-		<image src="../../static/newUI/bg.png" mode="widthFix" class="index_bg"></image>
+		<image src="http://pw.manxingkj.com/images/newUI/bg.png" mode="widthFix" class="index_bg"></image>
 
 
 		<mescroll-body ref="mescrollRef" @down="downCallback" @up="upCallback">
@@ -38,7 +38,7 @@
 			<view class="tn-fab-class tn-fab" @click="navigateToFn({ url: '/circlePages/edit', checkLogin: false })"
 				style="	position: relative;
 		z-index: 9999;">
-				<image src="../../static/newUI/add.png" mode="" class="add-icon tn-fab__box tn-fab--right"></image>
+				<image src="http://pw.manxingkj.com/images/newUI/add.png" mode="" class="add-icon tn-fab__box tn-fab--right"></image>
 				<!-- 	<view class="tn-fab__box tn-fab--right" style="left: auto; right: 20px; bottom: 100px; z-index: 19060;">
 					<view data-v-710e8188="" class="tn-fab__item__btn tn-fab__item__btn--fab tn-cool-bg-color-5"
 						style="width: 44px; height: 44px; border-radius: 50%; z-index: 19059;">

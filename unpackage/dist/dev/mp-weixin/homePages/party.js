@@ -104,7 +104,7 @@ try {
       return Promise.all(/*! import() | tuniao-ui/components/tn-nav-bar/tn-nav-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-nav-bar/tn-nav-bar")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-nav-bar/tn-nav-bar.vue */ 778))
     },
     tnTag: function () {
-      return Promise.all(/*! import() | tuniao-ui/components/tn-tag/tn-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tag/tn-tag")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tag/tn-tag.vue */ 849))
+      return Promise.all(/*! import() | tuniao-ui/components/tn-tag/tn-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("tuniao-ui/components/tn-tag/tn-tag")]).then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-tag/tn-tag.vue */ 863))
     },
     tnAvatarGroup: function () {
       return __webpack_require__.e(/*! import() | tuniao-ui/components/tn-avatar-group/tn-avatar-group */ "tuniao-ui/components/tn-avatar-group/tn-avatar-group").then(__webpack_require__.bind(null, /*! @/tuniao-ui/components/tn-avatar-group/tn-avatar-group.vue */ 793))
@@ -269,7 +269,7 @@ var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/component
 //
 var NavIndexButton = function NavIndexButton() {
   __webpack_require__.e(/*! require.ensure | libs/components/nav-index-button */ "libs/components/nav-index-button").then((function () {
-    return resolve(__webpack_require__(/*! @/libs/components/nav-index-button.vue */ 898));
+    return resolve(__webpack_require__(/*! @/libs/components/nav-index-button.vue */ 979));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var MescrollBody = function MescrollBody() {
